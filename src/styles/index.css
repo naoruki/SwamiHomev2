@@ -1,0 +1,87 @@
+/* Reset and base styles */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  
+  background-image: url('../assets/landingbg.svg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+}
+h1,h2,h3{
+  color: #E25D9C !important;
+  font-family: "EB Garamond" !important;
+}
+/* Main content grows to fill space */
+.content {
+  flex: 1;
+  padding: 2em;
+  text-align: center;
+  padding-top: 70px; /* adjust based on your navbar height */
+}
+.footer {
+  position: fixed;
+  background-color: transparent;
+  background-image: none; /* Or remove this if you have a background image */
+  box-shadow: none; /* Optional: remove shadow if exists */
+  color: #fff; /* Optional: set text color for visibility */
+}
+
+.wrapper {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.landing-section {
+  background-image: url("../assets/landingbg.svg"); /* or use .svg or .png */
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 100px 20px; /* adjusts for navbar height and spacing */
+  color: black; /* optional: make text readable */
+  text-align: center;
+  height: 100%;
+}
+
+.hero-section {
+  background-image: url("../image/landingbg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white; /* optional: improve text visibility */
+}
+
+.landing-content h1 {
+  font-size: 3rem;
+}
+
+.landing-content p {
+  font-size: 1.25rem;
+}
+
+
+
+@media (min-width: 992px) {
+  .offcanvas,
+  .mobile,
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+/* Mobile override */
+@media (max-width: 767.98px) {
+  .landing-section {
+    background-image: url("../image/landingbg.svg");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60%; /* ✅ Set a proper mobile height */
+  }
+}

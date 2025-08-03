@@ -1,0 +1,55 @@
+.sticky-navbar {
+  position: sticky !important;
+  top: 0;
+  z-index: 1020; /* Make sure it's above other content */
+}
+
+/* .navbar {
+  background-color: transparent !important;
+} */
+
+.brand-text-small {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.mobile-navbar,
+.fullscreen-navbar {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-navbar.scrolled,
+.fullscreen-navbar.scrolled {
+  background-color: #f6ecdf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.custom-button {
+  background-color: #F7A1C4 !important;
+  border-color: #F7A1C4 !important;
+  color: black !important;
+  border-radius: 40px !important;
+  padding: 0.5rem 1rem;
+  transition: transform 0.2s ease-in-out !important; /* smooth effect */
+  font-weight: bold !important; 
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.custom-button:hover {
+  transform: scale(1.1); /* enlarge 5% */
+  /* Optional: restore hover background if you want */
+  /* background-color: #FBB7E3;
+     border-color: #FBB7E3; */
+}
+
+@media (max-width: 1397px) {
+  .hide-below-1398 {
+    display: none !important;
+  }
+}
+@media (min-width: 1398px) {
+  .show-below-1398 {
+    display: none !important;
+  }
+}

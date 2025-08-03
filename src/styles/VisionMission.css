@@ -1,0 +1,76 @@
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 500px; /* or adjust as needed */
+}
+
+.carousel-slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* space between icon and text */
+}
+
+.carousel-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.carousel-icon {
+  font-size: 30px;
+  color: #F7A1C4;
+  display: flex;
+  align-items: center;
+}
+
+
+.carousel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 3;
+  padding: 0 20px;
+}
+
+.carousel-controls button {
+  color: black;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.carousel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between icon and heading */
+}
+
