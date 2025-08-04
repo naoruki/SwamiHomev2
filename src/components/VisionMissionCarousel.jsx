@@ -14,6 +14,7 @@ const CustomCarousel = ({ slides }) => {
 
   return (
     <div className="carousel-container ">
+      <center><h1>Our Mission & Vision</h1></center>
       <div className="container mission-header"></div>
       {slides.map((slide, index) => (
         <div
@@ -21,10 +22,11 @@ const CustomCarousel = ({ slides }) => {
           key={index}
         >
           <div className="carousel-content">
-            {/* <div className="carousel-icon">{slide.icon}</div> */}
-
             <div className="carousel-text">
-              <h2>{slide.icon}{"   "}{slide.heading}</h2>
+              <h2 className="d-flex align-items-center gap-2">
+                <span>{slide.icon}</span>
+                <span>{slide.heading}</span>
+              </h2>
               <p>{slide.text}</p>
             </div>
           </div>
