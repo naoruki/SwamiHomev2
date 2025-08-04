@@ -10,7 +10,6 @@ body {
   font-family: Arial, sans-serif;
   
   background-image: url('../assets/landingimageHQsmaller.svg');
-  background-size:100%!important;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
