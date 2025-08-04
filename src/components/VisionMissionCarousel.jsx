@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/VisionMission.css";
-import { CaretRightIcon,CaretLeftIcon} from "@phosphor-icons/react";
+// import { CaretRightIcon,CaretLeftIcon} from "@phosphor-icons/react";
 
 const CustomCarousel = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -8,12 +8,12 @@ const CustomCarousel = ({ slides }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
-    <div className="carousel-container d-none d-lg-flex">
+    <div className="carousel-container ">
       <div className="container mission-header"></div>
       {slides.map((slide, index) => (
         <div
@@ -21,17 +21,17 @@ const CustomCarousel = ({ slides }) => {
           key={index}
         >
           <div className="carousel-content">
-            <div className="carousel-icon">{slide.icon}</div>
+            {/* <div className="carousel-icon">{slide.icon}</div> */}
 
             <div className="carousel-text">
-              <h2>{slide.heading}</h2>
+              <h2>{slide.icon}{"   "}{slide.heading}</h2>
               <p>{slide.text}</p>
             </div>
           </div>
         </div>
       ))}
 
-      <div className="carousel-controls">
+      {/* <div className="carousel-controls">
         <button
           className="carousel-button"
           onClick={() =>
@@ -46,6 +46,16 @@ const CustomCarousel = ({ slides }) => {
         >
           <CaretRightIcon size={32} weight="bold" color="#E25D9C" />
         </button>
+      </div> */}
+      {/* Dots directly below slides */}
+      <div className="carousel-dots">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === current ? "active" : ""}`}
+            onClick={() => setCurrent(index)}
+          />
+        ))}
       </div>
     </div>
   );

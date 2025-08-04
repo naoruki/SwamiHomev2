@@ -1,6 +1,7 @@
 // pages/LandingPage.js
 import VisionSection from "../components/VisionSection.jsx";
 import HeroPage from "../components/HeroPage.jsx";
+import Services from "../components/Services.jsx";
 
 const LandingPage = () => {
   return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
 
       <div className="container">
         <VisionSection />
+        <Services/>
       </div>
       
     </div>

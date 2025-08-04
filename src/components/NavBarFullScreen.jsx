@@ -64,7 +64,7 @@ function NavBar() {
               <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
               <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
-            <HoverNavDropdown title="Careers" id="careers-dropdown">
+            <HoverNavDropdown title="Get Involved" id="careers-dropdown">
               <NavDropdown.Item href="#" className="fs-5">Action</NavDropdown.Item>
               <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
               <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>

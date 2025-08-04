@@ -37,19 +37,19 @@
 
 .carousel-icon {
   font-size: 30px;
-  color: #F7A1C4;
+  color: #f7a1c4;
   display: flex;
   align-items: center;
 }
-
 
 .carousel-text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  align-items: center; /* Centers heading and paragraph */
 }
 
-.carousel-controls {
+/* .carousel-controls {
   position: absolute;
   top: 30%;
   width: 100%;
@@ -58,23 +58,46 @@
   transform: translateY(-50%);
   z-index: 3;
   padding: 0 20px;
-}
+} */
 
-.carousel-controls button {
+/* .carousel-controls button {
   color: black;
   border: none;
   font-size: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 4px;
-}
+} */
 .carousel-title {
   display: flex;
   align-items: center;
   gap: 0.5rem; /* space between icon and heading */
 }
 
-.carousel-button{
-  background-color:transparent!important;
+.carousel-button {
+  background-color: transparent !important;
+}
 
+.carousel-dots {
+  position: absolute;
+  bottom: 230px; /* or wherever you want it */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* spacing between dots */
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+  background-color: #e25d9c;
+  transform: scale(1.2);
 }

@@ -6,13 +6,13 @@ const slides = [
   {
     icon: <HandHeartIcon  size={40} weight="fill" />,
     heading: "Our Vision",
-    text: "Some representative placeholder content for the first slide.",
+    text: "“A centre for Excellence in Human Values and a role model for elder care”",
 
   },
   {
     icon: <TargetIcon  size={40} weight="fill" />,
     heading: "Our Mission",
-    text: "Some representative placeholder content for the second slide.",
+    text: "“Providing holistic quality care for the elderly, needy and staff by consciously transforming into more humane individuals. Together we dedicate ourselves to selfless service with selfless love.”",
 
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     {
     icon: <StarIcon  size={40} weight="fill" />,
     heading: "Our Motto",
-    text: "Some representative placeholder content for the third slide.",
+    text: "Love All Serve All",
 
   },
 ];
