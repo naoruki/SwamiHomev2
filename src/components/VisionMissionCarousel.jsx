@@ -1,5 +1,6 @@
-import  { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "../styles/VisionMission.css";
+import { CaretRightIcon,CaretLeftIcon} from "@phosphor-icons/react";
 
 const CustomCarousel = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -13,8 +14,7 @@ const CustomCarousel = ({ slides }) => {
 
   return (
     <div className="carousel-container d-none d-lg-flex">
-      <div className="container mission-header">
-      </div>
+      <div className="container mission-header"></div>
       {slides.map((slide, index) => (
         <div
           className={`carousel-slide ${index === current ? "active" : ""}`}
@@ -33,14 +33,18 @@ const CustomCarousel = ({ slides }) => {
 
       <div className="carousel-controls">
         <button
+          className="carousel-button"
           onClick={() =>
             setCurrent((current - 1 + slides.length) % slides.length)
           }
         >
-          ‹
+          <CaretLeftIcon size={32} weight="bold" color="#E25D9C" />
         </button>
-        <button onClick={() => setCurrent((current + 1) % slides.length)}>
-          ›
+        <button
+          className="carousel-button"
+          onClick={() => setCurrent((current + 1) % slides.length)}
+        >
+          <CaretRightIcon size={32} weight="bold" color="#E25D9C" />
         </button>
       </div>
     </div>

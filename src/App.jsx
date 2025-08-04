@@ -9,6 +9,7 @@ import NavBarMobile from "./components/NavBarMobile.jsx";
 import Footer from "./components/Footer.jsx";
 import LandingPage from "./pages/Landing.jsx";
 import FloatingButton from "./components/FloatingButton.jsx";
+import { HandHeartIcon} from "@phosphor-icons/react";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <NavBar />
       <NavBarMobile />
       <LandingPage />
-      <FloatingButton />
+      <FloatingButton icon={<HandHeartIcon size={32}/>} label="Support Us" />
 
       <div className="footer-background">
         <Footer />

@@ -45,34 +45,34 @@ function NavBar() {
             </Nav.Link>
 
             <HoverNavDropdown title="About Us" id="about-dropdown">
-              <NavDropdown.Item href="#">Our Story</NavDropdown.Item>
-              <NavDropdown.Item href="#">Our Team</NavDropdown.Item>
-              <NavDropdown.Item href="#">Vision & Mission</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Our Story</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Our Team</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Vision & Mission</NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Services" id="services-dropdown">
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Community Life" id="community-dropdown">
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Media" id="media-dropdown">
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Careers" id="careers-dropdown">
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Contact" id="contact-dropdown">
-              <NavDropdown.Item href="#">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#" className="fs-5">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
           </Nav>
         </Navbar.Collapse>

@@ -1,11 +1,10 @@
-import React from "react";
 import { Button } from "react-bootstrap";
 // Make sure this path is correct
 
-const FloatingButton = () => {
+const FloatingButton = ({ icon, label }) => {
   return (
     <Button className="custom-button floating-button">
-      Support Us
+      {icon} {label}
     </Button>
   );
 };
