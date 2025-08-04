@@ -8,6 +8,7 @@ import NavBar from "./components/NavBarFullScreen.jsx";
 import NavBarMobile from "./components/NavBarMobile.jsx";
 import Footer from "./components/Footer.jsx";
 import LandingPage from "./pages/Landing.jsx";
+import FloatingButton from "./components/FloatingButton.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <NavBar />
       <NavBarMobile />
       <LandingPage />
+      <FloatingButton />
 
       <div className="footer-background">
         <Footer />

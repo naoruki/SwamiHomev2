@@ -20,7 +20,7 @@ function NavBar() {
   return (
     <Navbar
       expand="lg"
-      className="d-none d-lg-flex sticky-navbar fullscreen-navbar"
+      className="d-none d-lg-flex sticky-navbar fullscreen-navbar fs-5"
       id="fullscreen-navbar"
     >
       <Container>
@@ -38,7 +38,7 @@ function NavBar() {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbar-nav" />
-        <Navbar.Collapse id="navbar-nav">
+        <Navbar.Collapse id="navbar-nav ">
           <Nav className="ms-auto">
             <Nav.Link href="#" active>
               Home
@@ -74,12 +74,12 @@ function NavBar() {
               <NavDropdown.Item href="#">Another action</NavDropdown.Item>
               <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
             </HoverNavDropdown>
-            <Button className="ms-3 custom-button">Book Visitation</Button>
-
-            <Button className="ms-3 custom-button">Support Us</Button>
           </Nav>
         </Navbar.Collapse>
+          
       </Container>
+      
+    
     </Navbar>
   );
 }

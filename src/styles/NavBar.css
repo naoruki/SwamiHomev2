@@ -1,3 +1,6 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
 .sticky-navbar {
   position: sticky !important;
   top: 0;
@@ -9,7 +12,7 @@
 } */
 
 .brand-text-small {
-  font-size: 0.85rem;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -26,13 +29,13 @@
 }
 
 .custom-button {
-  background-color: #F7A1C4 !important;
-  border-color: #F7A1C4 !important;
+  background-color: #f7a1c4 !important;
+  border-color: #f7a1c4 !important;
   color: black !important;
   border-radius: 40px !important;
   padding: 0.5rem 1rem;
   transition: transform 0.2s ease-in-out !important; /* smooth effect */
-  font-weight: bold !important; 
+  font-weight: bold !important;
   font-family: Arial, Helvetica, sans-serif !important;
 }
 
@@ -41,6 +44,16 @@
   /* Optional: restore hover background if you want */
   /* background-color: #FBB7E3;
      border-color: #FBB7E3; */
+}
+.floating-button {
+  position: fixed;
+  bottom: 20px; /* distance from bottom */
+  right: 20px; /* distance from right */
+  z-index: 1050; /* stay above other elements */
+  border-radius: 50px; /* optional: rounded button */
+  padding: 15px 25px !important;
+  font-size:20px !important;
+  font-weight: bold !important;
 }
 
 @media (max-width: 1397px) {
