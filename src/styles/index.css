@@ -9,7 +9,8 @@ body {
   flex-direction: column;
   font-family: Arial, sans-serif;
   
-  background-image: url('../assets/landingbg.svg');
+  background-image: url('../assets/landingimageHQsmaller.svg');
+  background-size:100%!important;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
