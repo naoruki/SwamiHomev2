@@ -2,9 +2,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 500px; /* or adjust as needed */
+  height: 450px; /* or adjust as needed */
 }
-
 .carousel-slide {
   opacity: 0;
   position: absolute;

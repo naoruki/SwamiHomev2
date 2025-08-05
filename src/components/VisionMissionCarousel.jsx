@@ -14,7 +14,7 @@ const CustomCarousel = ({ slides }) => {
 
   return (
     <div className="carousel-container ">
-      <center><h1>Our Mission & Vision</h1></center>
+      <center><h1>Our Mission,Vision,Core Values & Motto</h1></center>
       <div className="container mission-header"></div>
       {slides.map((slide, index) => (
         <div

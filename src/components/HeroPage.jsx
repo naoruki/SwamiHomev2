@@ -1,5 +1,4 @@
 import landingImg from "../assets/landingimageHQ.svg"; // Adjust path if needed
-// import { Smiley, Heart, Horse } from "@phosphor-icons/react";
 const HeroSection = () => {
   return (
     <div className="container col-xxl-8 px-4 py-5">

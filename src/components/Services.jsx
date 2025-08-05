@@ -1,15 +1,15 @@
-import { HouseLineIcon, SunIcon, HouseIcon,PersonIcon, ShootingStarIcon  } from "@phosphor-icons/react";
+import { HouseLineIcon, SunIcon, HouseIcon, PersonIcon, ShootingStarIcon } from "@phosphor-icons/react";
 
 const Services = () => {
   return (
-    <div className="container">
+    <div className="container pb-5"> {/* Added pb-5 for bottom padding */}
       {/* Row 1 */}
       <center><h1>Our Services</h1></center>
       <div className="row mb-3">
         <div className="col-12 col-md-6 mb-3">
           <div className="card">
             <div className="card-body">
-              <HouseLineIcon size={50} color="#E25D9C"/>
+              <HouseLineIcon size={50} color="#E25D9C" />
               <h2>Residential Services</h2>
               <p>
                 Residential Care
@@ -22,7 +22,7 @@ const Services = () => {
         <div className="col-12 col-md-6">
           <div className="card">
             <div className="card-body">
-              <SunIcon size={50} color="#E25D9C"/>
+              <SunIcon size={50} color="#E25D9C" />
               <h2>Day Care Services</h2>
               <p>
                 Dementia Day Care Centre
@@ -39,7 +39,7 @@ const Services = () => {
         <div className="col-12 col-md-6 col-lg-6 mb-3">
           <div className="card">
             <div className="card-body">
-              <HouseIcon size={50} color="#E25D9C"/>
+              <HouseIcon size={50} color="#E25D9C" />
               <h2>Community Services</h2>
               <p>
                 Support Groups
@@ -52,7 +52,7 @@ const Services = () => {
         <div className="col-12 col-md-6 col-lg-3 mb-3">
           <div className="card">
             <div className="card-body">
-                <ShootingStarIcon size={50} color="#E25D9C"/>
+              <ShootingStarIcon size={50} color="#E25D9C" />
               <h2>Integrated Services</h2>
               <p>Integrated Home & Day Care Center (IHDC)</p>
             </div>
@@ -61,7 +61,7 @@ const Services = () => {
         <div className="col-12 col-md-6 col-lg-3 mb-3">
           <div className="card">
             <div className="card-body">
-                <PersonIcon size={50} color="#E25D9C"/>
+              <PersonIcon size={50} color="#E25D9C" />
               <h2>Therapy Services</h2>
               <p>
                 Occupational Therapy

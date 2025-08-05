@@ -1,0 +1,28 @@
+.testimonials-section {
+  padding: 2rem;
+  background: #f6ecdf;
+   
+}
+.testimonials-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.testimonials-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* optional for responsiveness */
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #eee;
+  max-width: 300px;
+  flex: 1 1 auto; /* optional for flexible layout */
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin: 1rem 0;
+}

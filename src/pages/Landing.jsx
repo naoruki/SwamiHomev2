@@ -2,6 +2,7 @@
 import VisionSection from "../components/VisionSection.jsx";
 import HeroPage from "../components/HeroPage.jsx";
 import Services from "../components/Services.jsx";
+import Testimonial from "../components/TestimonialSection .jsx";
 
 const LandingPage = () => {
   return (
@@ -9,12 +10,12 @@ const LandingPage = () => {
       <HeroPage />
 
       <div className="container">
+        <Services />
         <VisionSection />
-        <Services/>
+
+        <Testimonial />
       </div>
-      
     </div>
-    
   );
 };
 
