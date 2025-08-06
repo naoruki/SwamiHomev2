@@ -1,44 +1,53 @@
 const Footer = () => {
   return (
-    <div className="container ">
-      <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-        <div className="col mb-3">
-          <a
-            href="/"
-            className="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none"
-            aria-label="Bootstrap"
-          >
-            <svg className="bi me-2" width="40" height="32" aria-hidden="true">
-              <use xlinkHref="#bootstrap" />
-            </svg>
-          </a>
-          <p className="text-body-secondary">© 2025</p>
+    <div className="container">
+      <footer className="row py-4 my-4 border-top">
+        {/* Left Side: Contact Us */}
+        <div className="col-md-4 mb-3">
+          <h5 className="text-start">Contact Us</h5>
+          <address className="text-start text-body-secondary">
+            SUNSHINE WELFARE ACTION MISSION (SWAMI Home)
+            <br />
+            No.5 Sembawang Walk
+            <br />
+            Singapore 757717
+            <br />
+            <br />
+            Phone: +65 6257 6117
+            <br />
+            Fax: +65 67548443
+            Email: <a href="mailto:enquiry@swami.org.sg">enquiry@swami.org.sg</a>
+          </address>
         </div>
 
-        <div className="col mb-3" />
+        {/* Middle: Hours */}
+        <div className="col-md-4 mb-3 text-start">
+          <h5>Hours</h5>
+          <ul className="list-unstyled text-body-secondary">
+            <li>
+              <strong>Opening Hours:</strong> Mon–Fri, 8.30am–5.30pm
+            </li>
+            <li>
+              <strong>Visiting Hours:</strong> Mon-Sat,9.00am–7.00pm
+            </li>
+          </ul>
+        </div>
 
-        {[...Array(3)].map((_, index) => (
-          <div className="col mb-3" key={index}>
-            <h5>Section</h5>
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">Home</a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">Features</a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">Pricing</a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">FAQs</a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="#" className="nav-link p-0 text-body-secondary">About</a>
-              </li>
-            </ul>
-          </div>
-        ))}
+        {/* Right Side: Quick Links */}
+        <div className="col-md-4 mb-3">
+          <h5 className="text-start">Quick Links</h5>
+          <ul className="nav flex-column align-items-md-start">
+            {["About Us","Donation", "Services",  "Careers", "PDPA"].map(
+              (link, index) => (
+                <li className="nav-item mb-2" key={index}>
+                  <a href="#" className="nav-link p-0 text-body-secondary">
+                    {link}
+                  </a>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
       </footer>
     </div>
   );
