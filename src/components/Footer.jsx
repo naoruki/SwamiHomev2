@@ -16,6 +16,7 @@ const Footer = () => {
             Phone: +65 6257 6117
             <br />
             Fax: +65 67548443
+            <br />
             Email: <a href="mailto:enquiry@swami.org.sg">enquiry@swami.org.sg</a>
           </address>
         </div>
