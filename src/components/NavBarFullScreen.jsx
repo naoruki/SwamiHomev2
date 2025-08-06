@@ -54,27 +54,36 @@ function NavBar() {
               <NavDropdown.Item href="#" className="">
                 Vision & Mission
               </NavDropdown.Item>
+              <NavDropdown.Item href="#" className="">
+                Annual Report
+              </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Services" id="services-dropdown">
               <NavDropdown.Item href="#" className="">
-                Action
+                Residential Services
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Another action
+                Day Care Services
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Something else here
+                Community Services
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#" className="">
+                Integrated Services
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#" className="">
+                Therapy Services
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Community Life" id="community-dropdown">
               <NavDropdown.Item href="#" className="">
-                Action
+                Activities & Programs
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Another action
+                Facilties
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Something else here
+                Visual Tour
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Media" id="media-dropdown">
@@ -101,7 +110,7 @@ function NavBar() {
             </HoverNavDropdown>
             <Nav className="ms-auto">
               <Nav.Link href="#" active>
-                Home
+                Contact us
               </Nav.Link>
             </Nav>
           </Nav>

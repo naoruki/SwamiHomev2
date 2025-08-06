@@ -13,9 +13,9 @@ const Footer = () => {
             Singapore 757717
             <br />
             <br />
-            Phone: +65 6257 6117
+            <b>Phone:</b> +65 6257 6117
             <br />
-            Fax: +65 67548443
+            <b>Fax:</b> +65 67548443
             <br />
             Email: <a href="mailto:enquiry@swami.org.sg">enquiry@swami.org.sg</a>
           </address>
@@ -26,10 +26,10 @@ const Footer = () => {
           <h5>Hours</h5>
           <ul className="list-unstyled text-body-secondary">
             <li>
-              <strong>Opening Hours:</strong> Mon–Fri, 8.30am–5.30pm
+              <strong>Opening Hours:</strong><br /> Mon–Fri, 8.30am–5.30pm
             </li>
             <li>
-              <strong>Visiting Hours:</strong> Mon-Sat,9.00am–7.00pm
+              <strong>Visiting Hours:</strong><br /> Mon-Sat, 9.00am–7.00pm
             </li>
           </ul>
         </div>

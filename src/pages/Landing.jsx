@@ -1,9 +1,9 @@
-// pages/LandingPage.js
 import VisionSection from "../components/VisionSection.jsx";
-import HeroPage from "../components/HeroPage1.jsx";
-import Services from "../components/Services.jsx";
+
+import Services from "../components/ServicesSection.jsx";
 import Testimonial from "../components/TestimonialSection .jsx";
 import HeroCarousel from "../components/HeroPageCarousel.jsx";
+import OurPartners from "../components/OurPartnerSection.jsx";
 
 const LandingPage = () => {
   return (
@@ -14,6 +14,7 @@ const LandingPage = () => {
         <Services />
         <VisionSection />
 
+        <OurPartners />
         <Testimonial />
       </div>
     </div>
