@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
-          <Route path="donation" element={<DonationPage />} />
+          <Route path="donate" element={<DonationPage />} />
         </Route>
       </Routes>
     </Router>

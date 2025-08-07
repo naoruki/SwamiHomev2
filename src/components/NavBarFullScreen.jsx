@@ -43,7 +43,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav ">
           <Nav className="ms-auto">
-            <Nav.Link href="#" active>
+            <Nav.Link as={Link} to="/" active>
               Home
             </Nav.Link>
 
