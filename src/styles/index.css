@@ -19,6 +19,13 @@ h1,h2,h3{
   color: #E25D9C !important;
   font-family: "EB Garamond" !important;
 }
+.caveat-font {
+  font-family: 'Caveat', cursive;
+}
+
+.indie-flower-font {
+  font-family: 'Indie Flower', cursive;
+}
 /* Main content grows to fill space */
 .content {
   flex: 1;

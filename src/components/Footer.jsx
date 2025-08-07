@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="col-md-4 mb-3">
           <h5 className="text-start">Contact Us</h5>
           <address className="text-start text-body-secondary">
-            SUNSHINE WELFARE ACTION MISSION (SWAMI Home)
+            <b>SUNSHINE WELFARE ACTION MISSION (SWAMI Home)</b>
             <br />
             No.5 Sembawang Walk
             <br />

@@ -2,6 +2,9 @@ import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import Logo from "../assets/logo.svg";
 import HoverNavDropdown from "./HoverNavDropdown"; // adjust path if needed
 import { useEffect } from "react";
+
+import { Link } from "react-router-dom";
+
 function NavBar() {
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +27,12 @@ function NavBar() {
       id="fullscreen-navbar"
     >
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand as={Link} to="/">
           <div className="d-flex align-items-center">
             <img
               src={Logo}
               alt="Logo"
-              style={{ width: "70px", marginRight: "10px" }} // Adjust size and spacing
+              style={{ width: "70px", marginRight: "10px" }}
             />
             <span className="brand-text-small">
               SUNSHINE WELFARE ACTION MISSION
