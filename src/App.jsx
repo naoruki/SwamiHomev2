@@ -8,15 +8,16 @@ import {
 import Layout from "./components/Layout.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
 import DonationPage from "./pages/DonationPage.jsx"; // make sure this exists
-
+import ScrollToTop from "./components/ScrollToTop.jsx";
 function App() {
   return (
     <Router>
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
           <Route path="donate" element={<DonationPage />} />
-
           {/* Catch-all route for undefined paths */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
