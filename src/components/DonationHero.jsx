@@ -30,12 +30,20 @@ const DonationHero = () => {
           </p>
           <div className="row g-2">
             <div className="col-12 col-md-4">
-              <Button size="lg" className="volunteer-button w-100" href="#donation-section">
+              <Button
+                size="lg"
+                className="volunteer-button w-100"
+                href="#donation-section"
+              >
                 Donate
               </Button>
             </div>
             <div className="col-12 col-md-4">
-              <Button size="lg" className="volunteer-button w-100">
+              <Button
+                size="lg"
+                className="volunteer-button w-100"
+                href="/volunteer"
+              >
                 Volunteer
               </Button>
             </div>
