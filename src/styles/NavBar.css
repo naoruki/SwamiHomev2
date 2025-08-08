@@ -28,7 +28,7 @@ html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
-.custom-button {
+.custom-button,.volunteer-button {
   background-color: #f7a1c4 !important;
   border-color: #f7a1c4 !important;
   color: black !important;
@@ -45,6 +45,19 @@ html {
   /* background-color: #FBB7E3;
      border-color: #FBB7E3; */
 }
+
+/* .volunteer-button:hover {
+  background-color: white !important;
+  color: white important!;
+  border-color: #f7a1c4 !important;
+} */
+.volunteer-button:active {
+  background-color: pink !important;
+  color: white;
+  border-color: #f7a1c4 !important;
+}
+
+
 .floating-button {
   position: fixed;
   bottom: 20px; /* distance from bottom */

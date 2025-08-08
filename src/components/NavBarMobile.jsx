@@ -52,41 +52,32 @@ function NavBarMobile() {
             placement="start"
           >
             <Offcanvas.Header closeButton>
-               <Offcanvas.Title id="offcanvasNavbarLabel">
+              <Offcanvas.Title id="offcanvasNavbarLabel">
                 <img
                   src={Logo}
                   alt="Logo"
                   style={{ width: "70px", marginRight: "10px" }} // Adjust size and spacing
                 />
-              </Offcanvas.Title> 
+              </Offcanvas.Title>
               <span className="brand-text-small fw-bold text-wrap">
                 SUNSHINE WELFARE ACTION MISSION
               </span>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#" active>
+                <Nav.Link as={Link} to="/" active>
                   Home
                 </Nav.Link>
-                <Nav.Link href="#">Link</Nav.Link>
-                <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
+                
+                <NavDropdown title="About Us" id="offcanvasNavbarDropdown">
                   <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Another action</NavDropdown.Item>
-                  <NavDropdown.Divider />
                   <NavDropdown.Item href="#">
                     Something else here
                   </NavDropdown.Item>
                 </NavDropdown>
+                <Nav.Link href="#">Contact Us</Nav.Link>
               </Nav>
-              <Form className="d-flex mt-3">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
+
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>

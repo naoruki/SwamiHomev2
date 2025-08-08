@@ -113,7 +113,7 @@ function NavBar() {
             </HoverNavDropdown>
             <Nav className="ms-auto">
               <Nav.Link href="#" active>
-                Contact us
+                Contact Us
               </Nav.Link>
             </Nav>
           </Nav>

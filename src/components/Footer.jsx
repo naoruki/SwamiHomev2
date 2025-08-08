@@ -1,3 +1,5 @@
+import { InstagramLogoIcon, FacebookLogoIcon } from "@phosphor-icons/react";
+
 const Footer = () => {
   return (
     <div className="container">
@@ -32,7 +34,7 @@ const Footer = () => {
             </li>
             <li>
               <strong>Visiting Hours:</strong>
-              <br /> Mon-Sat, 9.00am–7.00pm
+              <br /> Mon–Sat, 9.00am–7.00pm
             </li>
           </ul>
         </div>
@@ -51,6 +53,32 @@ const Footer = () => {
               )
             )}
           </ul>
+        </div>
+
+        {/* Social Media Icons - New Row */}
+        {/* Social Media Icons - Centered and Side by Side */}
+        <div className="col-12 text-center mt-4">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="me-3 d-inline-block"
+          >
+            <InstagramLogoIcon size={32} color="#E25D9C" weight="duotone" />
+          </a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="d-inline-block"
+          >
+            <FacebookLogoIcon size={32} color="#E25D9C" weight="duotone" />
+          </a>
+        </div>
+        {/* Copyright */}
+        <div className="col-12 text-center mt-3 text-body-secondary small">
+          &copy; {new Date().getFullYear()} SUNSHINE WELFARE ACTION MISSION. All
+          rights reserved.
         </div>
       </footer>
     </div>
