@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import heroImage from "../assets/donateimg.png"; // Update path as needed
-
+import { Link } from "react-router-dom";
 const DonationHero = () => {
   return (
     <Container className="py-5">
@@ -30,7 +30,7 @@ const DonationHero = () => {
           </p>
           <div className="row g-2">
             <div className="col-12 col-md-4">
-              <Button size="lg" className="volunteer-button w-100">
+              <Button size="lg" className="volunteer-button w-100" href="#donation-section">
                 Donate
               </Button>
             </div>

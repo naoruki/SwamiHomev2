@@ -4,9 +4,6 @@ import {
   NavDropdown,
   Container,
   Offcanvas,
-  Form,
-  FormControl,
-  Button,
 } from "react-bootstrap";
 import { useEffect } from "react";
 import Logo from "../assets/logo.svg";
@@ -68,8 +65,14 @@ function NavBarMobile() {
                 <Nav.Link as={Link} to="/" active>
                   Home
                 </Nav.Link>
-                
+
                 <NavDropdown title="About Us" id="offcanvasNavbarDropdown">
+                  <NavDropdown.Item href="#">Action</NavDropdown.Item>
+                  <NavDropdown.Item href="#">
+                    Something else here
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="Services" id="offcanvasNavbarDropdown">
                   <NavDropdown.Item href="#">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#">
                     Something else here
@@ -77,7 +80,6 @@ function NavBarMobile() {
                 </NavDropdown>
                 <Nav.Link href="#">Contact Us</Nav.Link>
               </Nav>
-
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
