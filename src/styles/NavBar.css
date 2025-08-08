@@ -55,7 +55,7 @@ html {
   font-size:20px !important;
   font-weight: bold !important;
 }
-
+/* 
 @media (max-width: 1397px) {
   .hide-below-1398 {
     display: none !important;
@@ -65,6 +65,13 @@ html {
   .show-below-1398 {
     display: none !important;
   }
+} */
+ 
+@media (max-width: 576px) {
+  .custom-button {
+    font-size: 0.75rem !important; /* smaller font for mobile */
+  }
 }
+
 
 
