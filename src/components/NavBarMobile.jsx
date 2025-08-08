@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { useEffect } from "react";
 import Logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
 function NavBarMobile() {
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +34,13 @@ function NavBarMobile() {
         id="mobile-navbar"
       >
         <Container fluid>
-          <Navbar.Brand href="#" className="d-flex align-items-center">
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img
               src={Logo}
               alt="Logo"
               style={{ width: "50px", marginRight: "10px" }} // Adjust size as needed
             />
-            <span className="brand-text-small fw-bold text-wrap">
+            <span className="brand-text-small fw-bold text-nowrap d-none d-sm-inline">
               SUNSHINE WELFARE ACTION MISSION
             </span>
           </Navbar.Brand>
@@ -51,13 +52,16 @@ function NavBarMobile() {
             placement="start"
           >
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">
+               <Offcanvas.Title id="offcanvasNavbarLabel">
                 <img
                   src={Logo}
                   alt="Logo"
                   style={{ width: "70px", marginRight: "10px" }} // Adjust size and spacing
                 />
-              </Offcanvas.Title>
+              </Offcanvas.Title> 
+              <span className="brand-text-small fw-bold text-wrap">
+                SUNSHINE WELFARE ACTION MISSION
+              </span>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">

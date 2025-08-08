@@ -34,7 +34,7 @@ function NavBar() {
               alt="Logo"
               style={{ width: "70px", marginRight: "10px" }}
             />
-            <span className="brand-text-small">
+            <span className="brand-text-small d-none d-xl-inline">
               SUNSHINE WELFARE ACTION MISSION
             </span>
           </div>

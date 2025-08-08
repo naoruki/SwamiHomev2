@@ -5,7 +5,8 @@ const DonationHero = () => {
     <Container className="py-5">
       <Row className="align-items-center g-5">
         {/* Left Column: Image */}
-        <Col xs={10} sm={8} lg={6}>
+
+        <Col xs={10} sm={8} lg={6} className="pt-5 pt-sm-0">
           <img
             src={heroImage}
             className="d-block mx-lg-auto img-fluid"
@@ -30,7 +31,7 @@ const DonationHero = () => {
           <div className="row g-2">
             <div className="col-4">
               <Button size="lg" className="custom-button w-100">
-                Ways to Donate
+                Donate
               </Button>
             </div>
             <div className="col-4">
