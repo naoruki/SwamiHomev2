@@ -3,7 +3,7 @@ import { InstagramLogoIcon, FacebookLogoIcon } from "@phosphor-icons/react";
 const Footer = () => {
   return (
     <div className="container">
-      <footer className="row py-4 my-4 border-top">
+      <footer className="row py-4 border-top">
         {/* Left Side: Contact Us */}
         <div className="col-md-4 mb-3">
           <h5 className="text-start">Contact Us</h5>

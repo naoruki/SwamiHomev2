@@ -33,7 +33,6 @@
   text-align: center;
 }
 
-
 .core-values-grid {
   display: flex;
   flex-wrap: wrap;
@@ -50,8 +49,6 @@
   border-radius: 8px;
   background-color: #fff;
 }
-
-
 
 @media (max-width: 820px) {
   .about-us-container {
