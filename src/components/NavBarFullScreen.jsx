@@ -48,7 +48,7 @@ function NavBar() {
             </Nav.Link>
 
             <HoverNavDropdown title="About Us" id="about-dropdown">
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/about-us" className="">
                 Our Story
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
