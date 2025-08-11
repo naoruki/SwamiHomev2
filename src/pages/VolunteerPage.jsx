@@ -5,7 +5,7 @@ const VolunteerPage = () => {
   return (
     <Container>
       <VolunteerHero />
-      <hr/>
+
       <VolunteerSection/>
     </Container>
   );
