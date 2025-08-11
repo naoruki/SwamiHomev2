@@ -26,7 +26,7 @@ const JourneySection = () => (
         </div>
       </div>
       <div className="row mt-5 my-4">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 order-2 order-md-1">
           <p>
             The group of 29 people was thrilled to be called in for an interview
             by Sri Sathya Sai Baba.
@@ -40,10 +40,10 @@ const JourneySection = () => (
             advice was to expand one’s heart and to do service without any
             expectation or recognition for any reward or personal gain.
           </p>
-          <p>Baba encouraged the volunteer group to engage in regular social</p>
-          work.
+          <p>Baba encouraged the volunteer group to engage in regular social
+          work.</p>
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 order-1 order-md-2">
           <img
             src={journey2}
             className="img-fluid"
