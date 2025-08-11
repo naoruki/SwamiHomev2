@@ -8,23 +8,32 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  
-  background-image: url('../assets/landingbg1.svg');
+
+  background-image: url("../assets/landingbg1.svg");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   position: relative;
 }
-h1,h2,h3{
-  color: #E25D9C !important;
+h1,
+h2,
+h3 {
+  color: #e25d9c !important;
   font-family: "EB Garamond" !important;
 }
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 40px; /* or 1.5em */
+  margin-left: 0;
+}
+
 .caveat-font {
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
 }
 
 .indie-flower-font {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 /* Main content grows to fill space */
 .content {
@@ -74,11 +83,15 @@ h1,h2,h3{
 }
 
 .carousel-indicators [data-bs-target] {
-  background-color: #E25D9C !important; /* Your custom color */
+  background-color: #e25d9c !important; /* Your custom color */
 }
 
 .carousel-item {
   min-height: 55vh;
+}
+.hr {
+  border-color: pink !important;/* light gray */
+  opacity: 0.8 !important; /* makes it even softer */
 }
 
 @media (min-width: 992px) {

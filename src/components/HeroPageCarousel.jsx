@@ -1,4 +1,3 @@
-import slide1 from "../assets/landingimage2.svg"; // Replace with your actual images
 import HeroPage1 from "./HeroPage1.jsx";
 import HeroPage2 from "./HeroPage2.jsx"; // Ensure this is the correct import path
 import HeroPage3 from "./HeroPage3.jsx"; // Ensure this is the correct import path
@@ -35,15 +34,15 @@ const HeroCarousel = () => {
 
       {/* Slides */}
       <div className="carousel-inner">
-        <div className="carousel-item active" data-bs-interval="10000">
+        <div className="carousel-item active" data-bs-interval="8000">
           {/* <img src={slide1} className="d-block w-100" alt="Slide 1" /> */}
           <HeroPage1 />
         </div>
-        <div className="carousel-item" data-bs-interval="10000">
+        <div className="carousel-item" data-bs-interval="8000">
           {/* <img src={slide1} className="d-block w-100" alt="Slide 2" /> */}
           <HeroPage2 />
         </div>
-        <div className="carousel-item" data-bs-interval="10000">
+        <div className="carousel-item" data-bs-interval="8000">
           {/* <img src={slide1} className="d-block w-100" alt="Slide 3" /> */}
           <HeroPage3 />
         </div>

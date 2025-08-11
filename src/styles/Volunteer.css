@@ -1,0 +1,48 @@
+.volunteer-hero {
+  background: linear-gradient(
+    120deg,
+    rgba(127, 222, 252, 0.7) 0%,
+    rgba(252, 184, 225, 0.7) 100%
+  );
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.volunteer-hero__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.volunteer-hero__cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 32px;
+  background: #fff;
+  color: black;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.volunteer-hero__cta:hover {
+  background: #fcb8e1;
+  color: white;
+}
+
+/* Push hero down on mobile to clear navbar */
+@media (max-width: 820px) {
+  .volunteer-hero {
+    margin-top: 80px; /* adjust this to match mobile navbar height */
+    padding: 40px 15px;
+  }
+}
+/* custom-overrides.css */
+@media (max-width: 820px) {
+  .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}

@@ -1,10 +1,12 @@
 import { Container } from "react-bootstrap";
-import DonateSection from "../components/DonateSection";
+import VolunteerSection from "../components/VolunteerSection";
 import VolunteerHero from "../components/VolunteerHero";
 const VolunteerPage = () => {
   return (
     <Container>
       <VolunteerHero />
+      <hr/>
+      <VolunteerSection/>
     </Container>
   );
 };
