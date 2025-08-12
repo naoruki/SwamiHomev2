@@ -26,11 +26,11 @@ function AppContent() {
   }, [location]);
 
   // Scroll to top after loading ends
-  useEffect(() => {
-    if (!loading) {
-      window.scrollTo(0, 0);
-    }
-  }, [loading]);
+  // useEffect(() => {
+  //   if (!loading) {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }, [loading]);
 
   return (
     <>
