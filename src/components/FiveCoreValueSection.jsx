@@ -31,7 +31,7 @@ const coreValues = [
 const FiveCoreValueSection = () => (
   <section className="core-values-section">
     <Container>
-      <h2>Five Core Values</h2>
+      <h2>Our Five Core Values</h2>
       <div className="core-values-grid">
         {coreValues.map((value) => (
           <div key={value.title} className="core-value-card">
