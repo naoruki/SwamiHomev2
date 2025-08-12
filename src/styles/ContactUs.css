@@ -1,0 +1,12 @@
+.contact-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(252, 184, 225, 0.6) 0%,
+    rgba(246, 236, 223, 0.6) 50%,
+    rgba(127, 222, 252, 0.6) 100%
+  );
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}

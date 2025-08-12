@@ -49,13 +49,16 @@ function NavBar() {
 
             <HoverNavDropdown title="About Us" id="about-dropdown">
               <NavDropdown.Item href="/about-us" className="">
-                Our Story
+                About Us
               </NavDropdown.Item>
               <NavDropdown.Item href="/about-us/#our-journey" className="">
                 Our Journey
               </NavDropdown.Item>
+              <NavDropdown.Item href="/founder" className="">
+                Our Founder
+              </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Our Team
+                Organization
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
                 Vision & Mission
@@ -115,7 +118,7 @@ function NavBar() {
               </NavDropdown.Item>
             </HoverNavDropdown>
             <Nav className="ms-auto">
-              <Nav.Link href="#" active>
+              <Nav.Link href="/contact-us" active>
                 Contact Us
               </Nav.Link>
             </Nav>

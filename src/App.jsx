@@ -11,6 +11,7 @@ import LandingPage from "./pages/LandingPage.jsx";
 import DonationPage from "./pages/DonationPage.jsx";
 import VolunteerPage from "./pages/VolunteerPage.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
+import ContactUsPage from "./pages/ContactUs.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
 
@@ -41,6 +42,7 @@ function AppContent() {
           <Route path="donate" element={<DonationPage />} />
           <Route path="volunteer" element={<VolunteerPage />} />
           <Route path="about-us" element={<AboutUsPage />} />
+          <Route path="contact-us" element={<ContactUsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
