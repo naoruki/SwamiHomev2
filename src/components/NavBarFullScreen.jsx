@@ -51,6 +51,9 @@ function NavBar() {
               <NavDropdown.Item href="/about-us" className="">
                 Our Story
               </NavDropdown.Item>
+              <NavDropdown.Item href="/about-us/#our-journey" className="">
+                Our Journey
+              </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
                 Our Team
               </NavDropdown.Item>

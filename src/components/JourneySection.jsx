@@ -9,7 +9,7 @@ import emptyLand from "../assets/swami3home.png";
 import swamihome3 from "../assets/swami3homeafter.png";
 import sunshine from "../assets/sunshine.png";
 import graceopen from "../assets/graceopen.png";
-import grace from "../assets/grace.png"
+import grace from "../assets/grace.png";
 import ImageSlider from "./ImageSlider.jsx";
 
 const JourneySection = () => {
@@ -25,15 +25,17 @@ const JourneySection = () => {
     },
   ];
   const sunshineSlides = [
-    { image: graceopen,caption:"Open on 16th November 2019 by Mr Ong Ye Kung" },
+    {
+      image: graceopen,
+      caption: "Open on 16th November 2019 by Mr Ong Ye Kung",
+    },
     {
       image: grace,
     },
   ];
   return (
     <Container>
-      {" "}
-      <div className="container">
+      <div id="our-journey" className="container">
         <h1>Our Journey</h1>
         <hr></hr>
         <h2>Year 1981</h2>
@@ -238,7 +240,6 @@ const JourneySection = () => {
           <ImageSlider slides={sunshineSlides} />
         </div>
       </div>
-   
     </Container>
   );
 };
