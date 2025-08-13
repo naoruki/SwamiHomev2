@@ -6,8 +6,8 @@ const Services = () => {
       {/* Row 1 */}
       <center><h1>Our Services</h1></center>
       <div className="row mb-3">
-        <div className="col-12 col-md-6 mb-3">
-          <div className="card">
+        <div className="col-12 col-md-6 mb-3 d-flex">
+          <div className="card h-100 w-100">
             <div className="card-body">
               <HouseLineIcon size={50} color="#E25D9C" weight="duotone" />
               <h2>Residential Services</h2>
@@ -19,7 +19,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 mb-3">
           <div className="card">
             <div className="card-body">
               <SunIcon size={50} color="#E25D9C"weight="duotone" />
