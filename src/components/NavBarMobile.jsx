@@ -124,7 +124,7 @@ function NavBarMobile() {
                     Something else here
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#">Contact Us</Nav.Link>
+                <Nav.Link href="/contact-us">Contact Us</Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
