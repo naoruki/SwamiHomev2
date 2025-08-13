@@ -28,6 +28,8 @@ const Services = () => {
                 Dementia Day Care Centre
                 <br />
                 Day Rehabilitation Centre
+                <br/>
+                Integrated Home & Day Care Center (IHDC)
               </p>
             </div>
           </div>
@@ -49,16 +51,8 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3 mb-3">
-          <div className="card">
-            <div className="card-body">
-              <ShootingStarIcon size={50} color="#E25D9C" weight="duotone" />
-              <h2>Integrated Services</h2>
-              <p>Integrated Home & Day Care Center (IHDC)</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 col-lg-3 mb-3">
+
+        <div className="col-12 col-md-6 col-lg-6 mb-3">
           <div className="card">
             <div className="card-body">
               <PersonIcon size={50} color="#E25D9C" weight="duotone" />

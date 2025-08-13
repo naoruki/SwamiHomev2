@@ -9,4 +9,12 @@
   text-align: center;
   border-radius: 12px;
   margin-bottom: 32px;
+
+}
+
+/* Mobile view only */
+@media (max-width: 768px) {
+  .contact-hero {
+    margin-top: 80px;
+  }
 }

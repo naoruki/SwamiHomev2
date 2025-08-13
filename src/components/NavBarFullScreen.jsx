@@ -61,10 +61,10 @@ function NavBar() {
                 Organization
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Vision & Mission
+                Annual Report
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Annual Report
+                PDPA
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Services" id="services-dropdown">
@@ -97,24 +97,24 @@ function NavBar() {
             </HoverNavDropdown>
             <HoverNavDropdown title="Media" id="media-dropdown">
               <NavDropdown.Item href="#" className="">
-                Action
+                What's happening
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Another action
+                Past Event Highlights
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Something else here
+                Photo Gallery
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Get Involved" id="careers-dropdown">
               <NavDropdown.Item href="#" className="">
-                Action
+                Career
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Another action
+                Donate
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Something else here
+                Volunteer
               </NavDropdown.Item>
             </HoverNavDropdown>
             <Nav className="ms-auto">
