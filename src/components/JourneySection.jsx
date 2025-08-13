@@ -35,7 +35,7 @@ const JourneySection = () => {
   ];
   return (
     <Container>
-      <div id="our-journey" className="container">
+      <div id="our-journey" className="container our-journey">
         <h1>Our Journey</h1>
         <hr></hr>
         <h2>Year 1981</h2>

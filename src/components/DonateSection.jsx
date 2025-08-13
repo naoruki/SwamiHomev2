@@ -6,7 +6,7 @@ const DonateSection = () => {
     <>
       <hr />
 
-<div className="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start" id="donation-section">
+<div className="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start donation-section" id="donation-section">
   {/* First Card */}
   <div
     className="card"

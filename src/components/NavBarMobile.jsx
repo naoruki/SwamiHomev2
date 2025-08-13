@@ -67,12 +67,58 @@ function NavBarMobile() {
                 </Nav.Link>
 
                 <NavDropdown title="About Us" id="offcanvasNavbarDropdown">
+                  <NavDropdown.Item href="/about-us" className="">
+                    About Us
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/about-us/#our-journey" className="">
+                    Our Journey
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/founder" className="">
+                    Our Founder
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Organization
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Vision & Mission
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Annual Report
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="Services" id="offcanvasNavbarDropdown">
+                  <NavDropdown.Item href="#" className="">
+                    Residential Services
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Day Care Services
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Community Services
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Integrated Services
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#" className="">
+                    Therapy Services
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown
+                  title="Community Life"
+                  id="offcanvasNavbarDropdown"
+                >
                   <NavDropdown.Item href="#">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#">
                     Something else here
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Services" id="offcanvasNavbarDropdown">
+                <NavDropdown title="Media" id="offcanvasNavbarDropdown">
+                  <NavDropdown.Item href="#">Action</NavDropdown.Item>
+                  <NavDropdown.Item href="#">
+                    Something else here
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="Get Involved" id="offcanvasNavbarDropdown">
                   <NavDropdown.Item href="#">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#">
                     Something else here
