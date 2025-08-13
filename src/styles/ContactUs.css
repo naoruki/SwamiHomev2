@@ -18,3 +18,11 @@
     margin-top: 80px;
   }
 }
+@media (max-width: 768px) {
+  .contact-hero {
+    margin-top: 80px;
+    width: 100vw;
+    margin-left: -20px; /* Optional: compensate for default padding */
+    margin-right: -20px;
+  }
+}
