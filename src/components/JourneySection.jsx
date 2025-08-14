@@ -148,7 +148,7 @@ const JourneySection = () => {
           </div>
         </div>
         <div className="row my-4 ">
-          <h2>1988 ~ 1992 </h2>
+          <h2>1992 ~ 1995 </h2>
           <div className="col-12 col-md-6">
             <ImageSlider slides={slides} />
           </div>

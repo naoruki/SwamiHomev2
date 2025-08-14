@@ -97,9 +97,6 @@ function NavBarMobile() {
                     Community Services
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" className="">
-                    Integrated Services
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
                     Therapy Services
                   </NavDropdown.Item>
                 </NavDropdown>
