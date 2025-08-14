@@ -1,0 +1,22 @@
+.dropdown-hover {
+  position: relative;
+}
+
+.dropdown-submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-hover:hover .dropdown-submenu {
+  display: block;
+}
+
+.dropdown-submenu .dropdown-item {
+  white-space: nowrap;
+}

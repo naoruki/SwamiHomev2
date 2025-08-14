@@ -87,14 +87,14 @@ function NavBarMobile() {
                   </NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Services" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item href="/residential-services" className="">
                     Residential Services
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" className="">
                     Day Care Services
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" className="">
-                    Community Services
+                    Home-Based Services
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" className="">
                     Therapy Services

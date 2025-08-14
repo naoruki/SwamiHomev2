@@ -2,6 +2,7 @@ import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import Logo from "../assets/logo.svg";
 import HoverNavDropdown from "./HoverNavDropdown"; // adjust path if needed
 import { useEffect } from "react";
+import "../styles/DropdownHover.css";
 
 import { Link } from "react-router-dom";
 
@@ -68,14 +69,25 @@ function NavBar() {
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Services" id="services-dropdown">
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item
+                href="/residential-services"
+                className="dropdown-hover"
+              >
                 Residential Services
+                <div className="dropdown-submenu">
+                  <a className="dropdown-item" href="/residential-care">
+                    Residential Care
+                  </a>
+                  <a className="dropdown-item" href="/dementia-care">
+                    Dementia Care
+                  </a>
+                </div>
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
                 Day Care Services
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Community Services
+                Home-Based Services
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
                 Therapy Services

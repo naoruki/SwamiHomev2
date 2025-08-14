@@ -29,7 +29,7 @@ const Services = () => {
                 <br />
                 Day Rehabilitation Centre
                 <br/>
-                Integrated Home & Day Care Center (IHDC)
+                
               </p>
             </div>
           </div>
@@ -39,21 +39,23 @@ const Services = () => {
       {/* Row 2 */}
       <div className="row">
         <div className="col-12 col-md-6 col-lg-6 mb-3">
-          <div className="card">
+          <div className="card ">
             <div className="card-body">
               <HouseIcon size={50} color="#E25D9C" weight="duotone" />
-              <h2>Community Services</h2>
+              <h2>Home-Based Services</h2>
               <p>
-                Support Groups
+                Home Medical & Home Nursing Services
                 <br />
-                Outreach Programs
+                Home Help Services
+                <br/>
+                Integrated Home & Day Care Center (IHDC)
               </p>
             </div>
           </div>
         </div>
 
         <div className="col-12 col-md-6 col-lg-6 mb-3">
-          <div className="card">
+          <div className="card h-100 w-100">
             <div className="card-body">
               <PersonIcon size={50} color="#E25D9C" weight="duotone" />
               <h2>Therapy Services</h2>

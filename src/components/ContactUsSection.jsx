@@ -7,7 +7,7 @@ const ContactUsSection = () => (
         <h3>Locate Us</h3>
         <Mymap />
       </div>
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-6 py-5">
         <h4>Drop Us An Message</h4>
         <ContactForm/>
       </div>
