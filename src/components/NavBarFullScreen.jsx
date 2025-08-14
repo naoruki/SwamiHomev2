@@ -78,9 +78,6 @@ function NavBar() {
                 Community Services
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
-                Integrated Services
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
                 Therapy Services
               </NavDropdown.Item>
             </HoverNavDropdown>
@@ -108,12 +105,12 @@ function NavBar() {
             </HoverNavDropdown>
             <HoverNavDropdown title="Get Involved" id="careers-dropdown">
               <NavDropdown.Item href="#" className="">
-                Career
+                Careers
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/donate" className="">
                 Donate
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/volunteer" className="">
                 Volunteer
               </NavDropdown.Item>
             </HoverNavDropdown>

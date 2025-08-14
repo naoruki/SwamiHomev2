@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutUsSection = () => (
   <div className="container about-us-section">
     <h5>
@@ -12,9 +10,7 @@ const AboutUsSection = () => (
         serving all with love and respect, regardless of race or religion.
       </center>
     </h5>
-     
   </div>
- 
 );
 
 export default AboutUsSection;

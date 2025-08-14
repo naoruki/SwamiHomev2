@@ -12,7 +12,11 @@ const Layout = () => {
       <NavBar />
       <NavBarMobile />
       <Outlet /> {/* This renders the current route's page */}
-      <FloatingButton icon={<HandHeartIcon size={32} />} label="Support Us" to="/donate" />
+      <FloatingButton
+        icon={<HandHeartIcon size={32} />}
+        label="Support Us"
+        to="/donate"
+      />
       <div className="footer-background">
         <Footer />
       </div>
