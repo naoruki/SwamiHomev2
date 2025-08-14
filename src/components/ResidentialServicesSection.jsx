@@ -10,7 +10,7 @@ const OurJourney = () => {
         <hr />
 
         <div className="row">
-          <div className="col-12 col-md-12">
+          <div className="col-12 col-md-12 residential-care" id="residential-care">
             <h2>Geriatric Residential Care</h2>
             <p>
               SWAMI Home’s Residential Care is a nursing support residence for
@@ -47,7 +47,7 @@ const OurJourney = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-12 col-md-12">
+          <div className="col-12 col-md-12 dementia-care" id="dementia-care">
             <h2>Dementia Residence</h2>
             <p>-Service Targets</p>
             <ul>

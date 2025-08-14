@@ -75,10 +75,10 @@ function NavBar() {
               >
                 Residential Services
                 <div className="dropdown-submenu">
-                  <a className="dropdown-item" href="/residential-care">
+                  <a className="dropdown-item" href="/residential-services/#residential-care">
                     Residential Care
                   </a>
-                  <a className="dropdown-item" href="/dementia-care">
+                  <a className="dropdown-item" href="/residential-services/#dementia-care">
                     Dementia Care
                   </a>
                 </div>
