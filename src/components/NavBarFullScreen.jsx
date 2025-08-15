@@ -44,9 +44,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav ">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/" active>
+            {/* <Nav.Link as={Link} to="/" active>
               Home
-            </Nav.Link>
+            </Nav.Link> */}
 
             <HoverNavDropdown title="About Us" id="about-dropdown">
               <NavDropdown.Item href="/about-us" className="">
