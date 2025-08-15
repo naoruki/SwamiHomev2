@@ -48,7 +48,6 @@ const Services = () => {
                 <br />
                 Home Help Services
                 <br/>
-                Integrated Home & Day Care Center (IHDC)
               </p>
             </div>
           </div>
