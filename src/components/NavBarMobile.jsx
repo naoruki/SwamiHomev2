@@ -5,10 +5,17 @@ import {
   Container,
   Offcanvas,
 } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
+
 function NavBarMobile() {
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
+  const handleNavClick = () => handleClose();
+
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById("mobile-navbar");
@@ -27,7 +34,7 @@ function NavBarMobile() {
     <>
       <Navbar
         expand={false}
-        className=" d-lg-none fixed-top mobile-navbar"
+        className="d-lg-none fixed-top mobile-navbar"
         id="mobile-navbar"
       >
         <Container fluid>
@@ -35,93 +42,119 @@ function NavBarMobile() {
             <img
               src={Logo}
               alt="Logo"
-              style={{ width: "50px", marginRight: "10px" }} // Adjust size as needed
+              style={{ width: "50px", marginRight: "10px" }}
             />
             <span className="brand-text-small fw-bold text-nowrap d-none d-sm-inline">
               SUNSHINE WELFARE ACTION MISSION
             </span>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
+          <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
           <Navbar.Offcanvas
+            show={showOffcanvas}
+            onHide={handleClose}
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             placement="start"
           >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">
-                <img
-                  src={Logo}
-                  alt="Logo"
-                  style={{ width: "70px", marginRight: "10px" }} // Adjust size and spacing
-                />
-              </Offcanvas.Title>
-              <span className="brand-text-small fw-bold text-wrap">
-                SUNSHINE WELFARE ACTION MISSION
-              </span>
-            </Offcanvas.Header>
+<Offcanvas.Header closeButton>
+  <Link
+    to="/"
+    onClick={handleNavClick}
+    className="d-flex align-items-center text-decoration-none"
+  >
+    <img
+      src={Logo}
+      alt="Logo"
+      style={{ width: "70px", marginRight: "10px" }}
+    />
+    <span className="brand-text-small fw-bold text-wrap text-dark">
+      SUNSHINE WELFARE ACTION MISSION
+    </span>
+  </Link>
+</Offcanvas.Header>
+
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/" active>
+              <Nav className="flex-column">
+                <Nav.Link as={Link} to="/" onClick={handleNavClick}>
                   Home
                 </Nav.Link>
 
-                <NavDropdown title="About Us" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item href="/about-us" className="">
+                <NavDropdown title="About Us" id="about-dropdown">
+                  <NavDropdown.Item as={Link} to="/about-us" onClick={handleNavClick}>
                     About Us
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/about-us/#our-journey" className="">
+                  <NavDropdown.Item as={Link} to="/about-us/#our-journey" onClick={handleNavClick}>
                     Our Journey
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/founder" className="">
+                  <NavDropdown.Item as={Link} to="/founder" onClick={handleNavClick}>
                     Our Founder
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item as={Link} to="/organization" onClick={handleNavClick}>
                     Organization
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item as={Link} to="/vision-mission" onClick={handleNavClick}>
                     Vision & Mission
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item as={Link} to="/annual-report" onClick={handleNavClick}>
                     Annual Report
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Services" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item href="/residential-services" className="">
+
+                <NavDropdown title="Services" id="services-dropdown">
+                  <NavDropdown.Item as={Link} to="/residential-services" onClick={handleNavClick}>
                     Residential Services
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item as={Link} to="/day-care" onClick={handleNavClick}>
                     Day Care Services
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item as={Link} to="/home-based" onClick={handleNavClick}>
                     Home-Based Services
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#" className="">
+                  <NavDropdown.Item as={Link} to="/therapy" onClick={handleNavClick}>
                     Therapy Services
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown
-                  title="Community Life"
-                  id="offcanvasNavbarDropdown"
-                >
-                  <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Something else here
+
+                <NavDropdown title="Community Life" id="community-dropdown">
+                  <NavDropdown.Item as={Link} to="/activities" onClick={handleNavClick}>
+                    Activities & Programs
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/facilities" onClick={handleNavClick}>
+                    Facilities
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/visual-tour" onClick={handleNavClick}>
+                    Visual Tour
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Media" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Something else here
+
+                <NavDropdown title="Media" id="media-dropdown">
+                  <NavDropdown.Item as={Link} to="/news" onClick={handleNavClick}>
+                    What's Happening
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/events" onClick={handleNavClick}>
+                    Past Event Highlights
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/gallery" onClick={handleNavClick}>
+                    Photo Gallery
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Get Involved" id="offcanvasNavbarDropdown">
-                  <NavDropdown.Item href="#">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Something else here
+
+                <NavDropdown title="Get Involved" id="get-involved-dropdown">
+                  <NavDropdown.Item as={Link} to="/careers" onClick={handleNavClick}>
+                    Careers
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/donate" onClick={handleNavClick}>
+                    Donate
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/volunteer" onClick={handleNavClick}>
+                    Volunteer
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/contact-us">Contact Us</Nav.Link>
+
+                <Nav.Link as={Link} to="/contact-us" onClick={handleNavClick}>
+                  Contact Us
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
