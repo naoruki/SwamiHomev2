@@ -11,6 +11,15 @@ html {
   background-color: transparent !important;
 } */
 
+.dropdown-menu{
+  border: none !important;
+  box-shadow: none !important; /* Optional: removes shadow */
+  background-color: #FCF3E8 !important;
+}
+.dropdown-item:hover{
+  background-color:pink !important;
+}
+
 .brand-text-small {
   font-size: 13px;
   font-weight: bold;
@@ -41,16 +50,9 @@ html {
 
 .custom-button:hover {
   transform: scale(1.1); /* enlarge 5% */
-  /* Optional: restore hover background if you want */
-  /* background-color: #FBB7E3;
-     border-color: #FBB7E3; */
 }
 
-/* .volunteer-button:hover {
-  background-color: white !important;
-  color: white important!;
-  border-color: #f7a1c4 !important;
-} */
+
 .volunteer-button:active {
   background-color: pink !important;
   color: white;
