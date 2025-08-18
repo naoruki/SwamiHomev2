@@ -1,4 +1,4 @@
-import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import Logo from "../assets/logo.svg";
 import HoverNavDropdown from "./HoverNavDropdown"; // adjust path if needed
 import { useEffect } from "react";
@@ -48,7 +48,11 @@ function NavBar() {
               Home
             </Nav.Link> */}
 
-            <HoverNavDropdown title="About Us" id="about-dropdown">
+            <HoverNavDropdown
+              title="About Us"
+              id="about-dropdown"
+              className="NavDropItem"
+            >
               <NavDropdown.Item href="/about-us" className="">
                 About Us
               </NavDropdown.Item>
@@ -75,10 +79,16 @@ function NavBar() {
               >
                 Residential Services
                 <div className="dropdown-submenu">
-                  <a className="dropdown-item" href="/residential-services/#residential-care">
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#residential-care"
+                  >
                     Residential Care
                   </a>
-                  <a className="dropdown-item" href="/residential-services/#dementia-care">
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#dementia-care"
+                  >
                     Dementia Care
                   </a>
                 </div>
