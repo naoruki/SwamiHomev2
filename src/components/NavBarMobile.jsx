@@ -226,6 +226,13 @@ function NavBarMobile() {
                   >
                     Volunteer
                   </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/tender"
+                    onClick={handleNavClick}
+                  >
+                    Volunteer
+                  </NavDropdown.Item>
                 </NavDropdown>
 
                 <Nav.Link as={Link} to="/contact-us" onClick={handleNavClick}>

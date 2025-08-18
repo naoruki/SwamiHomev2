@@ -1,4 +1,4 @@
-import { useState,button } from "react";
+import { useState } from "react";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +25,7 @@ const ContactForm = () => {
     <form>
       <div className="mb-3">
         <label htmlFor="exampleFormControlInput1" className="form-label">
-         Name
+          Name
         </label>
         <input
           type="text"
@@ -56,7 +56,9 @@ const ContactForm = () => {
           rows="3"
         ></textarea>
       </div>
-     <button type="button" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-primary">
+        Submit
+      </button>
     </form>
   );
 };

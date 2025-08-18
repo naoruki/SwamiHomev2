@@ -8,6 +8,7 @@ import "./styles/NavBar.css";
 import "./styles/AboutUs.css"; // import the css file
 import "./styles/ContactUs.css";
 import "./styles/services.css"
+import "./styles/Career.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "slick-carousel/slick/slick.css";
