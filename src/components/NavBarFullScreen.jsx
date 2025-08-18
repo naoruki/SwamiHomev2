@@ -126,7 +126,7 @@ function NavBar() {
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Get Involved" id="careers-dropdown">
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/career" className="">
                 Careers
               </NavDropdown.Item>
               <NavDropdown.Item href="/donate" className="">
@@ -134,6 +134,9 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item href="/volunteer" className="">
                 Volunteer
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/tender" className="">
+                Tender
               </NavDropdown.Item>
             </HoverNavDropdown>
             <Nav className="ms-auto">
