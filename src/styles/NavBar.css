@@ -14,7 +14,7 @@ html {
 .dropdown-menu{
   border: none !important;
   box-shadow: none !important; /* Optional: removes shadow */
-  background-color: #FCF3E8 !important;
+  background-color: #fff !important;
 }
 .dropdown-item:hover{
   background-color:#f7a1c4 !important;
