@@ -93,14 +93,56 @@ function NavBar() {
                   </a>
                 </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="#" className="dropdown-hover">
                 Day Care Services
+                <div className="dropdown-submenu">
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#residential-care"
+                  >
+                    Dementia Day Care Centre
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#dementia-care"
+                  >
+                    Day Rehabilitation Centre
+                  </a>
+                </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="#" className="dropdown-hover">
                 Home-Based Services
+                <div className="dropdown-submenu">
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#residential-care"
+                  >
+                    Home Medical & Home Nursing Services
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#dementia-care"
+                  >
+                    Home Help Services
+                  </a>
+                </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="#" className="dropdown-hover">
                 Therapy Services
+                <div className="dropdown-submenu">
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#residential-care"
+                  >
+                    Occupational Therapy
+                  </a>
+                  <a
+                    className="dropdown-item"
+                    href="/residential-services/#dementia-care"
+                  >
+                    Physiotherapy
+                  </a>
+                </div>
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Community Life" id="community-dropdown">

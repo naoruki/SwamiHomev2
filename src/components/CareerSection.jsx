@@ -1,3 +1,4 @@
+import CareerForm from "./CareerForm.jsx"
 const CareerSection = () => {
   return (
     <section className="career-section">
@@ -28,51 +29,8 @@ const CareerSection = () => {
 
           <div className="highlight">
             <h3>Or fill up this form</h3>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Name"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Email"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Contact Number"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Interested Position"
-              />
-            </div>
-            <div className="mb-3">
-              <textarea
-                className="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-                placeholder="Message"
-              ></textarea>
-            </div>
-            <div className="mb-3">
-              <button type="button" class="btn btn-primary">
-                Submit
-              </button>
-            </div>
+            <CareerForm/>
+           
           </div>
         </div>
       </div>

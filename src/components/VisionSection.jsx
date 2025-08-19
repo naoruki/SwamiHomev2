@@ -1,4 +1,4 @@
-import CustomCarousel from "./VisionMissionCarousel"; // adjust path if needed
+import CustomCarousel from "./VisionMissionCards"; // adjust path if needed
 import { HandHeartIcon,TargetIcon,ShootingStarIcon,StarIcon} from "@phosphor-icons/react";
 
 
