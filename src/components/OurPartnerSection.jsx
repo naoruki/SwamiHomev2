@@ -16,7 +16,6 @@ const partners = [
 
 const OurPartners = () => (
   <section className="our-partners">
-    <h2>Our Partners</h2>
     <div className="partners-list">
       {partners.map((partner) => (
         <a
@@ -29,6 +28,7 @@ const OurPartners = () => (
           <img src={partner.logo} alt={partner.name} />
 
         </a>
+        
       ))}
     </div>
   </section>

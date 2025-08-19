@@ -65,6 +65,7 @@ const CareerSection = () => {
                 className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
+                placeholder="Message"
               ></textarea>
             </div>
             <div className="mb-3">

@@ -54,6 +54,7 @@ const ContactForm = () => {
           className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
+          placeholder="Message"
         ></textarea>
       </div>
       <button type="button" class="btn btn-primary">
