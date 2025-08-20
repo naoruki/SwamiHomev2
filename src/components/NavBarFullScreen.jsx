@@ -62,8 +62,11 @@ function NavBar() {
               <NavDropdown.Item href="/founder" className="">
                 Our Founder
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
-                Organization
+              <NavDropdown.Item href="/organization" className="">
+                Organization Structure
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/management-committee" className="">
+                Management Committee
               </NavDropdown.Item>
               <NavDropdown.Item href="#" className="">
                 Annual Report

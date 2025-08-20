@@ -1,7 +1,7 @@
 
 
 const ContactUsHero = () => (
-  <div  className="contact-hero">
+  <div  className="header-hero">
     <h1>Contact Us</h1>
     <p>
       We’d love to hear from you! Reach out with your questions, feedback, or

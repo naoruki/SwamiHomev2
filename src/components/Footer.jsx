@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="container">
       <footer className="row py-4 border-top">
         {/* Left Side: Contact Us */}
-        <div className="col-md-3 mb-3">
+        <div className="col-md-5 mb-5">
           <h5 className="text-start">Contact Us</h5>
           <address className="text-start text-body-secondary">
             <b>SUNSHINE WELFARE ACTION MISSION (SWAMI Home)</b>
@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
 
         {/* Middle: Hours */}
-        <div className="col-md-4 mb-4 text-start">
+        <div className="col-md-3 mb-3 text-start">
           <h5>Hours</h5>
           <ul className="list-unstyled text-body-secondary">
             <li>
@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
 
         {/* Right Side: Quick Links */}
-        <div className="col-md-3 mb-3">
+        <div className="col-md-2 mb-2">
           <h5 className="text-start">Quick Links</h5>
           <ul className="nav flex-column align-items-start align-items-md-start">
             {["About Us", "Donation", "Services", "Careers", "PDPA"].map(
