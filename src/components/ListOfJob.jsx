@@ -29,8 +29,8 @@ function CustomAccordion() {
   };
 
   return (
-    <div className="accordion-container">
-      <h3>Available Positions</h3>
+    <div className="accordion-container mb-5 mt-5">
+      <h2>Available Positions</h2>
       {jobList.map((job) => (
         <div key={job.id} className="accordion-item">
           <button

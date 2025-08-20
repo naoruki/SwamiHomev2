@@ -52,6 +52,14 @@
 #our-journey {
   scroll-margin-top: 100px; /* Adjust based on navbar height */
 }
+.organization-chart {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  height: 100%; /* or a specific height like 400px */
+
+
+}
 
 @media (max-width: 820px) {
   .about-us-container {

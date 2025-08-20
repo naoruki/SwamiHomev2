@@ -1,4 +1,4 @@
-.contact-hero {
+.header-hero {
   background: linear-gradient(
     135deg,
     rgba(252, 184, 225, 0.6) 0%,
@@ -14,12 +14,12 @@
 
 /* Mobile view only */
 @media (max-width: 768px) {
-  .contact-hero {
+  .header-hero {
     margin-top: 80px;
   }
 }
 @media (max-width: 768px) {
-  .contact-hero {
+  .header-hero {
     margin-top: 80px;
     width: 100vw;
     margin-left: -20px; /* Optional: compensate for default padding */
