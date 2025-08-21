@@ -68,10 +68,10 @@ function NavBar() {
               <NavDropdown.Item href="/management-committee" className="">
                 Management Committee
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/annual-report" className="">
                 Annual Report
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/pdpa" className="">
                 PDPA
               </NavDropdown.Item>
             </HoverNavDropdown>
