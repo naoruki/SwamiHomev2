@@ -107,14 +107,10 @@ function NavBarMobile() {
                     to="/organization"
                     onClick={handleNavClick}
                   >
-                    Organization
+                    Organization Structure
                   </NavDropdown.Item>
-                  <NavDropdown.Item
-                    as={Link}
-                    to="/vision-mission"
-                    onClick={handleNavClick}
-                  >
-                    Vision & Mission
+                  <NavDropdown.Item href="/management-committee" className="">
+                    Management Committee
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
@@ -122,6 +118,9 @@ function NavBarMobile() {
                     onClick={handleNavClick}
                   >
                     Annual Report
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/pdpa" className="">
+                    PDPA
                   </NavDropdown.Item>
                 </NavDropdown>
 
