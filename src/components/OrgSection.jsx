@@ -1,5 +1,4 @@
 import swamihome3 from "../assets/organizationchart.svg";
-import { Container } from "react-bootstrap";
 const OrgSection = () => (
   <div className="container">
     <div className="header-hero">
@@ -15,7 +14,6 @@ const OrgSection = () => (
         loading="lazy"
       />
     </div>
-    <div><h1></h1></div>
   </div>
 );
 
