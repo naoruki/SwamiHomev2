@@ -61,6 +61,35 @@
 
 }
 
+.card-container-com {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+}
+
+.card-row-com {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.card-com {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 16px;
+  width: 240px;
+  text-align: center;
+}
+
+
+
+
+
+
+
 @media (max-width: 820px) {
   .about-us-container {
     margin-top: 80px;
