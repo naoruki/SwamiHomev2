@@ -1,66 +1,127 @@
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    contact: "",
+    email: "",
     subject: "",
     message: "",
   });
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const [status, setStatus] = useState(""); // for success/failure message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // You can add logic here to send the data to a backend or API
+
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || "New Contact Form Submission",
+          message: formData.message,
+          "g-recaptcha-response": captchaToken,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setCaptchaToken(null);
+      } else {
+        setStatus("Failed to send message. Try again later.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("An error occurred. Please try again.");
+    }
   };
 
   return (
-    <form>
+    <>
+    <form onSubmit={handleSubmit}>
       <div className="mb-3">
-        <label htmlFor="exampleFormControlInput1" className="form-label">
-          Name
-        </label>
+        <label className="form-label">Name</label>
         <input
           type="text"
           className="form-control"
-          id="exampleFormControlInput1"
-          placeholder="Name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="exampleFormControlInput1" className="form-label">
-          Email address
-        </label>
+        <label className="form-label">Email address</label>
         <input
           type="email"
           className="form-control"
-          id="exampleFormControlInput1"
+          name="email"
           placeholder="name@example.com"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Subject</label>
+        <input
+          type="text"
+          className="form-control"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Message</label>
+        <textarea
+          className="form-control"
+          name="message"
+          rows="3"
+          value={formData.message}
+          onChange={handleChange}
+          required
         />
       </div>
 
-      <div className="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">
-          Your Message
-        </label>
-        <textarea
-          className="form-control"
-          id="exampleFormControlTextarea1"
-          rows="3"
-          placeholder="Message"
-        ></textarea>
-      </div>
-      <button type="button" class="btn btn-primary">
+      <ReCAPTCHA
+        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+        onChange={handleCaptchaChange}
+      />
+
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={!captchaToken}
+      >
         Submit
       </button>
+
+      {status && <p className="mt-2">{status}</p>}
     </form>
+    </>
   );
 };
 
