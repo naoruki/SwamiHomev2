@@ -1,109 +1,133 @@
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
-function CareerForm() {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    contactNumber: "",
-    position: "",
+    subject: "",
     message: "",
-    file: null,
   });
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: files ? files[0] : value,
-    }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleCaptchaChange = (token) => setCaptchaToken(token);
+  const handleCaptchaExpired = () => setCaptchaToken(null);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3001/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, captchaToken }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Message sent!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setCaptchaToken(null);
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error sending message.");
+    }
   };
+
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="highlight">
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="contactNumber"
-            placeholder="Contact Number"
-            value={formData.contactNumber}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="position"
-            placeholder="Interested Position"
-            value={formData.position}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-3">
-          <textarea
-            className="form-control"
-            name="message"
-            rows="3"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-          />
-        </div>
-
-        {/* File Upload moved below message */}
-        <div className="mb-3">
-          <label htmlFor="formFile" className="form-label">
-            Upload PDF or Word
-          </label>
-          <input
-            className="form-control"
-            type="file"
-            id="formFile"
-            name="file"
-            accept=".pdf, .doc, .docx"
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="mb-3">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </div>
+    <form onSubmit={handleSubmit} acceptCharset="UTF-8">
+      <div className="mb-3">
+        <label className="form-label">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          maxLength={100}
+        />
       </div>
+
+      <div className="mb-3">
+        <label className="form-label">Email address</label>
+        <input
+          type="email"
+          className="form-control"
+          name="email"
+          placeholder="name@example.com"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          maxLength={200}
+        />
+      </div>
+
+      <div className="mb-3">
+        <label className="form-label">Subject</label>
+        <input
+          type="text"
+          className="form-control"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          maxLength={150}
+        />
+      </div>
+
+      <div className="mb-3">
+        <label className="form-label">Message</label>
+        <textarea
+          className="form-control"
+          name="message"
+          rows="3"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          maxLength={5000}
+        />
+      </div>
+
+      <div className="mb-3">
+        <ReCAPTCHA
+          sitekey={siteKey}
+          onChange={handleCaptchaChange}
+          onExpired={handleCaptchaExpired}
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={!captchaToken || !siteKey}
+      >
+        Submit
+      </button>
+
+      {!siteKey && (
+        <p className="mt-2 text-danger">
+          Missing <code>VITE_RECAPTCHA_SITE_KEY</code> in your .env file.
+        </p>
+      )}
     </form>
   );
-}
+};
 
-export default CareerForm;
+export default ContactForm;

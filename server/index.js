@@ -1,17 +1,9 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import contactRoute from "./sendEmail.js";
+require('dotenv').config(); // Load .env file
 
-dotenv.config();
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-app.use("/api", contactRoute); // This enables /api/send-email
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const config = {
+  auth: {
+    clientId: process.env.CLIENT_ID,
+    authority: `https://login.microsoftonline.com/${process.env.TENANT_ID}`,
+    clientSecret: process.env.CLIENT_SECRET,
+  },
+};
