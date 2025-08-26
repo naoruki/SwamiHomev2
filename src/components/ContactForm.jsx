@@ -2,6 +2,7 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
+  // Controlled inputs (keeps your original style)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,58 +10,53 @@ const ContactForm = () => {
     message: "",
   });
   const [captchaToken, setCaptchaToken] = useState(null);
-  const [status, setStatus] = useState(""); // for success/failure message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
+  const handleCaptchaChange = (token) => setCaptchaToken(token);
+  const handleCaptchaExpired = () => setCaptchaToken(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  // Prevent submission unless CAPTCHA solved
+  const handleBeforeSubmit = (e) => {
     if (!captchaToken) {
+      e.preventDefault();
       alert("Please complete the reCAPTCHA.");
-      return;
-    }
-
-    setStatus("Sending...");
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject || "New Contact Form Submission",
-          message: formData.message,
-          "g-recaptcha-response": captchaToken,
-        }),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setCaptchaToken(null);
-      } else {
-        setStatus("Failed to send message. Try again later.");
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("An error occurred. Please try again.");
     }
   };
+
+  // Config (envs optional)
+  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const recipient =
+    import.meta.env.VITE_FORMSUBMIT_EMAIL || "YOUR_EMAIL@example.com";
+
+  // Absolute URL to your main page (recommended by FormSubmit)
+  const homeUrl = `${window.location.origin}/`;
 
   return (
-    <>
-    <form onSubmit={handleSubmit}>
+    <form
+      action={`https://formsubmit.co/${encodeURIComponent(recipient)}`}
+      method="POST"
+      onSubmit={handleBeforeSubmit}
+      acceptCharset="UTF-8"
+    >
+      {/* FormSubmit hidden configs */}
+      <input type="hidden" name="_subject" value="New Contact Form Submission" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" /> {/* Using Google reCAPTCHA */}
+      <input type="hidden" name="_next" value={homeUrl} />   {/* Redirect to main page */}
+
+      {/* Honeypot (anti-spam) */}
+      <input
+        type="text"
+        name="_honey"
+        style={{ display: "none" }}
+        tabIndex="-1"
+        autoComplete="off"
+      />
+
       <div className="mb-3">
         <label className="form-label">Name</label>
         <input
@@ -70,8 +66,10 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          maxLength={100}
         />
       </div>
+
       <div className="mb-3">
         <label className="form-label">Email address</label>
         <input
@@ -82,8 +80,10 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          maxLength={200}
         />
       </div>
+
       <div className="mb-3">
         <label className="form-label">Subject</label>
         <input
@@ -92,8 +92,10 @@ const ContactForm = () => {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
+          maxLength={150}
         />
       </div>
+
       <div className="mb-3">
         <label className="form-label">Message</label>
         <textarea
@@ -103,25 +105,39 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           required
+          maxLength={5000}
         />
       </div>
 
-      <ReCAPTCHA
-        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-        onChange={handleCaptchaChange}
-      />
+      {/* Google reCAPTCHA (v2 checkbox) */}
+      <div className="mb-3">
+        <ReCAPTCHA
+          sitekey={siteKey}
+          onChange={handleCaptchaChange}
+          onExpired={handleCaptchaExpired}
+        />
+      </div>
 
       <button
         type="submit"
         className="btn btn-primary"
-        disabled={!captchaToken}
+        disabled={!captchaToken || !siteKey || !recipient}
       >
         Submit
       </button>
 
-      {status && <p className="mt-2">{status}</p>}
+      {/* Optional hints if env not set */}
+      {!recipient && (
+        <p className="mt-2 text-danger">
+          Missing <code>VITE_FORMSUBMIT_EMAIL</code> in your .env file.
+        </p>
+      )}
+      {!siteKey && (
+        <p className="mt-2 text-danger">
+          Missing <code>VITE_RECAPTCHA_SITE_KEY</code> in your .env file.
+        </p>
+      )}
     </form>
-    </>
   );
 };
 
