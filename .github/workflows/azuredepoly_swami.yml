@@ -52,4 +52,4 @@ jobs:
           app-name: 'swami'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_172B5C5034C64CC9B7979FD3B78F8360 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FB4685C31C6F4A31BFBD5C2F67E59286 }}
