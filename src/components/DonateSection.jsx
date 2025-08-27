@@ -106,6 +106,51 @@ const DonateSection = () => {
             </p>
           </div>
         </div>
+          {/* third Card */}
+        <div
+          className="card"
+          style={{
+            width: "18rem",
+            borderRadius: "1rem",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            height: "28rem",
+          }}
+        >
+          <div
+            style={{
+              height: "10rem",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {/* <img
+              src={sgdonate}
+              alt="Other QR"
+              style={{
+                maxHeight: "100%",
+                maxWidth: "80%",
+                objectFit: "contain",
+              }}
+            /> */}
+          </div>
+          <div
+            className="card-body"
+            style={{
+              height: "18rem",
+              overflow: "auto",
+            }}
+          >
+            <h5 className="card-title">Donation in Kind</h5>
+            <p className="card-text">
+              <a href="/contact-us">
+                Contact Us here
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

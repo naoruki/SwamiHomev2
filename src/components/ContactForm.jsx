@@ -43,11 +43,16 @@ const ContactForm = () => {
       acceptCharset="UTF-8"
     >
       {/* FormSubmit hidden configs */}
-      <input type="hidden" name="_subject" value="New Contact Form Submission" />
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Contact Form Submission"
+      />
       <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" /> {/* Using Google reCAPTCHA */}
-      <input type="hidden" name="_next" value={homeUrl} />   {/* Redirect to main page */}
-
+      <input type="hidden" name="_captcha" value="false" />{" "}
+      {/* Using Google reCAPTCHA */}
+      <input type="hidden" name="_next" value={homeUrl} />{" "}
+      {/* Redirect to main page */}
       {/* Honeypot (anti-spam) */}
       <input
         type="text"
@@ -56,7 +61,6 @@ const ContactForm = () => {
         tabIndex="-1"
         autoComplete="off"
       />
-
       <div className="mb-3">
         <label className="form-label">Name</label>
         <input
@@ -69,7 +73,6 @@ const ContactForm = () => {
           maxLength={100}
         />
       </div>
-
       <div className="mb-3">
         <label className="form-label">Email address</label>
         <input
@@ -83,19 +86,22 @@ const ContactForm = () => {
           maxLength={200}
         />
       </div>
-
       <div className="mb-3">
         <label className="form-label">Subject</label>
-        <input
-          type="text"
+        <select
           className="form-control"
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          maxLength={150}
-        />
+          required
+          style={{ appearance: "auto" }} // Ensures native dropdown styling
+        >
+          <option value="">Select Subject</option>
+          <option value="Donation">Donation</option>
+          <option value="Volunteer">Volunteer</option>
+          <option value="Others">General</option>
+        </select>
       </div>
-
       <div className="mb-3">
         <label className="form-label">Message</label>
         <textarea
@@ -108,7 +114,6 @@ const ContactForm = () => {
           maxLength={5000}
         />
       </div>
-
       {/* Google reCAPTCHA (v2 checkbox) */}
       <div className="mb-3">
         <ReCAPTCHA
@@ -117,7 +122,6 @@ const ContactForm = () => {
           onExpired={handleCaptchaExpired}
         />
       </div>
-
       <button
         type="submit"
         className="btn btn-primary"
@@ -125,7 +129,6 @@ const ContactForm = () => {
       >
         Submit
       </button>
-
       {/* Optional hints if env not set */}
       {!recipient && (
         <p className="mt-2 text-danger">
