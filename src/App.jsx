@@ -14,9 +14,10 @@ import AboutUsPage from "./pages/AboutUsPage.jsx";
 import ContactUsPage from "./pages/ContactUs.jsx";
 import CareerPage from "./pages/CareerPage.jsx";
 import Organization from "./pages/OrganizationPage.jsx";
-import ManageCom from "./pages/ManagementCommittee.jsx"
+import Founder from "./pages/FounderPage.jsx";
+import ManageCom from "./pages/ManagementCommittee.jsx";
 import PDPA from "./pages/PDPApage.jsx";
-import NotFound from "./pages/404.jsx"
+import NotFound from "./pages/404.jsx";
 import ResidentialServicesPage from "./pages/ResidentialServicesPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
@@ -51,11 +52,15 @@ function AppContent() {
           <Route path="contact-us" element={<ContactUsPage />} />
           <Route path="career" element={<CareerPage />} />
           <Route path="organization" element={<Organization />} />
-           <Route path="management-committee" element={<ManageCom />} />
-           <Route path="residential-services" element={<ResidentialServicesPage />} />
-            <Route path="PDPA" element={<PDPA />} />
+          <Route path="management-committee" element={<ManageCom />} />
+          <Route
+            path="residential-services"
+            element={<ResidentialServicesPage />}
+          />
+          <Route path="PDPA" element={<PDPA />} />
+           <Route path="founder" element={<Founder />} />
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
-           <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
