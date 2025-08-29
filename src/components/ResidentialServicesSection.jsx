@@ -1,7 +1,5 @@
-import React from "react";
 import { Container } from "react-bootstrap";
-import residentalcare from "../assets/residentalcare.jpg";
-// Update with your actual image path
+
 
 const OurJourney = () => {
   return (
@@ -46,6 +44,7 @@ const OurJourney = () => {
             </ul>
           </div>
         </div>
+        <hr/>
         <div className="row">
           <div className="col-12 col-md-12 dementia-care" id="dementia-care">
             <h2>Dementia Residence</h2>

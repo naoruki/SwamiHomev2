@@ -7,7 +7,6 @@ import HeroCarousel from "../components/HeroPageCarousel.jsx";
 const LandingPage = () => {
   return (
     <div>
-      {/* <HeroPage /> */}
       <HeroCarousel />
       <div className="container">
         <Services />

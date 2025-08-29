@@ -93,6 +93,9 @@ ul {
   border-color: pink !important;/* light gray */
   opacity: 0.8 !important; /* makes it even softer */
 }
+select {
+  appearance: none; /* This hides the arrow */
+}
 
 @media (min-width: 992px) {
   .offcanvas,
