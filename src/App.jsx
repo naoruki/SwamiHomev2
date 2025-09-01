@@ -18,7 +18,8 @@ import Founder from "./pages/FounderPage.jsx";
 import ManageCom from "./pages/ManagementCommittee.jsx";
 import PDPA from "./pages/PDPApage.jsx";
 import NotFound from "./pages/404.jsx";
-import ResidentialServicesPage from "./pages/ResidentialServicesPage.jsx";
+import ResidentialServicesPage from "./pages/ResidentialServicePage.jsx";
+import DayCareServicePage from "./pages/DaycareServicePage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
 
@@ -57,8 +58,9 @@ function AppContent() {
             path="residential-services"
             element={<ResidentialServicesPage />}
           />
+          <Route path="daycare-services" element={<DayCareServicePage />} />
           <Route path="PDPA" element={<PDPA />} />
-           <Route path="founder" element={<Founder />} />
+          <Route path="founder" element={<Founder />} />
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           <Route path="*" element={<NotFound />} />
         </Route>

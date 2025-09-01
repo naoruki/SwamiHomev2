@@ -134,14 +134,14 @@ function NavBarMobile() {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    to="/day-care"
+                    to="/daycare-services"
                     onClick={handleNavClick}
                   >
                     Day Care Services
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    to="/home-based"
+                    to="/home-based-services"
                     onClick={handleNavClick}
                   >
                     Home-Based Services

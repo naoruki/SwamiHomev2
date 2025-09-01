@@ -12,7 +12,7 @@ const testimonials = [
 ];
 
 const Testimonial = () => (
-  <section className="testimonials-section">
+  <section className="testimonials-section mb-3">
     <h2>From the Heart of Our Community</h2>
     <div className="testimonials-container">
       {testimonials.map((t, idx) => (
