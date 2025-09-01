@@ -1,7 +1,7 @@
 import founder from "../assets/founder.jpg";
 const FounderSection = () => (
   <>
-    <div className="pdpa-box mb-3">
+    <div className="box mb-3">
       <center>
         <img
           src={founder}

@@ -101,30 +101,30 @@ function NavBar() {
                 <div className="dropdown-submenu">
                   <a
                     className="dropdown-item"
-                    href="/residential-services/#residential-care"
+                    href="/daycare-services/#Dementia-Day-Centre"
                   >
                     Dementia Day Care Centre
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/residential-services/#dementia-care"
+                    href="/daycare-services/#Day-Rehabilitation-Centre"
                   >
                     Day Rehabilitation Centre
                   </a>
                 </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="dropdown-hover">
+              <NavDropdown.Item href="/home-based-services" className="dropdown-hover">
                 Home-Based Services
                 <div className="dropdown-submenu">
                   <a
                     className="dropdown-item"
-                    href="/residential-services/#residential-care"
+                    href="/home-based-services/#home-medical"
                   >
                     Home Medical & Home Nursing Services
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/residential-services/#dementia-care"
+                    href="/home-based-services/#home-help"
                   >
                     Home Help Services
                   </a>
