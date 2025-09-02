@@ -7,8 +7,9 @@ import {
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Logo from "../assets/logo.svg";
-import { Link } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+import { useLocation } from "react-router-dom";
 function NavBarMobile() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
@@ -30,6 +31,18 @@ function NavBarMobile() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [showResidentialSubmenu, setShowResidentialSubmenu] = useState(false);
+  const [showDaycareSubmenu, setShowDaycareSubmenu] = useState(false);
+
+  const toggleResidentialSubmenu = (e) => {
+    e.preventDefault(); // Prevent navigation
+    setShowResidentialSubmenu((prev) => !prev);
+  };
+  const toggleDaycareSubmenu = (e) => {
+    e.preventDefault();
+    setShowDaycareSubmenu((prev) => !prev);
+  };
+const location = useLocation();
   return (
     <>
       <Navbar
@@ -82,28 +95,28 @@ function NavBarMobile() {
 
                 <NavDropdown title="About Us" id="about-dropdown">
                   <NavDropdown.Item
-                    as={Link}
+                    as={NavLink}
                     to="/about-us"
                     onClick={handleNavClick}
                   >
                     About Us
                   </NavDropdown.Item>
                   <NavDropdown.Item
-                    as={Link}
+                    as={HashLink}
                     to="/about-us/#our-journey"
                     onClick={handleNavClick}
                   >
                     Our Journey
                   </NavDropdown.Item>
                   <NavDropdown.Item
-                    as={Link}
+                    as={NavLink}
                     to="/founder"
                     onClick={handleNavClick}
                   >
                     Our Founder
                   </NavDropdown.Item>
                   <NavDropdown.Item
-                    as={Link}
+                    as={NavLink}
                     to="/organization"
                     onClick={handleNavClick}
                   >
@@ -125,20 +138,68 @@ function NavBarMobile() {
                 </NavDropdown>
 
                 <NavDropdown title="Services" id="services-dropdown">
-                  <NavDropdown.Item
-                    as={Link}
-                    to="/residential-services"
-                    onClick={handleNavClick}
+                  {/* Submenu trigger */}
+                  <div
+                    className="dropdown-item d-flex justify-content-between align-items-center"
+                    onClick={toggleResidentialSubmenu}
+                    style={{ cursor: "pointer" }}
                   >
                     Residential Services
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    as={Link}
-                    to="/daycare-services"
-                    onClick={handleNavClick}
+                    <span>{showResidentialSubmenu ? "▾" : "▸"}</span>
+                  </div>
+
+                  {/* Submenu with animation */}
+                  <div
+                    className={`submenu ps-3 transition-submenu ${
+                      showResidentialSubmenu ? "open" : ""
+                    }`}
+                  >
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/residential-services/#residential-care"
+                      onClick={handleNavClick}
+                    >
+                      Residential Care
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/residential-services/#dementia-care"
+                      onClick={handleNavClick}
+                    >
+                      Dementia Care
+                    </NavDropdown.Item>
+                  </div>
+
+                  {/* Other services */}
+                  <div
+                    className="dropdown-item d-flex justify-content-between align-items-center"
+                    onClick={toggleDaycareSubmenu}
+                    style={{ cursor: "pointer" }}
                   >
                     Day Care Services
-                  </NavDropdown.Item>
+                    <span>{showDaycareSubmenu ? "▾" : "▸"}</span>
+                  </div>
+
+                  <div
+                    className={`submenu ps-3 transition-submenu ${
+                      showDaycareSubmenu ? "open" : ""
+                    }`}
+                  >
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/daycare-services/#Dementia-Day-Centre"
+                      onClick={handleNavClick}
+                    >
+                      Dementia Day Centre
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/daycare-services/#Day-Rehabilitation-Centre"
+                      onClick={handleNavClick}
+                    >
+                      Day Rehabilitation Centre
+                    </NavDropdown.Item>
+                  </div>
                   <NavDropdown.Item
                     as={Link}
                     to="/home-based-services"
@@ -206,7 +267,7 @@ function NavBarMobile() {
                 <NavDropdown title="Get Involved" id="get-involved-dropdown">
                   <NavDropdown.Item
                     as={Link}
-                    to="/careers"
+                    to="/career"
                     onClick={handleNavClick}
                   >
                     Careers

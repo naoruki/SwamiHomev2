@@ -11,13 +11,13 @@ html {
   background-color: transparent !important;
 } */
 
-.dropdown-menu{
+.dropdown-menu {
   border: none !important;
   box-shadow: none !important; /* Optional: removes shadow */
   background-color: #fff !important;
 }
-.dropdown-item:hover{
-  background-color:#f7a1c4 !important;
+.dropdown-item:hover {
+  background-color: #f7a1c4 !important;
 }
 
 .brand-text-small {
@@ -37,7 +37,8 @@ html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
-.custom-button,.volunteer-button {
+.custom-button,
+.volunteer-button {
   background-color: #f7a1c4 !important;
   border-color: #f7a1c4 !important;
   color: black !important;
@@ -52,13 +53,11 @@ html {
   transform: scale(1.1); /* enlarge 5% */
 }
 
-
 .volunteer-button:active {
   background-color: pink !important;
   color: white;
   border-color: #f7a1c4 !important;
 }
-
 
 .floating-button {
   position: fixed;
@@ -67,7 +66,7 @@ html {
   z-index: 1050; /* stay above other elements */
   border-radius: 50px; /* optional: rounded button */
   padding: 15px 25px !important;
-  font-size:20px !important;
+  font-size: 20px !important;
   font-weight: bold !important;
 }
 /* 
@@ -81,12 +80,22 @@ html {
     display: none !important;
   }
 } */
- 
+
 @media (max-width: 576px) {
   .custom-button {
     font-size: 0.75rem !important; /* smaller font for mobile */
   }
 }
 
+/* Smooth submenu transition */
+.transition-submenu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
 
-
+.transition-submenu.open {
+  max-height: 500px; /* large enough to fit all submenu items */
+  opacity: 1;
+}
