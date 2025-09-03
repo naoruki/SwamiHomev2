@@ -8,12 +8,13 @@ const OurJourney = () => {
           className="col-12 col-md-12 residential-care"
           id="residential-care"
         >
-          <h2>Geriatric Residential Care</h2>
-          <p>
+                    <p>
             SWAMI Home’s Residential Care is a nursing support residence for
             elderly people who want to live in a home care environment with
             holistic activities. It comprises 190-bedded Geriatric
           </p>
+          <h2>Geriatric Residential Care</h2>
+
           <h5>Service Targets</h5>
           <ul>
             <li>
