@@ -19,19 +19,78 @@ function NavBarMobile() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Track sub-item selection for About Us
-  const [activeAboutLink, setActiveAboutLink] = useState("");
+  const [activeLink, setActiveLink] = useState("");
+
+  const [showResidentialSubmenu, setShowResidentialSubmenu] = useState(false);
+  const [showDaycareSubmenu, setShowDaycareSubmenu] = useState(false);
+  const [showHomeBasedSubmenu, setShowHomeBasedSubmenu] = useState(false);
+  const [showTherapySubmenu, setShowTherapySubmenu] = useState(false);
+  const toggleResidentialSubmenu = (e) => {
+    e.preventDefault();
+    setShowResidentialSubmenu((prev) => !prev);
+  };
+  const toggleDaycareSubmenu = (e) => {
+    e.preventDefault();
+    setShowDaycareSubmenu((prev) => !prev);
+  };
+  const toggleHomeBasedSubmenu = (e) => {
+    e.preventDefault();
+    setShowHomeBasedSubmenu((prev) => !prev);
+  };
+  const toggleTherapySubmenu = (e) => {
+    e.preventDefault();
+    setShowTherapySubmenu((prev) => !prev);
+  };
 
   useEffect(() => {
-    // Highlight About Us / Our Journey correctly based on URL
+    // Set active link
     if (location.pathname + location.hash === "/about-us#our-journey") {
-      setActiveAboutLink("/about-us#our-journey");
-    } else if (location.pathname === "/about-us" && !location.hash) {
-      setActiveAboutLink("/about-us");
+      setActiveLink("/about-us#our-journey");
+    } else if (location.pathname === "/about-us") {
+      setActiveLink("/about-us");
     } else {
-      setActiveAboutLink("");
+      setActiveLink(location.pathname);
     }
 
+    // Auto-close submenus if location is not part of them
+    if (!location.pathname.startsWith("/residential-services")) {
+      setShowResidentialSubmenu(false);
+    } else {
+      setShowResidentialSubmenu(true); // open if inside
+    }
+
+    if (!location.pathname.startsWith("/daycare-services")) {
+      setShowDaycareSubmenu(false);
+    } else {
+      setShowDaycareSubmenu(true); // open if inside
+    }
+
+    if (!location.pathname.startsWith("/daycare-services")) {
+      setShowDaycareSubmenu(false);
+    } else {
+      setShowDaycareSubmenu(true); // open if inside
+    }
+
+    if (!location.pathname.startsWith("/home-based-services")) {
+      setShowHomeBasedSubmenu(false);
+    } else {
+      setShowHomeBasedSubmenu(true); // open if inside
+    }
+
+    if (!location.pathname.startsWith("/therapy-services")) {
+      setShowTherapySubmenu(false);
+    } else {
+      setShowTherapySubmenu(true); // open if inside
+    }
+    // Auto-open if already inside
+    setShowResidentialSubmenu(
+      location.pathname.startsWith("/residential-services")
+    );
+    setShowDaycareSubmenu(location.pathname.startsWith("/daycare-services"));
+    setShowHomeBasedSubmenu(
+      location.pathname.startsWith("/home-based-services")
+    );
+    setShowTherapySubmenu(location.pathname.startsWith("/therapy"));
     // Navbar scroll effect
     const handleScroll = () => {
       const navbar = document.getElementById("mobile-navbar");
@@ -42,18 +101,6 @@ function NavBarMobile() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname, location.hash]);
-
-  const [showResidentialSubmenu, setShowResidentialSubmenu] = useState(false);
-  const [showDaycareSubmenu, setShowDaycareSubmenu] = useState(false);
-
-  const toggleResidentialSubmenu = (e) => {
-    e.preventDefault();
-    setShowResidentialSubmenu((prev) => !prev);
-  };
-  const toggleDaycareSubmenu = (e) => {
-    e.preventDefault();
-    setShowDaycareSubmenu((prev) => !prev);
-  };
 
   return (
     <Navbar
@@ -104,35 +151,31 @@ function NavBarMobile() {
               <NavDropdown
                 title="About Us"
                 id="about-dropdown"
-                className={
-                  activeAboutLink.startsWith("/about-us") ? "active" : ""
-                }
+                className={activeLink.startsWith("/about-us") ? "active" : ""}
               >
-                {/* About Us */}
                 <NavDropdown.Item
                   as="button"
                   onClick={() => {
                     handleNavClick();
-                    navigate("/about-us"); // navigate to /about-us
-                    setActiveAboutLink("/about-us");
-                    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
+                    navigate("/about-us");
+                    setActiveLink("/about-us");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
-                  className={activeAboutLink === "/about-us" ? "active" : ""}
+                  className={activeLink === "/about-us" ? "active" : ""}
                 >
                   About Us
                 </NavDropdown.Item>
 
-                {/* Our Journey */}
                 <NavDropdown.Item
                   as={HashLink}
                   smooth
                   to="/about-us#our-journey"
                   onClick={() => {
                     handleNavClick();
-                    setActiveAboutLink("/about-us#our-journey");
+                    setActiveLink("/about-us#our-journey");
                   }}
                   className={
-                    activeAboutLink === "/about-us#our-journey" ? "active" : ""
+                    activeLink === "/about-us#our-journey" ? "active" : ""
                   }
                 >
                   Our Journey
@@ -194,36 +237,24 @@ function NavBarMobile() {
 
               {/* Services Dropdown */}
               <NavDropdown title="Services" id="services-dropdown">
-                {/* Residential Services submenu trigger */}
                 <div
                   className="dropdown-item d-flex justify-content-between align-items-center"
                   onClick={toggleResidentialSubmenu}
                   style={{ cursor: "pointer" }}
                 >
                   Residential Services
-                  <span>
-                    {showResidentialSubmenu ||
-                    location.pathname.startsWith("/residential-services")
-                      ? "▾"
-                      : "▸"}
-                  </span>
+                  <span>{showResidentialSubmenu ? "▾" : "▸"}</span>
                 </div>
 
                 <div
                   className={`submenu ps-3 transition-submenu ${
-                    showResidentialSubmenu ||
-                    location.pathname.startsWith("/residential-services")
-                      ? "open"
-                      : ""
+                    showResidentialSubmenu ? "open" : ""
                   }`}
                 >
                   <NavDropdown.Item
                     as={Link}
                     to="/residential-services/#residential-care"
-                    onClick={() => {
-                      handleNavClick();
-                      setShowResidentialSubmenu(false);
-                    }}
+                    onClick={handleNavClick}
                     className={
                       location.hash === "#residential-care" ? "active" : ""
                     }
@@ -233,10 +264,7 @@ function NavBarMobile() {
                   <NavDropdown.Item
                     as={Link}
                     to="/residential-services/#dementia-care"
-                    onClick={() => {
-                      handleNavClick();
-                      setShowResidentialSubmenu(false);
-                    }}
+                    onClick={handleNavClick}
                     className={
                       location.hash === "#dementia-care" ? "active" : ""
                     }
@@ -245,36 +273,24 @@ function NavBarMobile() {
                   </NavDropdown.Item>
                 </div>
 
-                {/* Daycare Services submenu trigger */}
                 <div
                   className="dropdown-item d-flex justify-content-between align-items-center"
                   onClick={toggleDaycareSubmenu}
                   style={{ cursor: "pointer" }}
                 >
                   Day Care Services
-                  <span>
-                    {showDaycareSubmenu ||
-                    location.pathname.startsWith("/daycare-services")
-                      ? "▾"
-                      : "▸"}
-                  </span>
+                  <span>{showDaycareSubmenu ? "▾" : "▸"}</span>
                 </div>
 
                 <div
                   className={`submenu ps-3 transition-submenu ${
-                    showDaycareSubmenu ||
-                    location.pathname.startsWith("/daycare-services")
-                      ? "open"
-                      : ""
+                    showDaycareSubmenu ? "open" : ""
                   }`}
                 >
                   <NavDropdown.Item
                     as={Link}
                     to="/daycare-services/#Dementia-Day-Centre"
-                    onClick={() => {
-                      handleNavClick();
-                      setShowDaycareSubmenu(false);
-                    }}
+                    onClick={handleNavClick}
                     className={
                       location.hash === "#Dementia-Day-Centre" ? "active" : ""
                     }
@@ -284,10 +300,7 @@ function NavBarMobile() {
                   <NavDropdown.Item
                     as={Link}
                     to="/daycare-services/#Day-Rehabilitation-Centre"
-                    onClick={() => {
-                      handleNavClick();
-                      setShowDaycareSubmenu(false);
-                    }}
+                    onClick={handleNavClick}
                     className={
                       location.hash === "#Day-Rehabilitation-Centre"
                         ? "active"
@@ -298,24 +311,71 @@ function NavBarMobile() {
                   </NavDropdown.Item>
                 </div>
 
-                <NavDropdown.Item
-                  as={Link}
-                  to="/home-based-services"
-                  onClick={handleNavClick}
-                  className={
-                    location.pathname === "/home-based-services" ? "active" : ""
-                  }
+                {/* Home-Based Services */}
+                <div
+                  className="dropdown-item d-flex justify-content-between align-items-center"
+                  onClick={toggleHomeBasedSubmenu}
+                  style={{ cursor: "pointer" }}
                 >
-                  Home-Based Services
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/therapy"
-                  onClick={handleNavClick}
-                  className={location.pathname === "/therapy" ? "active" : ""}
+                  Home-Based Services{" "}
+                  <span>{showHomeBasedSubmenu ? "▾" : "▸"}</span>
+                </div>
+                <div
+                  className={`submenu ps-3 transition-submenu ${
+                    showHomeBasedSubmenu ? "open" : ""
+                  }`}
                 >
-                  Therapy Services
-                </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/home-based-services/#nursing"
+                    onClick={handleNavClick}
+                    className={location.hash === "#nursing" ? "active" : ""}
+                  >
+                    Home Medical & Home Nursing Services
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/home-based-services/#Home-Help-Services"
+                    onClick={handleNavClick}
+                    className={location.hash === "#Home-Help-Services" ? "active" : ""}
+                  >
+                    Home Help Services
+                  </NavDropdown.Item>
+                </div>
+                {/* Therapy Services */}
+                <div
+                  className="dropdown-item d-flex justify-content-between align-items-center"
+                  onClick={toggleTherapySubmenu}
+                  style={{ cursor: "pointer" }}
+                >
+                  Therapy Services <span>{showTherapySubmenu ? "▾" : "▸"}</span>
+                </div>
+                <div
+                  className={`submenu ps-3 transition-submenu ${
+                    showTherapySubmenu ? "open" : ""
+                  }`}
+                >
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/therapy/#Occupational-Therapy"
+                    onClick={handleNavClick}
+                    className={
+                      location.hash === "#Occupational-Therapy" ? "active" : ""
+                    }
+                  >
+                    Occupational Therapy
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/therapy/#Physiotherapy"
+                    onClick={handleNavClick}
+                    className={
+                      location.hash === "#Physiotherapy" ? "active" : ""
+                    }
+                  >
+                    Physiotherapy
+                  </NavDropdown.Item>
+                </div>
               </NavDropdown>
 
               {/* Community Life Dropdown */}
@@ -418,7 +478,7 @@ function NavBarMobile() {
 
               {/* Contact */}
               <Nav.Link
-                as={NavLink}
+                as={Link}
                 to="/contact-us"
                 onClick={handleNavClick}
                 className={location.pathname === "/contact-us" ? "active" : ""}

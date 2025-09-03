@@ -99,3 +99,9 @@ html {
   max-height: 500px; /* large enough to fit all submenu items */
   opacity: 1;
 }
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #f7a1c4 !important; /* or your preferred shade */
+  color: #000 !important; /* optional: adjust text color for contrast */
+}
