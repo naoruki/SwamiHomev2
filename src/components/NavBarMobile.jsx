@@ -7,9 +7,8 @@ import {
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Logo from "../assets/logo.svg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { useLocation } from "react-router-dom";
 
 function NavBarMobile() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -18,16 +17,17 @@ function NavBarMobile() {
   const handleNavClick = () => handleClose();
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Track sub-item selection for About Us
   const [activeAboutLink, setActiveAboutLink] = useState("");
 
   useEffect(() => {
-    // Set initial active link based on URL
-    if (location.pathname === "/about-us" && location.hash === "#our-journey") {
-      setActiveAboutLink("about-us/#our-journey");
-    } else if (location.pathname === "/about-us") {
-      setActiveAboutLink("about-us");
+    // Highlight About Us / Our Journey correctly based on URL
+    if (location.pathname + location.hash === "/about-us#our-journey") {
+      setActiveAboutLink("/about-us#our-journey");
+    } else if (location.pathname === "/about-us" && !location.hash) {
+      setActiveAboutLink("/about-us");
     } else {
       setActiveAboutLink("");
     }
@@ -101,27 +101,39 @@ function NavBarMobile() {
           <Offcanvas.Body>
             <Nav className="flex-column">
               {/* About Us Dropdown */}
-              <NavDropdown title="About Us" id="about-dropdown">
+              <NavDropdown
+                title="About Us"
+                id="about-dropdown"
+                className={
+                  activeAboutLink.startsWith("/about-us") ? "active" : ""
+                }
+              >
+                {/* About Us */}
                 <NavDropdown.Item
-                  as={NavLink}
-                  to="/about-us"
+                  as="button"
                   onClick={() => {
                     handleNavClick();
-                    setActiveAboutLink("about-us"); // highlight About Us
+                    navigate("/about-us"); // navigate to /about-us
+                    setActiveAboutLink("/about-us");
+                    window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
                   }}
-                  className={activeAboutLink === "about-us" ? "active" : ""}
+                  className={activeAboutLink === "/about-us" ? "active" : ""}
                 >
                   About Us
                 </NavDropdown.Item>
 
+                {/* Our Journey */}
                 <NavDropdown.Item
                   as={HashLink}
-                  to="/about-us/#our-journey"
+                  smooth
+                  to="/about-us#our-journey"
                   onClick={() => {
                     handleNavClick();
-                    setActiveAboutLink("our-journey"); // highlight Our Journey
+                    setActiveAboutLink("/about-us#our-journey");
                   }}
-                  className={activeAboutLink === "our-journey" ? "active" : ""}
+                  className={
+                    activeAboutLink === "/about-us#our-journey" ? "active" : ""
+                  }
                 >
                   Our Journey
                 </NavDropdown.Item>
@@ -189,7 +201,12 @@ function NavBarMobile() {
                   style={{ cursor: "pointer" }}
                 >
                   Residential Services
-                  <span>{showResidentialSubmenu ? "▾" : "▸"}</span>
+                  <span>
+                    {showResidentialSubmenu ||
+                    location.pathname.startsWith("/residential-services")
+                      ? "▾"
+                      : "▸"}
+                  </span>
                 </div>
 
                 <div
@@ -235,7 +252,12 @@ function NavBarMobile() {
                   style={{ cursor: "pointer" }}
                 >
                   Day Care Services
-                  <span>{showDaycareSubmenu ? "▾" : "▸"}</span>
+                  <span>
+                    {showDaycareSubmenu ||
+                    location.pathname.startsWith("/daycare-services")
+                      ? "▾"
+                      : "▸"}
+                  </span>
                 </div>
 
                 <div
