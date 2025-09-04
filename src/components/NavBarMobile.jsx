@@ -317,7 +317,7 @@ function NavBarMobile() {
                   onClick={toggleHomeBasedSubmenu}
                   style={{ cursor: "pointer" }}
                 >
-                  Home-Based Services{" "}
+                  Home-Care Services{" "}
                   <span>{showHomeBasedSubmenu ? "▾" : "▸"}</span>
                 </div>
                 <div
@@ -327,9 +327,9 @@ function NavBarMobile() {
                 >
                   <NavDropdown.Item
                     as={Link}
-                    to="/home-based-services/#nursing"
+                    to="/home-based-services/#home-medical"
                     onClick={handleNavClick}
-                    className={location.hash === "#nursing" ? "active" : ""}
+                    className={location.hash === "#home-medical" ? "active" : ""}
                   >
                     Home Medical & Home Nursing Services
                   </NavDropdown.Item>

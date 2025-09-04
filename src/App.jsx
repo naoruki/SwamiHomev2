@@ -20,6 +20,7 @@ import PDPA from "./pages/PDPApage.jsx";
 import NotFound from "./pages/404.jsx";
 import ResidentialServicesPage from "./pages/ResidentialServicePage.jsx";
 import DayCareServicePage from "./pages/DaycareServicePage.jsx";
+import HomeBasePage from "./pages/HomebasedServicePage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
 
@@ -59,6 +60,7 @@ function AppContent() {
             element={<ResidentialServicesPage />}
           />
           <Route path="daycare-services" element={<DayCareServicePage />} />
+          <Route path="home-based-services" element={<HomeBasePage />} />
           <Route path="PDPA" element={<PDPA />} />
           <Route path="founder" element={<Founder />} />
           {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
