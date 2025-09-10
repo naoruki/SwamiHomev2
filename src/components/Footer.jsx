@@ -43,19 +43,21 @@ const Footer = () => {
         {/* Right Side: Quick Links */}
         <div className="col-md-2 mb-2">
           <h5 className="text-start">Quick Links</h5>
-          <ul className="nav flex-column align-items-start align-items-md-start">
-            {["About Us", "Donation", "Services", "Careers", "PDPA"].map(
-              (link, index) => (
-                <li className="nav-item mb-2" key={index}>
-                  <a href="#" className="nav-link p-0 text-body-secondary">
-                    {link}
-                  </a>
-                </li>
-                
-              )
-            )}
-            
-          </ul>
+<ul className="nav flex-column align-items-start align-items-md-start">
+  {[
+    { name: "About Us", path: "/about-us" },
+    { name: "Donation", path: "/donate" },
+    { name: "Services", path: "/services" },
+    { name: "Careers", path: "/career" },
+    { name: "PDPA", path: "/pdpa" },
+  ].map((link, index) => (
+    <li className="nav-item mb-2" key={index}>
+      <a href={link.path} className="nav-link p-0 text-body-secondary">
+        {link.name}
+      </a>
+    </li>
+  ))}
+</ul>
         </div>
         <div className="col-md-2 mb-3">
           <h5 className="text-start">Partners</h5>

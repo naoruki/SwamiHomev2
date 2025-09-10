@@ -114,7 +114,7 @@ function NavBar() {
                 </div>
               </NavDropdown.Item>
               <NavDropdown.Item href="/home-based-services" className="dropdown-hover">
-                Home-Based Services
+                Home-Care Services
                 <div className="dropdown-submenu">
                   <a
                     className="dropdown-item"
@@ -124,7 +124,7 @@ function NavBar() {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/home-based-services/#home-help"
+                    href="/home-based-services/#Home-Help-Services"
                   >
                     Home Help Services
                   </a>
