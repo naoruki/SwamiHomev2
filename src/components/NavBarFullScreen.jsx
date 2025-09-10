@@ -130,18 +130,18 @@ function NavBar() {
                   </a>
                 </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="dropdown-hover">
+              <NavDropdown.Item href="/therapy" className="dropdown-hover">
                 Therapy Services
                 <div className="dropdown-submenu">
                   <a
                     className="dropdown-item"
-                    href="/residential-services/#residential-care"
+                    href="/therapy/#Occupational-Therapy"
                   >
                     Occupational Therapy
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/residential-services/#dementia-care"
+                    href="/therapy/#Physiotherapy"
                   >
                     Physiotherapy
                   </a>
