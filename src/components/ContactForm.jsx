@@ -14,8 +14,8 @@ const ContactForm = () => {
   const formRef = useRef(null);
 
   const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-  const recipient =
-    import.meta.env.VITE_FORMSUBMIT_EMAIL || "YOUR_EMAIL@example.com";
+  const recipient = import.meta.env.VITE_FORMSUBMIT_EMAIL;
+
   const homeUrl = `${window.location.origin}/`;
 
   const hasSpecialChars = (text) => /[^a-zA-Z0-9 @.,?!'"()-]/.test(text);
@@ -88,7 +88,7 @@ const ContactForm = () => {
   return (
     <form
       ref={formRef}
-      action={`https://formsubmit.co/${encodeURIComponent(recipient)}`}
+      action={`https://formsubmit.co/enquiry@swami.org.sg`}
       method="POST"
       onSubmit={handleBeforeSubmit}
       acceptCharset="UTF-8"

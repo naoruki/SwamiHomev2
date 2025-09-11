@@ -1,4 +1,10 @@
 import { Container } from "react-bootstrap";
+import image1 from "../assets/IMG_9708.jpg";
+import image2 from "../assets/IMG_9709-1.jpg";
+import image3 from "../assets/IMG_9735.jpg";
+import image4 from "../assets/IMG_9943.jpg";
+import image5 from "../assets/IMG_9970.jpg";
+import image6 from "../assets/IMG_9982.jpg";
 const TherapySection = () => (
   <>
     <Container className="services-container mb-3  ">
@@ -37,6 +43,11 @@ const TherapySection = () => (
             <li>Community re-integration program</li>
           </ul>
         </p>
+        <div className="row align-items-start">
+          <div className="col"><img src={image4} alt="Physiotherapy" /></div>
+          <div className="col"><img src={image5} alt="Physiotherapy" /></div>
+          <div className="col"><img src={image6} alt="Physiotherapy" /></div>
+        </div>
       </div>
       <hr />
       <div className="row" id="Physiotherapy">
@@ -58,8 +69,12 @@ const TherapySection = () => (
           habilitation and rehabilitation.
         </p>
 
-        <h5>Photo</h5>
 
+        <div className="row align-items-start">
+          <div className="col"><img src={image1} alt="Physiotherapy" /></div>
+          <div className="col"><img src={image2} alt="Physiotherapy" /></div>
+          <div className="col"><img src={image3} alt="Physiotherapy" /></div>
+        </div>
       </div>
     </div>
   </>

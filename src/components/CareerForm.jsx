@@ -26,7 +26,7 @@ function CareerForm() {
   const handleCaptchaExpired = () => setCaptchaToken(null);
 
   const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-  const recipient = import.meta.env.VITE_FORMSUBMIT_EMAIL;
+  const recipient = import.meta.env.VITE_FORMSUBMIT_EMAIL_CAREER;
   const homeUrl = `${window.location.origin}/`;
 
   const handleBeforeSubmit = (e) => {
