@@ -47,8 +47,10 @@ const VolunteerSection = () => {
               </li>
               <li>Support our projects and be our volunteers now.</li>
             </ul>
+           
           </div>
         </div>
+        <h5>Ready to make a difference? Click here to apply and we will get back to you in 5 working days</h5>
       </div>
 
     </section>

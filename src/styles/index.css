@@ -21,6 +21,10 @@ h2
   color: #e25d9c !important;
   font-family: "EB Garamond" !important;
 }
+h3,h4,h5{
+  color: #e25d9c !important;
+  /* font-family: "Caveat", cursive !important; */
+}
 ul {
   list-style-type: disc;
   list-style-position: outside;

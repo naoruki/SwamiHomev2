@@ -8,9 +8,7 @@ const VolunteerHero = () => (
         Join our mission to make a difference! As a volunteer, you’ll help
         create a positive impact in our community.
       </p>
-      <a href="/contact-us" className="volunteer-hero__cta">
-        Sign Up Now
-      </a>
+
     </div>
   </section>
 );
