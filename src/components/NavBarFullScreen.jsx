@@ -149,14 +149,14 @@ function NavBar() {
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Community Life" id="community-dropdown">
-              <NavDropdown.Item href="#" className="">
+              <NavDropdown.Item href="/Activities" className="">
                 Activities & Programs
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
-                Facilties
+              <NavDropdown.Item href="/Facilities" className="">
+                Facilities
               </NavDropdown.Item>
-              <NavDropdown.Item href="#" className="">
-                Visual Tour
+              <NavDropdown.Item href="/Virtual-Tour" className="">
+                Virtual Tour
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Media" id="media-dropdown">
