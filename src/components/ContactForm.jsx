@@ -88,12 +88,15 @@ const ContactForm = () => {
   return (
     <form
       ref={formRef}
-      action={`https://formsubmit.co/enquiry@swami.org.sg`}
+      action={`https://formsubmit.co/${encodeURIComponent(recipient)}`}
       method="POST"
       onSubmit={handleBeforeSubmit}
-      acceptCharset="UTF-8"
     >
-      <input type="hidden" name="_subject" value="New Contact Form Submission" />
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Contact Form Submission"
+      />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_next" value={homeUrl} />

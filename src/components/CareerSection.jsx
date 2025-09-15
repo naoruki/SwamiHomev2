@@ -12,7 +12,7 @@ const CareerSection = () => {
         </p> */}
 
         <div className="career-highlights">
-          <div className="highlight">
+          {/* <div className="highlight">
             <h3>Drop us your resume </h3>
             <p>Email: hr@swami.org.sg </p>
             Human Resources
@@ -25,10 +25,10 @@ const CareerSection = () => {
             Tel : 6257 6117
             <br />
             Fax : 6754 8443
-          </div>
+          </div> */}
 
           <div className="highlight">
-            <h3>Or fill up this form</h3>
+            <h3>Drop us your resume</h3>
             <CareerForm/>
            
           </div>

@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
   useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -22,6 +21,7 @@ import ResidentialServicesPage from "./pages/ResidentialServicePage.jsx";
 import DayCareServicePage from "./pages/DaycareServicePage.jsx";
 import HomeBasePage from "./pages/HomebasedServicePage.jsx";
 import TherapyPage from "./pages/TherapyPage.jsx";
+import AnnualReportPage from "./pages/AnnualReportPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
 
@@ -29,19 +29,11 @@ function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
-  // Start loading on route change
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 700); // simulate loading
+    const timer = setTimeout(() => setLoading(false), 700);
     return () => clearTimeout(timer);
   }, [location]);
-
-  // Scroll to top after loading ends
-  // useEffect(() => {
-  //   if (!loading) {
-  //     window.scrollTo(0, 0);
-  //   }
-  // }, [loading]);
 
   return (
     <>
@@ -56,16 +48,14 @@ function AppContent() {
           <Route path="career" element={<CareerPage />} />
           <Route path="organization" element={<Organization />} />
           <Route path="management-committee" element={<ManageCom />} />
-          <Route
-            path="residential-services"
-            element={<ResidentialServicesPage />}
-          />
+          <Route path="residential-services" element={<ResidentialServicesPage />} />
           <Route path="daycare-services" element={<DayCareServicePage />} />
           <Route path="home-based-services" element={<HomeBasePage />} />
           <Route path="PDPA" element={<PDPA />} />
           <Route path="founder" element={<Founder />} />
           <Route path="therapy" element={<TherapyPage />} />
-          {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+          <Route path="annual-report" element={<AnnualReportPage />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
@@ -74,6 +64,29 @@ function AppContent() {
 }
 
 function App() {
+  useEffect(() => {
+    // Block right-click
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    // Block inspect element shortcuts
+    const handleKeyDown = (e) => {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+        (e.ctrlKey && e.key === "U")
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("contextmenu", (e) => e.preventDefault());
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />

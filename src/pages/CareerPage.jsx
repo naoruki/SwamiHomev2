@@ -7,7 +7,7 @@ const Career = () => {
     <Container>
       <CareerHero />
       <CareerSection/>
-      <ListOfJob/>
+      {/* <ListOfJob/> */}
     </Container>
   );
 };

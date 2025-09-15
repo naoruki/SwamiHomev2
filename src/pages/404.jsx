@@ -13,7 +13,7 @@ export default function NotFound() {
         textAlign: 'center',
       }}
     >
-      <h1>Not Found</h1>
+      <h1>Page Under Construction</h1>
     </Container>
   );
 }
