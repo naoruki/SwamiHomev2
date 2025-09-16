@@ -140,7 +140,7 @@ function CareerForm() {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="formFile" className="form-label">Upload PDF or Word</label>
+        <label htmlFor="formFile" className="form-label">Upload your resume (PDF or Word)</label>
         <input
           className="form-control"
           type="file"
