@@ -50,7 +50,7 @@ const VolunteerSection = () => {
            
           </div>
         </div>
-        <h5>Ready to make a difference? Click here to apply and we will get back to you in 5 working days</h5>
+        <h5>Ready to make a difference? Click <a href="/contact-us">here</a> to apply</h5>
       </div>
 
     </section>

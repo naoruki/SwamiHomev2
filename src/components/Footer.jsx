@@ -68,7 +68,7 @@ const Footer = () => {
         {/* Social Media Icons - Centered and Side by Side */}
         <div className="col-12 text-center mt-4">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/swami_home/"
             target="_blank"
             rel="noopener noreferrer"
             className="me-3 d-inline-block"
@@ -76,7 +76,7 @@ const Footer = () => {
             <InstagramLogoIcon size={32} color="#E25D9C" weight="duotone" />
           </a>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/SWAMIHomeSg"
             target="_blank"
             rel="noopener noreferrer"
             className="d-inline-block"
