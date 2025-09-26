@@ -17,6 +17,7 @@ import Founder from "./pages/FounderPage.jsx";
 import ManageCom from "./pages/ManagementCommittee.jsx";
 import PDPA from "./pages/PDPApage.jsx";
 import NotFound from "./pages/404.jsx";
+import TenderPage from "./pages/TenderPage.jsx";
 import ResidentialServicesPage from "./pages/ResidentialServicePage.jsx";
 import DayCareServicePage from "./pages/DaycareServicePage.jsx";
 import HomeBasePage from "./pages/HomebasedServicePage.jsx";
@@ -55,6 +56,7 @@ function AppContent() {
           <Route path="founder" element={<Founder />} />
           <Route path="therapy" element={<TherapyPage />} />
           <Route path="annual-report" element={<AnnualReportPage />} />
+          <Route path="tender" element={<TenderPage />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>
