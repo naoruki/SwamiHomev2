@@ -25,7 +25,7 @@ import TherapyPage from "./pages/TherapyPage.jsx";
 import AnnualReportPage from "./pages/AnnualReportPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
-
+import NameCard from "./pages/NameCard.jsx"; // ✅ import NameCard
 function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -40,6 +40,7 @@ function AppContent() {
     <>
       {loading && <LoadingOverlay />}
       <Routes>
+        <Route path="/vcard/:id" element={<NameCard />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
           <Route path="donate" element={<DonationPage />} />
@@ -49,7 +50,10 @@ function AppContent() {
           <Route path="career" element={<CareerPage />} />
           <Route path="organization" element={<Organization />} />
           <Route path="management-committee" element={<ManageCom />} />
-          <Route path="residential-services" element={<ResidentialServicesPage />} />
+          <Route
+            path="residential-services"
+            element={<ResidentialServicesPage />}
+          />
           <Route path="daycare-services" element={<DayCareServicePage />} />
           <Route path="home-based-services" element={<HomeBasePage />} />
           <Route path="PDPA" element={<PDPA />} />
