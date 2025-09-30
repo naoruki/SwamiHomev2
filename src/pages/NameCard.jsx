@@ -63,6 +63,19 @@ REV:${new Date().toISOString()}
 END:VCARD
   `.trim();
 
+  // ✅ Download handler
+  const handleDownload = () => {
+    const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${user.name || "contact"}.vcf`;
+    link.click();
+
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="user-view-page d-flex flex-column justify-content-between align-items-center text-center">
       <header className="w-100 py-3 pt-5">
@@ -84,6 +97,13 @@ END:VCARD
             <h6 className="mb-3">Scan or Click Below to Save Contact</h6>
             <div className="p-3 bg-white d-inline-block rounded shadow" style={{ border: "1px solid #ddd" }}>
               <QRCode value={vCard} size={220} includeMargin={true} />
+            </div>
+
+            {/* ✅ Download Button */}
+            <div className="mt-3">
+              <button onClick={handleDownload} className="btn btn-primary">
+                Download vCard
+              </button>
             </div>
           </div>
         )}

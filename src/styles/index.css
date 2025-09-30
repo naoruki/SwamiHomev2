@@ -124,3 +124,44 @@ select {
     min-height: 90vh; /* Taller height for smaller screens */
   }
 }
+
+/* job list */
+
+.accordion-header {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  background: #f8f9fa;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background: #e9ecef;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.accordion-body-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-body-wrapper.open {
+  max-height: 500px; /* adjust if needed */
+}
+
+.accordion-body {
+  padding: 12px 16px;
+  background: #fff;
+  /* border: 1px solid #ddd; */
+}
