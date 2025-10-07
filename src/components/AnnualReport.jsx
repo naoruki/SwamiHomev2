@@ -1,33 +1,47 @@
-import image4 from "../assets/2025.png";
-import image5 from "../assets/2024.png";
-import image6 from "../assets/2023.jpg";
-import image7 from "../assets/2022.jpg";
-import report2024 from "../assets/Annual report 2023-2024.pdf";
-import report2023 from "../assets/Annual Report 2022 - 2023.pdf";
-import report2022 from "../assets/Annual Report 2021-2022.pdf";
+import { useEffect, useState } from "react";
 
-const AnnualReport = () => (
-  <>
+const API_URL = import.meta.env.VITE_API_URL;
+
+const AnnualReport = () => {
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+    const fetchReports = async () => {
+      try {
+        const res = await fetch(`${API_URL}/reports`);
+        const data = await res.json();
+        // sort newest year first and keep only 3
+        const sorted = [...data].sort((a, b) => b.year - a.year).slice(0, 3);
+        setReports(sorted);
+      } catch (err) {
+        console.error("❌ Error fetching reports:", err);
+      }
+    };
+    fetchReports();
+  }, []);
+
+  return (
     <div className="box mb-3">
       <div className="d-flex justify-content-center text-center flex-wrap">
-        <div className="p-2">
-          <a href={report2024} download>
-            <img src={image5} alt="annual report 2024" style={{ width: "300px" }} />
-          </a>
-        </div>
-        <div className="p-2">
-          <a href={report2023} download>
-            <img src={image6} alt="annual report 2023" style={{ width: "300px" }} />
-          </a>
-        </div>
-        <div className="p-2">
-          <a href={report2022} download>
-            <img src={image7} alt="annual report 2022" style={{ width: "300px" }} />
-          </a>
-        </div>
+        {reports.map((report) => (
+          <div key={report._id} className="p-2">
+            <a href={`${API_URL}${report.pdfUrl}`} download>
+              <img
+                src={`${API_URL}${report.thumbnailUrl}`}
+                alt={`annual report ${report.year}`}
+                style={{ width: "300px" }}
+              />
+            </a>
+            <p className="mt-2 fw-bold">Annual Report {report.year}</p>
+          </div>
+        ))}
+
+        {reports.length === 0 && (
+          <p className="text-muted">No annual reports available</p>
+        )}
       </div>
     </div>
-  </>
-);
+  );
+};
 
 export default AnnualReport;
