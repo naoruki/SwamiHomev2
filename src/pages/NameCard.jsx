@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Navigate } from "react-router-dom"; // ✅ import Navigate
+import { useParams, Navigate } from "react-router-dom";
 import QRCode from "react-qr-code";
 import logo from "../assets/logo.svg";
 import "../styles/UserViewPage.css";
@@ -34,7 +34,6 @@ const NameCard = () => {
     fetchUser();
   }, [id]);
 
-  // ✅ Redirect to home if not found
   if (notFound) {
     return <Navigate to="/" replace />;
   }
@@ -43,7 +42,7 @@ const NameCard = () => {
     return <h3 className="text-center mt-5">Loading user...</h3>;
   }
 
-  // ✅ Build vCard
+
   const vCard = `
 BEGIN:VCARD
 VERSION:3.0
@@ -58,12 +57,11 @@ ADR;CHARSET=UTF-8;TYPE=WORK:;;5 Sembawang Walk, Singapore 757717;;;
 TITLE;CHARSET=UTF-8:${user.role}
 ROLE;CHARSET=UTF-8:${user.role}
 ORG;CHARSET=UTF-8:SWAMI
-URL;TYPE=WORK;CHARSET=UTF-8:swami.org.sg
+URL;TYPE=WORK;CHARSET=UTF-8:https://www.swami.org.sg
 REV:${new Date().toISOString()}
 END:VCARD
   `.trim();
 
-  // ✅ Download handler
   const handleDownload = () => {
     const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
     const url = URL.createObjectURL(blob);
@@ -99,7 +97,6 @@ END:VCARD
               <QRCode value={vCard} size={220} includeMargin={true} />
             </div>
 
-            {/* ✅ Download Button */}
             <div className="mt-3">
               <button onClick={handleDownload} className="btn btn-primary">
                 Download vCard
