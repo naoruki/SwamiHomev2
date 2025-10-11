@@ -19,7 +19,7 @@ const Footer = () => {
             <br />
             <b>Fax:</b> +65 67548443
             <br />
-            Email:{" "}
+            <b>Email:</b>{" "}
             <a href="mailto:enquiry@swami.org.sg">enquiry@swami.org.sg</a>
           </address>
         </div>
