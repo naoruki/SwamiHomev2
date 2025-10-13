@@ -1,0 +1,55 @@
+.poster-only-modal {
+  max-width: 95vw !important;
+}
+
+.modal-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.poster-frame {
+  height: 85vh;
+}
+
+/* ❌ Close button styling */
+.close-btn {
+  top: 20px;
+  right: 25px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+/* 📱 Mobile view (iPhone 15 Pro Max friendly) */
+@media (max-width: 576px) {
+  .poster-frame {
+    height: 70vh !important;
+  }
+
+  .close-btn {
+    top: 10px !important;
+    right: 12px !important;
+    width: 42px;
+    height: 42px;
+  }
+
+  .close-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}

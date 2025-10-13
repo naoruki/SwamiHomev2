@@ -416,17 +416,17 @@ function NavBarMobile() {
               <NavDropdown title="Media" id="media-dropdown">
                 <NavDropdown.Item
                   as={Link}
-                  to="/news"
+                  to="/events"
                   onClick={handleNavClick}
-                  className={location.pathname === "/news" ? "active" : ""}
+                  className={location.pathname === "/events" ? "active" : ""}
                 >
                   What's Happening
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
-                  to="/events"
+                  to="/past-events"
                   onClick={handleNavClick}
-                  className={location.pathname === "/events" ? "active" : ""}
+                  className={location.pathname === "/past-events" ? "active" : ""}
                 >
                   Past Event Highlights
                 </NavDropdown.Item>
