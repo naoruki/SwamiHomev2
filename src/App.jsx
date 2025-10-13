@@ -26,6 +26,8 @@ import AnnualReportPage from "./pages/AnnualReportPage.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import LoadingOverlay from "./components/LoadingOverlay.jsx";
 import NameCard from "./pages/NameCard.jsx"; // ✅ import NameCard
+import CurrentEvents from "./pages/CurrentEventsPage.jsx";
+import PastEventsPage from "./pages/PastEvents.jsx";
 function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -61,7 +63,8 @@ function AppContent() {
           <Route path="therapy" element={<TherapyPage />} />
           <Route path="annual-report" element={<AnnualReportPage />} />
           <Route path="tender" element={<TenderPage />} />
-
+          <Route path="events" element={<CurrentEvents />} />
+          <Route path="past-events" element={<PastEventsPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

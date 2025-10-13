@@ -160,10 +160,10 @@ function NavBar() {
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Media" id="media-dropdown">
-              <NavDropdown.Item href="/news" className="">
+              <NavDropdown.Item href="/events" className="">
                 What's happening
               </NavDropdown.Item>
-              <NavDropdown.Item href="/events" className="">
+              <NavDropdown.Item href="/past-events" className="">
                 Past Event Highlights
               </NavDropdown.Item>
               <NavDropdown.Item href="/gallery" className="">

@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { Modal } from "react-bootstrap";
+import { Modal, Carousel } from "react-bootstrap";
+import { X } from "react-bootstrap-icons";
 import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
+import volunteerPoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
+import "../styles/LandingModal.css";
 
-const EventModal = () => {
+function EventModal() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // ✅ Only show modal once per session
+    // ✅ Show only once per session
     const hasSeenModal = sessionStorage.getItem("eventModalShown");
     if (!hasSeenModal) {
       setShow(true);
@@ -21,56 +24,69 @@ const EventModal = () => {
       show={show}
       onHide={handleClose}
       centered
+      backdrop={false} // ❌ No dark overlay background
+      keyboard
       size="xl"
-      backdrop={true}
-      keyboard={true}
-      dialogClassName="modal-fullscreen-sm-down"
-      contentClassName="border-0 bg-transparent d-flex justify-content-center align-items-center"
+      contentClassName="border-0 bg-transparent shadow-none p-0"
+      dialogClassName="poster-only-modal"
     >
+      {/* 🖼 Entire area clickable to close */}
       <div
+        className="w-100 d-flex justify-content-center align-items-center position-relative"
         onClick={handleClose}
-        className="position-relative d-flex justify-content-center align-items-center w-100"
         style={{
           cursor: "pointer",
-          height: "100%",
-          minHeight: "80vh",
+          background: "transparent",
+          minHeight: "100vh",
         }}
       >
-        {/* ❌ Close button */}
+        {/* ❌ Close Button */}
         <button
           onClick={handleClose}
-          className="btn position-absolute text-white d-flex align-items-center justify-content-center"
-          style={{
-            top: "10px",
-            right: "10px",
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            borderRadius: "50%",
-            width: "40px",
-            height: "40px",
-            fontSize: "22px",
-            fontWeight: "bold",
-            lineHeight: "1",
-            zIndex: 10,
-          }}
+          className="close-btn position-absolute"
+          aria-label="Close"
         >
-          ×
+          <X size={30} />
         </button>
 
-        {/* 🖼️ Poster */}
-        <img
-          src={deepavaliPoster}
-          alt="Deepavali Event Poster"
-          className="img-fluid"
-          style={{
-            maxHeight: "85vh",
-            maxWidth: "95vw",
-            objectFit: "contain",
-            borderRadius: "8px",
-          }}
-        />
+        {/* 🎠 Poster Carousel */}
+        <Carousel
+          controls={false}
+          indicators={false}
+          interval={4000}
+          slide
+          fade={false}
+          className="w-100 d-flex justify-content-center align-items-center"
+        >
+          {[deepavaliPoster, volunteerPoster].map((src, i) => (
+            <Carousel.Item key={i}>
+              <div
+                className="poster-frame d-flex justify-content-center align-items-center"
+                style={{
+                  width: "95vw",
+                  height: "85vh",
+                }}
+              >
+                <img
+                  src={src}
+                  alt={`Poster ${i + 1}`}
+                  className="poster-img img-fluid rounded shadow-lg"
+                  style={{
+                    maxHeight: "85vh",
+                    maxWidth: "95vw",
+                    objectFit: "contain",
+                    borderRadius: "8px",
+                    userSelect: "none",
+                    pointerEvents: "none", // ✅ allows click to pass through
+                  }}
+                />
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </div>
     </Modal>
   );
-};
+}
 
 export default EventModal;

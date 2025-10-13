@@ -1,0 +1,67 @@
+.upcoming-events-section {
+  background-color: #fff9fb; /* very light pink tint */
+}
+
+.text-pink {
+  color: #e35b8f;
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background-color: #e35b8f;
+  border-radius: 5px;
+}
+
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(227, 91, 143, 0.2);
+}
+
+.image-container {
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+/* 🎀 Pink outline button */
+.btn-outline-pink {
+  color: #e35b8f;
+  border-color: #e35b8f;
+}
+
+.btn-outline-pink:hover {
+  background-color: #e35b8f;
+  color: white;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 576px) {
+  .image-container {
+    height: 220px;
+  }
+
+  .event-card {
+    border-radius: 10px;
+  }
+}
