@@ -15,16 +15,12 @@ const CurrentEvent = () => {
         title: "Deepavali Celebration 2025",
         date: "16 October 2025",
         image: deepavaliPoster,
-        description:
-          "Join us for our annual Deepavali Celebration filled with lights and Joy!",
       },
       {
         id: 2,
         title: "Community Palliative Care Workshop",
         date: "24 October 2025 6.00PM - 9.15PM",
         image: otherPoster,
-        description:
-          "Community Palliative Care Workshop",
       },
     ];
     setEvents(currentEvents);
@@ -85,41 +81,49 @@ const CurrentEvent = () => {
           contentClassName="border-0 bg-transparent"
         >
           {selectedEvent && (
-            <div className="text-center position-relative" onClick={handleClose}>
+            <div className="text-center position-relative px-2">
               {/* Close Button */}
               <Button
                 variant="light"
                 onClick={handleClose}
-                className="position-absolute top-0 end-0 m-3 rounded-circle"
+                className="position-absolute top-0 end-0 m-2 m-md-3 rounded-circle shadow-sm"
+                style={{ zIndex: 10 }}
               >
                 ✕
               </Button>
 
-              {/* Centered Image */}
+              {/* Poster */}
               <div
                 className="d-flex justify-content-center align-items-center"
                 style={{
-                  minHeight: "80vh",
-                  padding: "20px",
+                  minHeight: "60vh",
+                  padding: "10px 0",
                 }}
               >
                 <img
                   src={selectedEvent.image}
                   alt={selectedEvent.title}
-                  className="img-fluid rounded shadow-lg modal-event-image"
+                  className="img-fluid rounded-top shadow-lg"
                   style={{
-                    maxWidth: "70%",
+                    width: "95%",
+                    maxWidth: "700px",
                     height: "auto",
                     objectFit: "contain",
                   }}
                 />
               </div>
 
-              {/* Text Section */}
-              <div className="bg-white mt-3 p-3 rounded shadow-sm text-start mx-auto" style={{ maxWidth: "70%" }}>
-                <h4 className="fw-bold">{selectedEvent.title}</h4>
-                <p className="text-muted mb-1">{selectedEvent.date}</p>
-                <p>{selectedEvent.description}</p>
+              {/* Text box same width as image */}
+              <div
+                className="bg-white p-3 p-md-4 rounded-bottom shadow-lg text-start mx-auto mb-4"
+                style={{
+                  width: "95%",
+                  maxWidth: "700px",
+                  marginTop: "-8px", // small overlap for seamless connection
+                }}
+              >
+                <h5 className="fw-bold mb-1">{selectedEvent.title}</h5>
+                <p className="text-muted mb-0">{selectedEvent.date}</p>
               </div>
             </div>
           )}
