@@ -8,12 +8,13 @@ const LandingPage = () => {
   return (
     <div>
       <HeroCarousel />
-      {/* <EventModal /> ✅ Modal appears on page load */}
+      <div id="current-events">
+        <CurrentEvents />
+      </div>
       <div className="container">
-       
         <VisionSection />
-         <Services />
-         <CurrentEvents />
+        <Services />
+
         {/* <Testimonial /> */}
       </div>
     </div>

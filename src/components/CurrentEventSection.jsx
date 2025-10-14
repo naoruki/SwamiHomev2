@@ -14,10 +14,22 @@ const CurrentEvent = () => {
     const currentEvents = [
       {
         id: 1,
+        title: "Deepavali Celebration 2025",
         image: deepavaliPoster,
       },
       {
         id: 2,
+        title: "Community Palliative Care Workshop",
+        date: "24 October 2025 • 6.00PM – 9.15PM",
+        description: `
+    Join us for an eye-opening workshop exclusively for SWAMI Home staff, volunteers, next-of-kin, beneficiaries, and grassroots leaders. 
+    Discover the core purpose and transformative potential of community palliative care. 
+    Explore how to provide compassionate psychosocial care and gain practical skills for holding difficult conversations to support patients and families confronting serious illness. 
+    Palliative care is about quality of life—at every stage and transition.<br /><br />
+    Led by WHO-endorsed global experts, this session will guide SWAMI Home’s community on why palliative care matters, how psychosocial support can be integrated, and how to nurture open, empathetic conversations during difficult times. 
+    Build confidence, reduce stigma, and help make every moment count for those in your care.<br /><br />
+    <strong>Please click <a href="https://events.humanitix.com/registration-for-swami-home-community-palliative-care-workshop" target="_blank" rel="noopener noreferrer" style="color:#0d6efd; text-decoration:underline;">here</a> to register.</strong>
+  `,
         image: otherPoster,
       },
     ];
@@ -54,7 +66,7 @@ const CurrentEvent = () => {
               >
                 <img
                   src={event.image}
-                  alt={`Event ${event.id}`}
+                  alt={event.title}
                   className="poster-img img-fluid rounded"
                 />
               </div>
@@ -75,11 +87,9 @@ const CurrentEvent = () => {
           {selectedEvent && (
             <div
               className="position-relative d-flex justify-content-center align-items-center w-100"
-              onClick={handleClose}
               style={{
-                cursor: "pointer",
-                height: "100%",
                 minHeight: "85vh",
+                padding: "20px",
               }}
             >
               {/* Close Button */}
@@ -91,18 +101,54 @@ const CurrentEvent = () => {
                 <X size={32} />
               </button>
 
-              {/* Poster */}
-              <img
-                src={selectedEvent.image}
-                alt="Event Poster"
-                className="img-fluid rounded shadow-lg"
-                style={{
-                  maxHeight: "85vh",
-                  maxWidth: "95vw",
-                  objectFit: "contain",
-                  borderRadius: "10px",
-                }}
-              />
+              {/* ✅ Conditional Content */}
+              {selectedEvent.id === 1 ? (
+                // --- Image Modal for Event 1 ---
+                <img
+                  src={selectedEvent.image}
+                  alt="Event Poster"
+                  className="img-fluid rounded shadow-lg"
+                  style={{
+                    maxHeight: "85vh",
+                    maxWidth: "95vw",
+                    objectFit: "contain",
+                  }}
+                />
+              ) : (
+                // --- Text Modal for Event 2 ---
+                <div
+                  className="bg-white rounded shadow-lg p-4 text-left"
+                  style={{ maxWidth: "800px" }}
+                >
+                  {/* <img
+                    src={selectedEvent.image}
+                    alt={selectedEvent.title}
+                    className="img-fluid rounded mb-4"
+                    style={{
+                      maxHeight: "300px",
+                      objectFit: "cover",
+                    }}
+                  /> */}
+                  <h3 className="fw-bold text-pink mb-3">
+                    {selectedEvent.title}
+                  </h3>
+                  <p className="text-muted mb-2">{selectedEvent.date}</p>
+                  <p
+                    className="lead"
+                    dangerouslySetInnerHTML={{
+                      __html: selectedEvent.description,
+                    }}
+                  ></p>
+
+                  <Button
+                    variant="primary"
+                    className="mt-3 px-4 py-2 rounded-pill fw-semibold"
+                    onClick={handleClose}
+                  >
+                    Close
+                  </Button>
+                </div>
+              )}
             </div>
           )}
         </Modal>

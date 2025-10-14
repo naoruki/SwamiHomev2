@@ -13,7 +13,7 @@ const Layout = () => {
       <NavBarMobile />
       <Outlet /> {/* This renders the current route's page */}
       <FloatingButton
-        icon={<HandHeartIcon size={32} />}
+        icon={<HandHeartIcon size={30} />}
         label="Support Us"
         to="/donate"
       />
