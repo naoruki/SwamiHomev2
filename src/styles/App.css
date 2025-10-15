@@ -97,3 +97,15 @@
 .floating-button:nth-child(2) {
   bottom: 160px; /* slightly higher to stack above the first one */
 }
+
+.accordion-body-wrapper {
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+
+.arrow-icon {
+  transition: transform 200ms ease;
+}
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
