@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Container, Modal, Button } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
-import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
 import otherPoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
 import "../styles/CurrentEvent.css";
 
@@ -14,11 +13,6 @@ const CurrentEvent = () => {
     const currentEvents = [
       {
         id: 1,
-        title: "Deepavali Celebration 2025",
-        image: deepavaliPoster,
-      },
-      {
-        id: 2,
         title: "Community Palliative Care Workshop",
         date: "24 October 2025 • 6.00PM – 9.15PM",
         description: `
@@ -55,10 +49,10 @@ const CurrentEvent = () => {
           <div className="divider mx-auto"></div>
         </div>
 
-        {/* Posters Grid */}
+        {/* Poster */}
         <Row className="justify-content-center g-4">
           {events.map((event) => (
-            <Col key={event.id} xs={12} md={6} lg={5}>
+            <Col key={event.id} xs={12} md={8} lg={6}>
               <div
                 className="poster-card shadow-sm"
                 onClick={() => handleShow(event)}
@@ -74,12 +68,12 @@ const CurrentEvent = () => {
           ))}
         </Row>
 
-        {/* 🪩 Modal */}
+        {/* Modal */}
         <Modal
           show={showModal}
           onHide={handleClose}
           centered
-          backdrop
+          backdrop={true} // enables click outside to close
           keyboard
           size="xl"
           contentClassName="border-0 bg-transparent shadow-none p-0"
@@ -91,64 +85,50 @@ const CurrentEvent = () => {
                 minHeight: "85vh",
                 padding: "20px",
               }}
+              onClick={handleClose} // click anywhere outside content closes modal
             >
-              {/* Close Button */}
-              <button
-                onClick={handleClose}
-                className="close-btn position-absolute"
-                aria-label="Close"
+              {/* Stop propagation when clicking inside the content */}
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded shadow-lg p-4 text-left"
+                style={{ maxWidth: "800px" }}
               >
-                <X size={32} />
-              </button>
-
-              {/* ✅ Conditional Content */}
-              {selectedEvent.id === 1 ? (
-                // --- Image Modal for Event 1 ---
-                <img
-                  src={selectedEvent.image}
-                  alt="Event Poster"
-                  className="img-fluid rounded shadow-lg"
+                {/* Close Button */}
+                <button
+                  onClick={handleClose}
+                  className="close-btn position-absolute"
+                  aria-label="Close"
                   style={{
-                    maxHeight: "85vh",
-                    maxWidth: "95vw",
-                    objectFit: "contain",
+                    top: "20px",
+                    right: "30px",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
                   }}
-                />
-              ) : (
-                // --- Text Modal for Event 2 ---
-                <div
-                  className="bg-white rounded shadow-lg p-4 text-left"
-                  style={{ maxWidth: "800px" }}
                 >
-                  {/* <img
-                    src={selectedEvent.image}
-                    alt={selectedEvent.title}
-                    className="img-fluid rounded mb-4"
-                    style={{
-                      maxHeight: "300px",
-                      objectFit: "cover",
-                    }}
-                  /> */}
-                  <h3 className="fw-bold text-pink mb-3">
-                    {selectedEvent.title}
-                  </h3>
-                  <p className="text-muted mb-2">{selectedEvent.date}</p>
-                  <p
-                    className="lead"
-                    dangerouslySetInnerHTML={{
-                      __html: selectedEvent.description,
-                    }}
-                  ></p>
+                  <X size={32} />
+                </button>
 
-                  <Button
-                    variant="primary"
-                    className="mt-3 px-4 py-2 rounded-pill fw-semibold"
-                    onClick={handleClose}
-                  >
-                    Close
-                  </Button>
-                </div>
-              )}
+                {/* Event Details */}
+                <h3 className="fw-bold text-pink mb-3">
+                  {selectedEvent.title}
+                </h3>
+                <p className="text-muted mb-2">{selectedEvent.date}</p>
+                <p
+                  className="lead"
+                  dangerouslySetInnerHTML={{
+                    __html: selectedEvent.description,
+                  }}
+                ></p>
+
+                <Button
+                  variant="primary"
+                  className="mt-3 px-4 py-2 rounded-pill fw-semibold"
+                  onClick={handleClose}
+                >
+                  Close
+                </Button>
+              </div>
             </div>
           )}
         </Modal>
