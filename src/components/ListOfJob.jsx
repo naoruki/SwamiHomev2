@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BsChevronDown } from "react-icons/bs";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -6,14 +6,29 @@ const API_URL = import.meta.env.VITE_API_URL;
 function CustomAccordion() {
   const [jobs, setJobs] = useState([]);
   const [activeId, setActiveId] = useState(null);
+  const contentRefs = useRef({}); // store refs per job id
 
-  // Fetch jobs from backend
   useEffect(() => {
     const fetchJobs = async () => {
       try {
         const res = await fetch(`${API_URL}/jobs`);
         const data = await res.json();
-        setJobs(data);
+
+        // normalize description to array
+        const normalized = (data || []).map((job) => ({
+          ...job,
+          description: Array.isArray(job.description)
+            ? job.description
+            : job.description
+            ? [job.description]
+            : [],
+        }));
+
+        setJobs(normalized);
+
+        // ✅ auto-expand the first enabled job
+        const firstEnabled = normalized.find((j) => j.enabled);
+        if (firstEnabled) setActiveId(firstEnabled._id);
       } catch (err) {
         console.error("❌ Error fetching jobs:", err);
       }
@@ -21,11 +36,9 @@ function CustomAccordion() {
     fetchJobs();
   }, []);
 
-  const toggle = (id) => {
-    setActiveId((prevId) => (prevId === id ? null : id));
-  };
+  // ✅ only one open at a time
+  const toggle = (id) => setActiveId((prev) => (prev === id ? null : id));
 
-  // ✅ Only include enabled jobs
   const enabledJobs = jobs.filter((job) => job.enabled);
 
   return (
@@ -41,26 +54,48 @@ function CustomAccordion() {
                 activeId === job._id ? "active" : ""
               }`}
               onClick={() => toggle(job._id)}
+              aria-expanded={activeId === job._id}
+              aria-controls={`panel-${job._id}`}
             >
               <span>{job.title}</span>
               <BsChevronDown
                 className={`arrow-icon ${activeId === job._id ? "rotate" : ""}`}
               />
             </button>
+
+            {/* wrapper animates to content height */}
             <div
-              className={`accordion-body-wrapper ${
-                activeId === job._id ? "open" : ""
-              }`}
+              id={`panel-${job._id}`}
+              className="accordion-body-wrapper"
+              style={{
+                maxHeight:
+                  activeId === job._id
+                    ? `${contentRefs.current[job._id]?.scrollHeight || 0}px`
+                    : 0,
+              }}
             >
-              <div className="accordion-body">
-                <p>
-                  <strong>Job Description</strong>
-                </p>
-                <p>{job.description}</p>
+              <div
+                className="accordion-body"
+                ref={(el) => {
+                  contentRefs.current[job._id] = el;
+                }}
+              >
+                {job.description?.length > 0 && (
+                  <>
+                    <p className="mb-1">
+                      <strong>Job Description</strong>
+                    </p>
+                    <ul className="mb-3">
+                      {job.description.map((line, idx) => (
+                        <li key={idx}>{line}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
 
                 {job.requirements?.length > 0 && (
                   <>
-                    <p>
+                    <p className="mb-1">
                       <strong>Requirements</strong>
                     </p>
                     <ul>

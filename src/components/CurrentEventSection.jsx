@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Container, Modal, Button } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
-import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
 import otherPoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
 import "../styles/CurrentEvent.css";
 
@@ -14,10 +13,17 @@ const CurrentEvent = () => {
     const currentEvents = [
       {
         id: 1,
-        image: deepavaliPoster,
-      },
-      {
-        id: 2,
+        title: "Community Palliative Care Workshop",
+        date: "24 October 2025 • 6.00PM – 9.15PM",
+        description: `
+    Join us for an eye-opening workshop exclusively for SWAMI Home staff, volunteers, next-of-kin, beneficiaries, and grassroots leaders. 
+    Discover the core purpose and transformative potential of community palliative care. 
+    Explore how to provide compassionate psychosocial care and gain practical skills for holding difficult conversations to support patients and families confronting serious illness. 
+    Palliative care is about quality of life—at every stage and transition.<br /><br />
+    Led by WHO-endorsed global experts, this session will guide SWAMI Home’s community on why palliative care matters, how psychosocial support can be integrated, and how to nurture open, empathetic conversations during difficult times. 
+    Build confidence, reduce stigma, and help make every moment count for those in your care.<br /><br />
+    <strong>Please click <a href="https://events.humanitix.com/registration-for-swami-home-community-palliative-care-workshop" target="_blank" rel="noopener noreferrer" style="color:#0d6efd; text-decoration:underline;">here</a> to register.</strong>
+  `,
         image: otherPoster,
       },
     ];
@@ -43,10 +49,10 @@ const CurrentEvent = () => {
           <div className="divider mx-auto"></div>
         </div>
 
-        {/* Posters Grid */}
+        {/* Poster */}
         <Row className="justify-content-center g-4">
           {events.map((event) => (
-            <Col key={event.id} xs={12} md={6} lg={5}>
+            <Col key={event.id} xs={12} md={8} lg={6}>
               <div
                 className="poster-card shadow-sm"
                 onClick={() => handleShow(event)}
@@ -54,7 +60,7 @@ const CurrentEvent = () => {
               >
                 <img
                   src={event.image}
-                  alt={`Event ${event.id}`}
+                  alt={event.title}
                   className="poster-img img-fluid rounded"
                 />
               </div>
@@ -62,12 +68,12 @@ const CurrentEvent = () => {
           ))}
         </Row>
 
-        {/* 🪩 Modal */}
+        {/* Modal */}
         <Modal
           show={showModal}
           onHide={handleClose}
           centered
-          backdrop
+          backdrop={true} // enables click outside to close
           keyboard
           size="xl"
           contentClassName="border-0 bg-transparent shadow-none p-0"
@@ -75,34 +81,54 @@ const CurrentEvent = () => {
           {selectedEvent && (
             <div
               className="position-relative d-flex justify-content-center align-items-center w-100"
-              onClick={handleClose}
               style={{
-                cursor: "pointer",
-                height: "100%",
                 minHeight: "85vh",
+                padding: "20px",
               }}
+              onClick={handleClose} // click anywhere outside content closes modal
             >
-              {/* Close Button */}
-              <button
-                onClick={handleClose}
-                className="close-btn position-absolute"
-                aria-label="Close"
+              {/* Stop propagation when clicking inside the content */}
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded shadow-lg p-4 text-left"
+                style={{ maxWidth: "800px" }}
               >
-                <X size={32} />
-              </button>
+                {/* Close Button */}
+                <button
+                  onClick={handleClose}
+                  className="close-btn position-absolute"
+                  aria-label="Close"
+                  style={{
+                    top: "20px",
+                    right: "30px",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  <X size={32} />
+                </button>
 
-              {/* Poster */}
-              <img
-                src={selectedEvent.image}
-                alt="Event Poster"
-                className="img-fluid rounded shadow-lg"
-                style={{
-                  maxHeight: "85vh",
-                  maxWidth: "95vw",
-                  objectFit: "contain",
-                  borderRadius: "10px",
-                }}
-              />
+                {/* Event Details */}
+                <h3 className="fw-bold text-pink mb-3">
+                  {selectedEvent.title}
+                </h3>
+                <p className="text-muted mb-2">{selectedEvent.date}</p>
+                <p
+                  className="lead"
+                  dangerouslySetInnerHTML={{
+                    __html: selectedEvent.description,
+                  }}
+                ></p>
+
+                <Button
+                  variant="primary"
+                  className="mt-3 px-4 py-2 rounded-pill fw-semibold"
+                  onClick={handleClose}
+                >
+                  Close
+                </Button>
+              </div>
             </div>
           )}
         </Modal>

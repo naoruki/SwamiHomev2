@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, Row, Col, Container, Modal, Button } from "react-bootstrap";
 import midautumn from "../assets/midautumn.jpg";
-
+import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
 
 const PastEvents = () => {
   const [events, setEvents] = useState([]);
@@ -9,18 +9,29 @@ const PastEvents = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    const currentEvents = [
+    const pastEvents = [
       {
         id: 1,
         title: "Mid Autumn Celebration 2025",
         date: "3 October 2025",
         image: midautumn,
-        description:
-          "Mid Autumn Celebration 2023 at SWAMI Home. A joyous gathering filled with traditional festivities, cultural performances, and delicious mooncakes, bringing together residents, staff, and the community to celebrate the spirit of unity and togetherness.",
+        description: `
+          Mid Autumn Celebration 2025 at SWAMI Home was a joyous gathering filled with cultural performances, 
+          traditional lanterns, and mooncakes. Residents, staff, and volunteers came together to celebrate 
+          unity, gratitude, and togetherness under the beautiful full moon.
+        `,
       },
-
+      {
+        id: 2,
+        title: "Deepavali Celebration 2025",
+        date: "16 October 2025",
+        image: deepavaliPoster,
+        description: `
+          SWAMI Home celebrated Deepavali 2025 with Bhajans, Blessing Ceremony, Aarati, and Vegetarian lunch.
+        `,
+      },
     ];
-    setEvents(currentEvents);
+    setEvents(pastEvents);
   }, []);
 
   const handleShow = (event) => {
@@ -34,7 +45,7 @@ const PastEvents = () => {
   };
 
   return (
-    <div className="box mb-3">
+    <div className="box mb-5">
       <Container className="py-5">
         <Row className="g-4 justify-content-center">
           {events.map((event) => (
@@ -73,46 +84,70 @@ const PastEvents = () => {
           onHide={handleClose}
           centered
           size="xl"
-          backdrop="true"
+          backdrop={true}
           keyboard={true}
           contentClassName="border-0 bg-transparent"
         >
           {selectedEvent && (
-            <div className="text-center position-relative" onClick={handleClose}>
-              {/* Close Button */}
-              <Button
-                variant="light"
-                onClick={handleClose}
-                className="position-absolute top-0 end-0 m-3 rounded-circle"
-              >
-                ✕
-              </Button>
-
-              {/* Centered Image */}
+            <div
+              className="text-center position-relative px-2"
+              onClick={handleClose} // click anywhere closes modal
+            >
               <div
-                className="d-flex justify-content-center align-items-center"
-                style={{
-                  minHeight: "80vh",
-                  padding: "20px",
-                }}
+                onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+                className="d-flex flex-column align-items-center"
               >
-                <img
-                  src={selectedEvent.image}
-                  alt={selectedEvent.title}
-                  className="img-fluid rounded shadow-lg modal-event-image"
-                  style={{
-                    maxWidth: "70%",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
+                {/* ❌ Close Button */}
+                <Button
+                  variant="light"
+                  onClick={handleClose}
+                  className="position-absolute top-0 end-0 m-2 m-md-3 rounded-circle shadow-sm"
+                  style={{ zIndex: 10 }}
+                >
+                  ✕
+                </Button>
 
-              {/* Text Section */}
-              <div className="bg-white mt-3 p-3 rounded shadow-sm text-start mx-auto" style={{ maxWidth: "70%" }}>
-                <h4 className="fw-bold">{selectedEvent.title}</h4>
-                <p className="text-muted mb-1">{selectedEvent.date}</p>
-                <p>{selectedEvent.description}</p>
+                {/* 🖼 Poster */}
+                <div
+                  className="d-flex justify-content-center align-items-center"
+                  style={{
+                    minHeight: "60vh",
+                    padding: "10px 0",
+                  }}
+                >
+                  <img
+                    src={selectedEvent.image}
+                    alt={selectedEvent.title}
+                    className="img-fluid rounded-top shadow-lg"
+                    style={{
+                      width: "95%",
+                      maxWidth: "700px",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+
+                {/* 🧾 Text box (same width as poster) */}
+                <div
+                  className="bg-white p-3 p-md-4 rounded-bottom shadow-lg text-start mx-auto mb-4"
+                  style={{
+                    width: "95%",
+                    maxWidth: "700px",
+                    marginTop: "-8px",
+                  }}
+                >
+                  <h5 className="fw-bold mb-1">{selectedEvent.title}</h5>
+                  <p className="text-muted mb-2">{selectedEvent.date}</p>
+                  {selectedEvent.description && (
+                    <p
+                      className="lead"
+                      dangerouslySetInnerHTML={{
+                        __html: selectedEvent.description,
+                      }}
+                    ></p>
+                  )}
+                </div>
               </div>
             </div>
           )}
