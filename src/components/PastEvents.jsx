@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, Row, Col, Container, Modal, Button } from "react-bootstrap";
 import midautumn from "../assets/midautumn.jpg";
 import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
+import palliativePoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
 
 const PastEvents = () => {
   const [events, setEvents] = useState([]);
@@ -12,6 +13,20 @@ const PastEvents = () => {
     const pastEvents = [
       {
         id: 1,
+        title: "Community Palliative Care Workshop",
+        date: "24 October 2025 • 6.00PM – 9.15PM",
+        description: `
+          The Community Palliative Care Workshop at SWAMI Home was an eye-opening session for staff, volunteers, next-of-kin, beneficiaries, and grassroots leaders. 
+          Participants learned about the importance and purpose of community palliative care, how to provide compassionate psychosocial support, 
+          and how to handle difficult conversations with empathy and confidence. 
+          The workshop emphasized improving quality of life and nurturing understanding during challenging transitions.<br /><br />
+          The session, led by WHO-endorsed global experts, helped participants explore how to integrate psychosocial care into daily interactions, 
+          break stigma around palliative care, and foster supportive environments for patients and families.
+        `,
+        image: palliativePoster,
+      },
+      {
+        id: 2,
         title: "Mid Autumn Celebration 2025",
         date: "3 October 2025",
         image: midautumn,
@@ -22,12 +37,13 @@ const PastEvents = () => {
         `,
       },
       {
-        id: 2,
+        id: 3,
         title: "Deepavali Celebration 2025",
         date: "16 October 2025",
         image: deepavaliPoster,
         description: `
-          SWAMI Home celebrated Deepavali 2025 with Bhajans, Blessing Ceremony, Aarati, and Vegetarian lunch.
+          SWAMI Home celebrated Deepavali 2025 with Bhajans, Blessing Ceremony, Aarati, and a delicious vegetarian lunch. 
+          The event was filled with lights, joy, and the spirit of togetherness.
         `,
       },
     ];
@@ -45,8 +61,9 @@ const PastEvents = () => {
   };
 
   return (
-    <div className="box mb-5">
+    <div className="box mb-3">
       <Container className="py-5">
+
         <Row className="g-4 justify-content-center">
           {events.map((event) => (
             <Col key={event.id} xs={12} md={6} lg={5}>
@@ -69,9 +86,7 @@ const PastEvents = () => {
                   <Card.Title className="fw-semibold text-dark">
                     {event.title}
                   </Card.Title>
-                  <Card.Text className="text-muted mb-0">
-                    {event.date}
-                  </Card.Text>
+                  <Card.Text className="text-muted mb-0">{event.date}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -91,13 +106,13 @@ const PastEvents = () => {
           {selectedEvent && (
             <div
               className="text-center position-relative px-2"
-              onClick={handleClose} // click anywhere closes modal
+              onClick={handleClose}
             >
               <div
-                onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+                onClick={(e) => e.stopPropagation()}
                 className="d-flex flex-column align-items-center"
               >
-                {/* ❌ Close Button */}
+                {/* ✕ Close Button */}
                 <Button
                   variant="light"
                   onClick={handleClose}
@@ -128,7 +143,7 @@ const PastEvents = () => {
                   />
                 </div>
 
-                {/* 🧾 Text box (same width as poster) */}
+                {/* 🧾 Text Box */}
                 <div
                   className="bg-white p-3 p-md-4 rounded-bottom shadow-lg text-start mx-auto mb-4"
                   style={{

@@ -28,6 +28,7 @@ import LoadingOverlay from "./components/LoadingOverlay.jsx";
 import NameCard from "./pages/NameCard.jsx"; // ✅ import NameCard
 import CurrentEvents from "./pages/CurrentEventsPage.jsx";
 import PastEventsPage from "./pages/PastEvents.jsx";
+import Gallery from "./pages/GalleryPage.jsx";
 function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -65,6 +66,7 @@ function AppContent() {
           <Route path="tender" element={<TenderPage />} />
           <Route path="events" element={<CurrentEvents />} />
           <Route path="past-events" element={<PastEventsPage />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
