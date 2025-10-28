@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Modal, Carousel } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
 import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
-import volunteerPoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
+import volunteerPoster from "../assets/CommunityPalliativeCareWorkshopFinal.jpg";
 import "../styles/LandingModal.css";
 
 function EventModal() {

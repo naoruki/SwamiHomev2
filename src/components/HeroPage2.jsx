@@ -1,4 +1,4 @@
-import landingImg from "../assets/landingimageHQ.svg";
+import landingImg from "../assets/landing3.jpg";
 
 const HeroSection2 = () => {
   return (

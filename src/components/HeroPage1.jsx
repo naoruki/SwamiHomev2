@@ -1,4 +1,4 @@
-import landingImg from "../assets/landingimage2.svg"; // Adjust path if needed
+import landingImg from "../assets/landing1.png"; // Adjust path if needed
 const HeroSection = () => {
   return (
     <div className="container col-xxl-8 px-4 py-5">

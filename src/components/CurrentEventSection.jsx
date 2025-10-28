@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Row, Col, Container, Modal, Button } from "react-bootstrap";
 import { X } from "react-bootstrap-icons";
-import otherPoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
+import otherPoster from "../assets/CommunityPalliativeCareWorkshopFinal.jpg";
 import "../styles/CurrentEvent.css";
 
 const CurrentEvent = () => {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, Row, Col, Container, Modal, Button } from "react-bootstrap";
 import midautumn from "../assets/midautumn.jpg";
 import deepavaliPoster from "../assets/SWAMIBCCSDEEPAVALI.jpg";
-import palliativePoster from "../assets/SWAMI_Community_Palliative_Care_Workshop_Final_NoVenueLabel.jpg";
+import palliativePoster from "../assets/CommunityPalliativeCareWorkshopFinal.jpg";
 
 const PastEvents = () => {
   const [events, setEvents] = useState([]);

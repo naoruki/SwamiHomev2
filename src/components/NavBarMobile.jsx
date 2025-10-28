@@ -6,7 +6,7 @@ import {
   Offcanvas,
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 

@@ -1,5 +1,5 @@
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import HoverNavDropdown from "./HoverNavDropdown"; // adjust path if needed
 import { useEffect } from "react";
 import "../styles/DropdownHover.css";
