@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css"; 
 import "../styles/gallery.css";
 
 const Gallery = ({ images = [] }) => {
@@ -7,7 +9,7 @@ const Gallery = ({ images = [] }) => {
 
   const handleClose = () => setSelectedIndex(null);
   const handleNext = (e) => {
-    e.stopPropagation(); // prevent closing modal
+    e.stopPropagation();
     setSelectedIndex((prev) => (prev + 1) % images.length);
   };
   const handlePrev = (e) => {
@@ -17,8 +19,6 @@ const Gallery = ({ images = [] }) => {
 
   return (
     <Container className="py-2">
-
-
       <Row className="justify-content-center">
         {images.map((img, index) => (
           <Col
@@ -29,10 +29,13 @@ const Gallery = ({ images = [] }) => {
             className="gallery-item"
             onClick={() => setSelectedIndex(index)}
           >
-            <img
+            {/* ✅ Lazy load each image */}
+            <LazyLoadImage
               src={img.src}
               alt={img.alt || `Image ${index + 1}`}
               className="img-fluid rounded shadow-sm gallery-image"
+              effect="blur"
+              threshold={200} // start loading when 200px before visible
             />
           </Col>
         ))}
@@ -47,7 +50,7 @@ const Gallery = ({ images = [] }) => {
         contentClassName="gallery-modal-content"
         backdropClassName="gallery-modal-backdrop-transparent"
         backdrop
-        onClick={handleClose} // click anywhere to close
+        onClick={handleClose}
       >
         <Modal.Body
           className="p-0 text-center position-relative"
@@ -55,17 +58,17 @@ const Gallery = ({ images = [] }) => {
         >
           {selectedIndex !== null && (
             <>
-              <img
+              <LazyLoadImage
                 src={images[selectedIndex].src}
                 alt={images[selectedIndex].alt}
                 className="img-fluid"
-                loading="lazy"
+                effect="opacity"
                 style={{
                   width: "100vw",
                   height: "100vh",
                   objectFit: "contain",
                   backgroundColor: "transparent",
-                  pointerEvents: "none", // click-through
+                  pointerEvents: "none",
                 }}
               />
 

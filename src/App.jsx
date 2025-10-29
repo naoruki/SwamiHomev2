@@ -29,6 +29,7 @@ import NameCard from "./pages/NameCard.jsx"; // ✅ import NameCard
 import CurrentEvents from "./pages/CurrentEventsPage.jsx";
 import PastEventsPage from "./pages/PastEvents.jsx";
 import Gallery from "./pages/GalleryPage.jsx";
+import ActivtiesPage from "./pages/ActivitiesPage.jsx";
 function AppContent() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -67,6 +68,7 @@ function AppContent() {
           <Route path="events" element={<CurrentEvents />} />
           <Route path="past-events" element={<PastEventsPage />} />
           <Route path="gallery" element={<Gallery />} />
+          <Route path ="activities" element={<ActivtiesPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
