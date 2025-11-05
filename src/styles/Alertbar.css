@@ -1,0 +1,59 @@
+.alert-bar {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideDown 0.3s ease-out;
+}
+
+.alert-content {
+  flex: 1;
+  text-align: center;
+}
+
+.alert-link {
+  color: #0056b3;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.alert-link:hover {
+  text-decoration: none;
+}
+
+/* ✖️ Clean solid X button */
+.close-btn {
+  background: none !important;
+  border: none;
+  color: #000 !important;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+  transform: scale(1.2);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

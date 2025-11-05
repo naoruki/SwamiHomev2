@@ -76,7 +76,7 @@ const Footer = () => {
             <InstagramLogoIcon size={32} color="#E25D9C" weight="duotone" />
           </a>
           <a
-            href="https://www.facebook.com/SWAMIHomeSg"
+            href="https://www.facebook.com/profile.php?id=61552785959134"
             target="_blank"
             rel="noopener noreferrer"
             className="d-inline-block"
