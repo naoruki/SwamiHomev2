@@ -14,7 +14,7 @@ const NameCard = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch(`${API_URL}/users/${id}`);
+        const res = await fetch(`${API_URL}/namecards/${id}`);
 
         if (res.status === 404) {
           setNotFound(true);

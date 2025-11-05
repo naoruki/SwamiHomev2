@@ -9,8 +9,8 @@ const committeeMembers = [
   { name: 'K. Ravintheran', role: 'Committee Member' },
   { name: 'Bong Gee Choi', role: 'Committee Member' },
   { name: 'Vijay Das', role: 'Committee Member' },
-  { name: 'Aurobind Yap Jin', role: 'Committee Member' },
-  { name: 'Govind Yap Jinhui', role: 'Committee Member' },
+  { name: 'Aurobind Yap', role: 'Committee Member' },
+  { name: 'Govind Yap', role: 'Committee Member' },
 ];
 
 const slugify = (text) =>

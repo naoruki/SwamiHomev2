@@ -1,0 +1,22 @@
+.activities-section {
+  background-color: transparent; /* ✅ Transparent background */
+}
+
+.activity-card {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #ffffff; /* keep cards white for contrast */
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.activity-img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}

@@ -18,8 +18,7 @@ const slides = [
   {
     icon: <ShootingStarIcon  size={40} weight="fill" />,
     heading: "Our Core Values",
-    text: "Some representative placeholder content for the third slide.",
-
+    text: "Truth, Right Conduct, Peace, Love, Non-Violence",
   },
     {
     icon: <StarIcon  size={40} weight="fill" />,

@@ -9,7 +9,7 @@ const LandingPage = () => {
     <div>
       <HeroCarousel />
       <div id="current-events">
-        <CurrentEvents />
+        {/* <CurrentEvents /> */}
       </div>
       <div className="container">
         <VisionSection />
