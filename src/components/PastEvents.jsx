@@ -9,7 +9,7 @@ const PastEvents = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch expired events from backend
+  // Fetch expired events
   const fetchExpiredEvents = async () => {
     try {
       setLoading(true);
@@ -38,11 +38,9 @@ const PastEvents = () => {
     setSelectedEvent(null);
   };
 
-  // ✅ Format date nicely
   const formatDate = (dateStr) => {
     if (!dateStr) return "";
     const d = new Date(dateStr);
-    if (Number.isNaN(d.getTime())) return dateStr;
     return d.toLocaleDateString("en-SG", {
       year: "numeric",
       month: "long",
@@ -52,7 +50,9 @@ const PastEvents = () => {
 
   return (
     <div className="box mb-3">
-      <Container className="py-5">
+      <Container className="py-5 text-center">
+
+
         <Row className="g-4 justify-content-center">
           {loading ? (
             <Col xs={12} className="text-center text-muted py-4">
@@ -75,7 +75,7 @@ const PastEvents = () => {
                     src={
                       event.image
                         ? `${API_URL}${event.image}`
-                        : "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='36'>No Image</text></svg>"
+                        : "https://via.placeholder.com/700x350?text=No+Image"
                     }
                     alt={event.title}
                     style={{
@@ -90,9 +90,7 @@ const PastEvents = () => {
                     </Card.Title>
                     <Card.Text className="text-muted mb-0">
                       {formatDate(event.date)}
-                      {event.time && event.time.trim() !== ""
-                        ? ` • ${event.time}`
-                        : ""}
+                      {event.time ? ` • ${event.time}` : ""}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -101,7 +99,7 @@ const PastEvents = () => {
           )}
         </Row>
 
-        {/* 🪄 Modal for viewing details */}
+        {/* MODAL (same as CurrentEvent) */}
         <Modal
           show={showModal}
           onHide={handleClose}
@@ -112,33 +110,34 @@ const PastEvents = () => {
           contentClassName="border-0 bg-transparent"
         >
           {selectedEvent && (
-            // 🟢 Click anywhere outside closes
             <div
               className="d-flex justify-content-center align-items-center w-100 h-100 position-relative"
-              style={{ minHeight: "100vh", backgroundColor: "rgba(0,0,0,0.6)" }}
-              onClick={handleClose} // click anywhere outside closes modal
+              style={{
+                minHeight: "100vh",
+                backgroundColor: "transparent",
+                backdropFilter: "none",
+              }}
+              onClick={handleClose}
             >
-              {/* 🧱 Inner Content (click inside does NOT close) */}
               <div
                 onClick={(e) => e.stopPropagation()}
                 className="d-flex flex-column align-items-center bg-transparent"
               >
-                {/* ✕ Close Button */}
+                {/* Close Button */}
                 <Button
                   variant="light"
                   onClick={handleClose}
                   className="position-absolute top-0 end-0 m-3 rounded-circle shadow-sm"
-                  style={{ zIndex: 10 }}
                 >
                   ✕
                 </Button>
 
-                {/* 🖼 Poster */}
+                {/* Poster */}
                 <img
                   src={
                     selectedEvent.image
                       ? `${API_URL}${selectedEvent.image}`
-                      : "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'><rect width='100%' height='100%' fill='%23eee'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='36'>No Image</text></svg>"
+                      : "https://via.placeholder.com/700x350?text=No+Image"
                   }
                   alt={selectedEvent.title}
                   className="img-fluid rounded-top shadow-lg"
@@ -150,7 +149,7 @@ const PastEvents = () => {
                   }}
                 />
 
-                {/* 🧾 Text Box */}
+                {/* Text Box */}
                 <div
                   className="bg-white p-3 p-md-4 rounded-bottom shadow-lg text-start mx-auto mb-4"
                   style={{
@@ -162,10 +161,9 @@ const PastEvents = () => {
                   <h5 className="fw-bold mb-1">{selectedEvent.title}</h5>
                   <p className="text-muted mb-2">
                     {formatDate(selectedEvent.date)}
-                    {selectedEvent.time && selectedEvent.time.trim() !== ""
-                      ? ` • ${selectedEvent.time}`
-                      : ""}
+                    {selectedEvent.time ? ` • ${selectedEvent.time}` : ""}
                   </p>
+
                   {selectedEvent.description && (
                     <p className="lead" style={{ whiteSpace: "pre-line" }}>
                       {selectedEvent.description}
