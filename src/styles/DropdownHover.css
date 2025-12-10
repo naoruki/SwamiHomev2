@@ -20,3 +20,14 @@
 .dropdown-submenu .dropdown-item {
   white-space: nowrap;
 }
+
+/* Bold ALL main navbar menu items (including Contact Us) */
+#fullscreen-navbar .navbar-nav > .nav-item > .nav-link,
+#fullscreen-navbar .navbar-nav .nav-link,
+#fullscreen-navbar .navbar-nav .dropdown-toggle {
+  font-weight: 700 !important;
+}
+
+#fullscreen-navbar .dropdown-toggle {
+  font-weight: 700 !important;
+}
