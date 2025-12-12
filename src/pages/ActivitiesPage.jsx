@@ -15,7 +15,7 @@ const activitiesData = [
     images: [Mamashop1, Mamashop2, Mamashop3], // slider in modal
     title: "MAMA Shop",
     description:
-      "Every Month, Swami Home will set up a Mama shop for residents to purchase Food/snacks.",
+      "Swami Home sets up a MAMA Shop once a month, where residents can purchase food, snacks, and drinks.",
   },
 ];
 
