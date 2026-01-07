@@ -68,12 +68,12 @@ const Footer = () => {
         {/* Social Media Icons - Centered and Side by Side */}
         <div className="col-12 text-center mt-4">
           <a
-            href="https://www.instagram.com/swami_home/"
+            href="https://www.instagram.com/savvysilverstars/"
             target="_blank"
             rel="noopener noreferrer"
             className="me-3 d-inline-block"
           >
-            <InstagramLogoIcon size={32} color="#E25D9C" weight="duotone" />
+            <InstagramLogoIcon size={45} color="#b30958ff" weight="duotone" />
           </a>
           <a
             href="https://www.facebook.com/profile.php?id=61552785959134"
@@ -81,11 +81,11 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="d-inline-block"
           >
-            <FacebookLogoIcon size={32} color="#E25D9C" weight="duotone" />
+            <FacebookLogoIcon size={45} color="#1827fdff" weight="duotone" />
           </a>
         </div>
         {/* Copyright */}
-        <div className="col-12 text-center mt-3 text-body-secondary small">
+        <div className="col-12 text-center mt-3 text-body-secondary medium">
           &copy; {new Date().getFullYear()} SUNSHINE WELFARE ACTION MISSION. All
           rights reserved.
         </div>

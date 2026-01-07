@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import QRCode from "react-qr-code";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import "../styles/UserViewPage.css";
 
 const API_URL = import.meta.env.VITE_API_URL;

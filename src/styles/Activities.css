@@ -20,3 +20,45 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
+
+
+.activity-slider-container {
+  position: relative;
+  text-align: center;
+}
+
+.activity-slider-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.activity-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.activity-slider-btn.left {
+  left: -50px;  /* arrow outside image */
+}
+
+.activity-slider-btn.right {
+  right: -50px; /* arrow outside image */
+}
+
+.activity-slider-indicator {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+  text-align: center;
+}
