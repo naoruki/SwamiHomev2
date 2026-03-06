@@ -12,13 +12,11 @@ const CareerHero = () => {
           and build your career in an organization that sets the standard for
           excellence in clinical healthcare.
         </p>
-        <div className="career-hero-buttons">
-          {/* <a href="/careers" className="btn btn-primary">
-            Explore Careers
-          </a> */}
-          {/* <a href="/volunteer" className="btn btn-outline-light">
-            <b>Become a Volunteer</b>
-          </a> */}
+
+        <div className="career-hero-buttons mt-3">
+          <a href="#job-listing" className="btn btn-light">
+            Please click here for our openings
+          </a>
         </div>
       </div>
     </Container>

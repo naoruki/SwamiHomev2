@@ -21,7 +21,7 @@ const HeroSection3 = () => {
         {/* Text below image on mobile, left on desktop */}
         <div className="col-lg-6 order-2 order-lg-1">
           <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-            Our Philosophical Values
+            Our Mission
           </h1>
           <p className="lead">
             Our strongest belief is that every individual’s needs are unique and

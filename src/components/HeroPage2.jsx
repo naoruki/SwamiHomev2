@@ -21,14 +21,10 @@ const HeroSection2 = () => {
         {/* Text below image on mobile, left on desktop */}
         <div className="col-lg-6 order-2 order-lg-1">
           <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-            Our Philosophical Values
+            Our Core Values
           </h1>
           <p className="lead">
-            We do not simply work to tick the boxes of the regulatory agencies
-            that audit and evaluate our services; our main priority while
-            delivering our care services is based on our values – <b>TRUTH, RIGHT
-            CONDUCT, PEACE, LOVE and NON-VIOLENCE</b> to attain the very best
-            standards in the hearts and minds of our residents. 
+             TRUTH, RIGHT CONDUCT, PEACE, LOVE and NON-VIOLENCE
           </p>
         </div>
       </div>

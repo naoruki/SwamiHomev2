@@ -1,11 +1,14 @@
 import { InstagramLogoIcon, FacebookLogoIcon } from "@phosphor-icons/react";
-import Partners from "./OurPartnerSection.jsx"
+import Partners from "./OurPartnerSection.jsx";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="container">
-      <footer className="row py-4 border-top">
+      {/* <footer className="row py-4 border-top"> */}
+      <footer>
         {/* Left Side: Contact Us */}
-        <div className="col-md-5 mb-5">
+        {/* <div className="col-md-5 mb-5">
           <h5 className="text-start">Contact Us</h5>
           <address className="text-start text-body-secondary">
             <b>SUNSHINE WELFARE ACTION MISSION (SWAMI Home)</b>
@@ -22,10 +25,10 @@ const Footer = () => {
             <b>Email:</b>{" "}
             <a href="mailto:enquiry@swami.org.sg">enquiry@swami.org.sg</a>
           </address>
-        </div>
+        </div> */}
 
         {/* Middle: Hours */}
-        <div className="col-md-3 mb-3 text-start">
+        {/* <div className="col-md-3 mb-3 text-start">
           <h5>Hours</h5>
           <ul className="list-unstyled text-body-secondary">
             <li>
@@ -38,10 +41,10 @@ const Footer = () => {
               (Including PH)
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Right Side: Quick Links */}
-        <div className="col-md-2 mb-2">
+        {/* <div className="col-md-2 mb-2">
           <h5 className="text-start">Quick Links</h5>
 <ul className="nav flex-column align-items-start align-items-md-start">
   {[
@@ -58,11 +61,11 @@ const Footer = () => {
     </li>
   ))}
 </ul>
-        </div>
-        <div className="col-md-2 mb-3">
+        </div> */}
+        {/* <div className="col-md-2 mb-3">
           <h5 className="text-start">Partners</h5>
             <Partners/>
-        </div>
+        </div> */}
 
         {/* Social Media Icons - New Row */}
         {/* Social Media Icons - Centered and Side by Side */}
@@ -84,8 +87,22 @@ const Footer = () => {
             <FacebookLogoIcon size={45} color="#1827fdff" weight="duotone" />
           </a>
         </div>
+        <div className="col-12 text-center mt-2 footer-links">
+          <Link to="/" className="footer-link">
+            Home
+          </Link>
+          <span className="mx-2">|</span>
+          <Link to="/about-us" className="footer-link">
+            About Us
+          </Link>
+          <span className="mx-2">|</span>
+          <Link to="/contact-us" className="footer-link">
+            Contact Us
+          </Link>
+        </div>
+
         {/* Copyright */}
-        <div className="col-12 text-center mt-3 text-body-secondary medium">
+        <div className="col-12 text-center mt-3 text-body-secondary medium pb-3">
           &copy; {new Date().getFullYear()} SUNSHINE WELFARE ACTION MISSION. All
           rights reserved.
         </div>

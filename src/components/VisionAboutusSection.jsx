@@ -1,4 +1,5 @@
 import CustomCarousel from "./VisionMissionCards"; // adjust path if needed
+import OurMissionCards from "./OurMissionForAboutUs";
 import { HandHeartIcon,TargetIcon,ShootingStarIcon,StarIcon} from "@phosphor-icons/react";
 
 
@@ -28,8 +29,8 @@ const slides = [
   },
 ];
 
-const VisionSection = () => {
-  return <CustomCarousel slides={slides} />;
+const VisionAboutUsSection = () => {
+  return <OurMissionCards slides={slides} />;
 };
 
-export default VisionSection;
+export default VisionAboutUsSection;

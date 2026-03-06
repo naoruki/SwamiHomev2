@@ -109,3 +109,16 @@
 .arrow-icon.rotate {
   transform: rotate(180deg);
 }
+
+
+.footer-link {
+  text-decoration: none;
+  color: #6c757d;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #b30958;   /* match your Instagram pink */
+  text-decoration: underline;
+}

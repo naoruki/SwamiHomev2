@@ -31,10 +31,18 @@
 .custom-card-content h2 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .custom-card-content {
   text-align: center;
+}
+.slide-text {
+  font-weight: 500;        /* bold */
+  font-size: 1.1rem;       /* slightly bigger */
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: #333;
 }
 
 

@@ -1,12 +1,11 @@
 import { useState } from "react";
 import "../styles/VisionMission.css"; // Use a separate CSS file for uniqueness
 
-const CustomCards = ({ slides }) => {
+const OurMissionCards = ({ slides }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
     <div className="custom-card-container">
-      <center><h1>Our Heart & Soul</h1></center>
       <div className="custom-card-grid">
         {slides.map((slide, index) => (
           <div
@@ -28,4 +27,4 @@ const CustomCards = ({ slides }) => {
   );
 };
 
-export default CustomCards;
+export default OurMissionCards;

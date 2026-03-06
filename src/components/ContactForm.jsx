@@ -6,9 +6,11 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
+
   const [errors, setErrors] = useState({});
   const [captchaToken, setCaptchaToken] = useState(null);
   const formRef = useRef(null);
@@ -18,13 +20,27 @@ const ContactForm = () => {
 
   const homeUrl = `${window.location.origin}/`;
 
+  // Existing: blocks special chars for general fields
   const hasSpecialChars = (text) => /[^a-zA-Z0-9 @.,?!'"()-]/.test(text);
+
+  // New: phone can only contain digits, +, and spaces
+  const isInvalidPhone = (text) => /[^0-9+ ]/.test(text);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    if (hasSpecialChars(value)) {
+    // Validate phone differently
+    if (name === "phone" && isInvalidPhone(value)) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Only numbers are allowed (digits, spaces, +).",
+      }));
+      return;
+    }
+
+    // Validate other fields
+    if (name !== "phone" && hasSpecialChars(value)) {
       setErrors((prev) => ({
         ...prev,
         [name]: "Special characters are not allowed.",
@@ -92,11 +108,7 @@ const ContactForm = () => {
       method="POST"
       onSubmit={handleBeforeSubmit}
     >
-      <input
-        type="hidden"
-        name="_subject"
-        value="New Contact Form Submission"
-      />
+      <input type="hidden" name="_subject" value="New Contact Form Submission" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_next" value={homeUrl} />
@@ -137,6 +149,21 @@ const ContactForm = () => {
           maxLength={200}
         />
         {errors.email && <p className="text-danger">{errors.email}</p>}
+      </div>
+
+      {/* Contact Number */}
+      <div className="mb-3">
+        <label className="form-label">Contact Number</label>
+        <input
+          type="tel"
+          className="form-control"
+          name="phone"
+          placeholder="e.g. +65 9123 4567"
+          value={formData.phone}
+          onChange={handleChange}
+          maxLength={20}
+        />
+        {errors.phone && <p className="text-danger">{errors.phone}</p>}
       </div>
 
       {/* Subject */}

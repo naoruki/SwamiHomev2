@@ -2,7 +2,7 @@ const AboutUsSection = () => (
   <div className="container about-us-section">
     <h5>
       <center>
-        Welcome to Swami Home!
+        <h2><b>Welcome to Swami Home!</b></h2>
         <br />
         Founded in 1986 by a group of devoted individuals in Singapore, Swami
         Home was established with a heartfelt desire to give back to society. It

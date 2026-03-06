@@ -2,6 +2,7 @@ import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import Logo from "../assets/logo.png";
 import HoverNavDropdown from "./HoverNavDropdown"; // adjust path if needed
 import { useEffect } from "react";
+import { InstagramLogoIcon, FacebookLogoIcon } from "@phosphor-icons/react";
 import "../styles/DropdownHover.css";
 
 import { Link } from "react-router-dom";
@@ -96,7 +97,10 @@ function NavBar() {
                   </a>
                 </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="/daycare-services" className="dropdown-hover">
+              <NavDropdown.Item
+                href="/daycare-services"
+                className="dropdown-hover"
+              >
                 Day Care Services
                 <div className="dropdown-submenu">
                   <a
@@ -113,7 +117,10 @@ function NavBar() {
                   </a>
                 </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="/home-based-services" className="dropdown-hover">
+              <NavDropdown.Item
+                href="/home-based-services"
+                className="dropdown-hover"
+              >
                 Home-Care Services
                 <div className="dropdown-submenu">
                   <a
@@ -139,10 +146,7 @@ function NavBar() {
                   >
                     Occupational Therapy
                   </a>
-                  <a
-                    className="dropdown-item"
-                    href="/therapy/#Physiotherapy"
-                  >
+                  <a className="dropdown-item" href="/therapy/#Physiotherapy">
                     Physiotherapy
                   </a>
                 </div>
@@ -184,9 +188,29 @@ function NavBar() {
                 Tender
               </NavDropdown.Item>
             </HoverNavDropdown>
-            <Nav className="ms-auto">
-              <Nav.Link href="/contact-us" active>
+            <Nav className="ms-auto align-items-center gap-3">
+              <Nav.Link as={Link} to="/contact-us">
                 Contact Us
+              </Nav.Link>
+
+              {/* Facebook */}
+              <Nav.Link
+                href="https://www.facebook.com/profile.php?id=61552785959134"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-0"
+              >
+                <FacebookLogoIcon size={30} weight="fill" />
+              </Nav.Link>
+
+              {/* Instagram */}
+              <Nav.Link
+                href="https://www.instagram.com/savvysilverstars/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-0"
+              >
+                <InstagramLogoIcon size={30} weight="fill" />
               </Nav.Link>
             </Nav>
           </Nav>

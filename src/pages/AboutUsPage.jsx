@@ -4,7 +4,9 @@ import AboutUsHero from "../components/AboutUsHero";
 import AboutUsSection from "../components/AboutUsSection";
 import FiveCoreValueSection from "../components/FiveCoreValueSection";
 import OurJourney from "../components/JourneySection";
-
+import VisionSection from "../components/VisionSection.jsx";
+import OurMissionCards from "../components/OurMissionForAboutUs.jsx";
+import VisionAboutUsSection from "../components/VisionAboutusSection.jsx";
 const AboutUsPage = () => {
   const { hash } = useLocation();
 
@@ -23,8 +25,13 @@ const AboutUsPage = () => {
   return (
     <div>
       <AboutUsHero />
+      
       <AboutUsSection />
+      <VisionAboutUsSection />
+      {/* <VisionSection/> */}
+      
       <FiveCoreValueSection />
+
       <OurJourney />
     </div>
   );

@@ -31,3 +31,11 @@
 #fullscreen-navbar .dropdown-toggle {
   font-weight: 700 !important;
 }
+.navbar .phosphor-icon {
+  transition: 0.3s ease;
+}
+
+.navbar .phosphor-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}

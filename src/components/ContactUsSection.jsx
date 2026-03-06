@@ -15,6 +15,18 @@ const ContactUsSection = () => (
           <br />
           Email: enquiry@swami.org.sg
         </div>
+        <br/>
+        <ul className="list-unstyled text-body-secondary">
+            <li>
+              <strong>Opening Hours:</strong>
+              <br /> Mon–Fri, 8.30am–5.30pm
+            </li>
+            <li>
+              <strong>Visiting Hours:</strong>
+              <br /> Mon–Sun, 9.00am–7.00pm 
+              (Including PH)
+            </li>
+          </ul>
       </div>
       <div className="col-12 col-md-6 py-5">
         <h4>Drop Us An Message</h4>

@@ -42,7 +42,12 @@ function CustomAccordion() {
   const enabledJobs = jobs.filter((job) => job.enabled);
 
   return (
-    <div className="accordion-container mb-5 mt-5">
+    // ✅ ADDED: id for jump link target + scrollMarginTop for fixed navbar offset
+    <div
+      id="job-listing"
+      className="accordion-container mb-5 mt-5"
+      style={{ scrollMarginTop: "90px" }}
+    >
       <h2>Available Positions</h2>
       {enabledJobs.length === 0 ? (
         <p>No jobs available at the moment.</p>
