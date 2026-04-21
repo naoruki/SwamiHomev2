@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { FacebookLogoIcon, InstagramLogoIcon } from "@phosphor-icons/react"; // ✅ ADDED
 
 function NavBarMobile() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -486,6 +487,28 @@ function NavBarMobile() {
                 Contact Us
               </Nav.Link>
             </Nav>
+
+            {/* ✅ ONLY ADDITION */}
+            <div className="pt-3 d-flex gap-3">
+              <Nav.Link
+                href="https://www.facebook.com/profile.php?id=61552785959134"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-0"
+              >
+                <FacebookLogoIcon size={30} weight="fill" />
+              </Nav.Link>
+
+              <Nav.Link
+                href="https://www.instagram.com/savvysilverstars/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-0"
+              >
+                <InstagramLogoIcon size={30} weight="fill" />
+              </Nav.Link>
+            </div>
+
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>

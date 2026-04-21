@@ -23,7 +23,7 @@ const slides = [
     {
     icon: <StarIcon  size={40} weight="fill" />,
     heading: "Our Motto",
-    text: "“Love All Serve All”",
+    text: "Love all, serve all. Help Ever, Hurt Never.”",
 
   },
 ];

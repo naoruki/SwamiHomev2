@@ -1,4 +1,4 @@
-import landingImg from "../assets/landing1.png"; // Adjust path if needed
+import landingImg from "../assets/landingimg1.png"; // Adjust path if needed
 const HeroSection = () => {
   return (
     <div className="container col-xxl-8 px-4 py-5">
@@ -26,7 +26,7 @@ const HeroSection = () => {
             family, supported by dedicated staff in a safe and nurturing
             environment.
           </p>
-          <p>"Love all, serve all."</p>
+          <p>"Love all, serve all. Help Ever, Hurt Never."</p>
         </div>
       </div>
     </div>

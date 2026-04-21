@@ -7,13 +7,13 @@ const slides = [
   {
     icon: <HandHeartIcon  size={40} weight="fill" />,
     heading: "Our Vision",
-    text: "“A world-class organization for eldercare and the needy.”",
+    text: "“A centre for Excellence in Human Values and a role model for elder care”",
 
   },
   {
     icon: <TargetIcon  size={40} weight="fill" />,
     heading: "Our Mission",
-    text: "“To provide holistic quality care with love and dedication for the elderly and needy driven by teamwork and professionalism”",
+    text: "“Providing holistic quality care for the elderly, needy and staff by consciously transforming into more humane individuals. Together we dedicate ourselves to selfless service with selfless love.”",
 
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     {
     icon: <StarIcon  size={40} weight="fill" />,
     heading: "Our Motto",
-    text: "“Love All Serve All”",
+    text: "“Love all, serve all. Help Ever, Hurt Never.”",
 
   },
 ];

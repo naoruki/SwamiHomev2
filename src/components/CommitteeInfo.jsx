@@ -1,25 +1,29 @@
-
 const committeeMembers = [
   { name: 'Yap Boon Phye', role: 'President' },
   { name: 'Tan Ngian Kwang', role: 'Honorary Secretary' },
-  { name: 'Kenny Tan Choon Keong', role: 'Honorary Treasurer' },
-  { name: 'Boon Wendy', role: 'Committee Member' },
-  { name: 'Quek Cheng Lock Ramon', role: 'Committee Member' },
-  { name: 'R Munggam s/o Apasamy', role: 'Committee Member' },
+  { name: 'Kenny Tan', role: 'Honorary Treasurer' },
+  { name: 'Wendy Boon', role: 'Committee Member' },
+  { name: 'Ramon Quek', role: 'Committee Member' },
+  { name: 'R Munggam', role: 'Committee Member' },
   { name: 'K. Ravintheran', role: 'Committee Member' },
-  { name: 'Bong Gee Choi', role: 'Committee Member' },
+  { name: 'Anthony Bong', role: 'Committee Member' },
   { name: 'Vijay Das', role: 'Committee Member' },
   { name: 'Aurobind Yap', role: 'Committee Member' },
   { name: 'Govind Yap', role: 'Committee Member' },
 ];
 
-const slugify = (text) =>
-  text.toLowerCase().replace(/[^a-z0-9]/g, '-');
+const staffAttendance = [
+  { name: 'Hans Goh', role: 'Executive Director' },
+  { name: 'Lucas Seah', role: 'Assistant Executive Director' },
+  { name: 'Chen Zhen Zhen', role: 'Assistant Executive Director/Finance' },
+];
+
+const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
 const CommitteeCards = () => {
-  const president = committeeMembers.filter(m => m.role === 'President');
-  const honorary = committeeMembers.filter(m => m.role.includes('Honorary'));
-  const members = committeeMembers.filter(m => m.role === 'Committee Member');
+  const president = committeeMembers.filter((m) => m.role === 'President');
+  const honorary = committeeMembers.filter((m) => m.role.includes('Honorary'));
+  const members = committeeMembers.filter((m) => m.role === 'Committee Member');
 
   const renderCards = (group) =>
     group.map((member, index) => {
@@ -37,6 +41,11 @@ const CommitteeCards = () => {
       <div className="card-row-com">{renderCards(president)}</div>
       <div className="card-row-com">{renderCards(honorary)}</div>
       <div className="card-row-com">{renderCards(members)}</div>
+
+      <div className="staff-attendance-section">
+        <h3 className="staff-attendance-title">Staff In Attendance</h3>
+        <div className="card-row-com">{renderCards(staffAttendance)}</div>
+      </div>
     </div>
   );
 };

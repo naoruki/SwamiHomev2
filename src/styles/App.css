@@ -122,3 +122,10 @@
   color: #b30958;   /* match your Instagram pink */
   text-decoration: underline;
 }
+
+.card-header-com {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
