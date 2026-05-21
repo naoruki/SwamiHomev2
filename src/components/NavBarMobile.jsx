@@ -85,11 +85,11 @@ function NavBarMobile() {
     }
     // Auto-open if already inside
     setShowResidentialSubmenu(
-      location.pathname.startsWith("/residential-services")
+      location.pathname.startsWith("/residential-services"),
     );
     setShowDaycareSubmenu(location.pathname.startsWith("/daycare-services"));
     setShowHomeBasedSubmenu(
-      location.pathname.startsWith("/home-based-services")
+      location.pathname.startsWith("/home-based-services"),
     );
     setShowTherapySubmenu(location.pathname.startsWith("/therapy"));
     // Navbar scroll effect
@@ -234,6 +234,16 @@ function NavBarMobile() {
                 >
                   PDPA
                 </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
+                  to="/publications"
+                  onClick={handleNavClick}
+                  className={
+                    location.pathname === "/publications" ? "active" : ""
+                  }
+                >
+                  Publications
+                </NavDropdown.Item>
               </NavDropdown>
 
               {/* Services Dropdown */}
@@ -330,7 +340,9 @@ function NavBarMobile() {
                     as={Link}
                     to="/home-based-services/#home-medical"
                     onClick={handleNavClick}
-                    className={location.hash === "#home-medical" ? "active" : ""}
+                    className={
+                      location.hash === "#home-medical" ? "active" : ""
+                    }
                   >
                     Home Medical & Home Nursing Services
                   </NavDropdown.Item>
@@ -338,7 +350,9 @@ function NavBarMobile() {
                     as={Link}
                     to="/home-based-services/#Home-Help-Services"
                     onClick={handleNavClick}
-                    className={location.hash === "#Home-Help-Services" ? "active" : ""}
+                    className={
+                      location.hash === "#Home-Help-Services" ? "active" : ""
+                    }
                   >
                     Home Help Services
                   </NavDropdown.Item>
@@ -427,7 +441,9 @@ function NavBarMobile() {
                   as={Link}
                   to="/past-events"
                   onClick={handleNavClick}
-                  className={location.pathname === "/past-events" ? "active" : ""}
+                  className={
+                    location.pathname === "/past-events" ? "active" : ""
+                  }
                 >
                   Past Event Highlights
                 </NavDropdown.Item>
@@ -508,7 +524,6 @@ function NavBarMobile() {
                 <InstagramLogoIcon size={30} weight="fill" />
               </Nav.Link>
             </div>
-
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>

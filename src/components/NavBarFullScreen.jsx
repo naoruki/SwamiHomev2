@@ -75,6 +75,9 @@ function NavBar() {
               <NavDropdown.Item href="/pdpa" className="">
                 PDPA
               </NavDropdown.Item>
+              <NavDropdown.Item href="/publications" className="">
+                Publications
+              </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Services" id="services-dropdown">
               <NavDropdown.Item
