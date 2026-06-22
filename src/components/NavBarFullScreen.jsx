@@ -187,6 +187,9 @@ function NavBar() {
               <NavDropdown.Item href="/volunteer" className="">
                 Volunteer
               </NavDropdown.Item>
+              <NavDropdown.Item href="/meal-delivery-volunteers" className="">
+                Meal on Wheels Volunteer
+              </NavDropdown.Item>
               <NavDropdown.Item href="/tender" className="">
                 Tender
               </NavDropdown.Item>

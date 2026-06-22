@@ -2,7 +2,7 @@ import "../styles/Volunteer.css";
 const VolunteerHero = () => (
   <section className="volunteer-hero">
     <div className="volunteer-hero__content">
-      Support Our Projects
+      <b>Support Our Projects</b>
       <h1>Become a <span className="caveat-font">Volunteer</span></h1>
       <p>
         Join our mission to make a difference! As a volunteer, you’ll help

@@ -8,14 +8,14 @@
 .career-hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000000;
 }
 
 .career-hero-content p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto 30px;
-  color: #fff;
+  color: #000000;
 }
 
 .career-hero-buttons .btn {

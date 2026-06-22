@@ -485,6 +485,14 @@ function NavBarMobile() {
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={Link}
+                  to="/meal-delivery-volunteers"
+                  onClick={handleNavClick}
+                  className={location.pathname === "/meal-delivery-volunteers" ? "active" : ""}
+                >
+                  Meal on Wheels Volunteer
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
                   to="/tender"
                   onClick={handleNavClick}
                   className={location.pathname === "/tender" ? "active" : ""}

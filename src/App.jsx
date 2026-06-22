@@ -31,6 +31,7 @@ import PastEventsPage from "./pages/PastEvents.jsx";
 import Gallery from "./pages/GalleryPage.jsx";
 import ActivtiesPage from "./pages/ActivitiesPage.jsx";
 import PublicationPage from "./pages/PublicationPage.jsx";
+import DeliveryVolunteerPage from "./pages/MealDeliveryVolunteerPage.jsx";
 import "./config/appInsights";
 function AppContent() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function AppContent() {
           <Route path="about-us" element={<AboutUsPage />} />
           <Route path="contact-us" element={<ContactUsPage />} />
           <Route path="career" element={<CareerPage />} />
+          <Route path="meal-delivery-volunteers" element={<DeliveryVolunteerPage />} />
           <Route path="organization" element={<Organization />} />
           <Route path="management-committee" element={<ManageCom />} />
           <Route
