@@ -99,6 +99,10 @@ const Footer = () => {
           <Link to="/contact-us" className="footer-link">
             Contact Us
           </Link>
+          <span className="mx-2">|</span>
+          <Link to="/Privacy-Policy" className="footer-link">
+            Privacy Policy
+          </Link>
         </div>
 
         {/* Copyright */}

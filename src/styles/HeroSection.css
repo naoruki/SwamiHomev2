@@ -1,0 +1,16 @@
+.hero-banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-banner {
+    padding-top: 60px;   /* Adjust as needed */
+  }
+}

@@ -228,21 +228,13 @@ function NavBarMobile() {
 
                 <NavDropdown.Item
                   as={NavLink}
-                  to="/pdpa"
-                  onClick={handleNavClick}
-                  className={location.pathname === "/pdpa" ? "active" : ""}
-                >
-                  PDPA
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={Link}
-                  to="/publications"
+                  to="/Privacy-Policy"
                   onClick={handleNavClick}
                   className={
-                    location.pathname === "/publications" ? "active" : ""
+                    location.pathname === "/Privacy-Policy" ? "active" : ""
                   }
                 >
-                  Publications
+                  Privacy Policy
                 </NavDropdown.Item>
               </NavDropdown>
 
@@ -455,6 +447,9 @@ function NavBarMobile() {
                 >
                   Photo Gallery
                 </NavDropdown.Item>
+                <NavDropdown.Item href="/publications" className="">
+                  Publications
+                </NavDropdown.Item>
               </NavDropdown>
 
               {/* Get Involved Dropdown */}
@@ -487,7 +482,11 @@ function NavBarMobile() {
                   as={Link}
                   to="/meal-delivery-volunteers"
                   onClick={handleNavClick}
-                  className={location.pathname === "/meal-delivery-volunteers" ? "active" : ""}
+                  className={
+                    location.pathname === "/meal-delivery-volunteers"
+                      ? "active"
+                      : ""
+                  }
                 >
                   Meal on Wheels Volunteer
                 </NavDropdown.Item>

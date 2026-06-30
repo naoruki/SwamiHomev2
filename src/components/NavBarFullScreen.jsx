@@ -72,11 +72,8 @@ function NavBar() {
               <NavDropdown.Item href="/annual-report" className="">
                 Annual Report
               </NavDropdown.Item>
-              <NavDropdown.Item href="/pdpa" className="">
-                PDPA
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/publications" className="">
-                Publications
+              <NavDropdown.Item href="/Privacy-Policy" className="">
+                Privacy Policy
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Services" id="services-dropdown">
@@ -175,6 +172,9 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item href="/gallery" className="">
                 Photo Gallery
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/publications" className="">
+                Publications
               </NavDropdown.Item>
             </HoverNavDropdown>
             <HoverNavDropdown title="Get Involved" id="careers-dropdown">

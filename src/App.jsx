@@ -64,7 +64,7 @@ function AppContent() {
           />
           <Route path="daycare-services" element={<DayCareServicePage />} />
           <Route path="home-based-services" element={<HomeBasePage />} />
-          <Route path="PDPA" element={<PDPA />} />
+          <Route path="Privacy-Policy" element={<PDPA />} />
           <Route path="founder" element={<Founder />} />
           <Route path="therapy" element={<TherapyPage />} />
           <Route path="annual-report" element={<AnnualReportPage />} />
