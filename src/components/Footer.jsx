@@ -106,9 +106,9 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="col-12 text-center mt-3 text-body-secondary medium pb-3">
+        <div className="col-12 text-center mt-3 text-body-secondary medium pb-3"><b>
           &copy; {new Date().getFullYear()} SUNSHINE WELFARE ACTION MISSION. All
-          rights reserved.
+          rights reserved.</b>
         </div>
       </footer>
     </div>

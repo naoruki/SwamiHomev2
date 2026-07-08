@@ -7,9 +7,9 @@ import secondhome from "../assets/secondhome.png";
 import before from "../assets/Picture3.png";
 import emptyLand from "../assets/swami3home.png";
 import swamihome3 from "../assets/swami3homeafter.png";
-import sunshine from "../assets/sunshine.png";
+import sunshine from "../assets/sunshine.jpeg";
 import graceopen from "../assets/graceopen.png";
-import grace from "../assets/grace.png";
+import grace from "../assets/grace.jpeg";
 import ImageSlider from "./ImageSlider.jsx";
 
 const JourneySection = () => {
@@ -199,7 +199,32 @@ const JourneySection = () => {
             </p>
           </div>
           <div className="col-12 col-md-6 order-1 order-md-2">
-            <ImageSlider slides={slides2} />
+            <img
+              src={emptyLand}
+              className="img-fluid"
+              alt="Landing Image"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div className="row  my-4">
+
+          <div className="col-12 col-md-6 order-2 order-md-1">
+            <p>
+              Year 1997, Swami Home at 5 Sembawang Walk is completed
+            </p>
+          </div>
+          <div className="col-12 col-md-6 order-1 order-md-2">
+          <img
+              src={swamihome3}
+              className="img-fluid"
+              alt="Landing Image"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -237,7 +262,32 @@ const JourneySection = () => {
           </p>
         </div>
         <div className="col-12 col-md-6 order-1 order-md-2">
-          <ImageSlider slides={sunshineSlides} />
+          <img
+              src={grace}
+              className="img-fluid"
+              alt="Landing Image"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
+        </div>
+      </div>
+      <div className="row  my-4">
+        
+        <div className="col-12 col-md-6 order-2 order-md-1">
+          <p>
+            Open on 16th November 2019 by Mr Ong Ye Kung, Minister for Education.
+          </p>
+        </div>
+        <div className="col-12 col-md-6 order-1 order-md-2">
+          <img
+              src={graceopen}
+              className="img-fluid"
+              alt="Landing Image"
+              width="700"
+              height="500"
+              loading="lazy"
+            />
         </div>
       </div>
     </Container>

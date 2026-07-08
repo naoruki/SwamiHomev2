@@ -1,73 +1,99 @@
-import { HouseLineIcon, SunIcon, HouseIcon, PersonIcon, ShootingStarIcon } from "@phosphor-icons/react";
+import {
+  HouseLineIcon,
+  SunIcon,
+  HouseIcon,
+  PersonIcon,
+  ArrowRightIcon,
+} from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
+import "../styles/Services.css";
+
+const services = [
+  {
+    title: "Residential Services",
+    description: [
+      "Residential Care",
+      "Dementia Residence",
+    ],
+    icon: <HouseLineIcon size={44} weight="duotone" />,
+    link: "/residential-services",
+  },
+  {
+    title: "Day Care Services",
+    description: [
+      "Dementia Day Care Centre",
+      "Day Rehabilitation Centre",
+    ],
+    icon: <SunIcon size={44} weight="duotone" />,
+    link: "/daycare-services",
+  },
+  {
+    title: "Home-Based Services",
+    description: [
+      "Home Medical & Home Nursing Services",
+      "Home Help Services",
+    ],
+    icon: <HouseIcon size={44} weight="duotone" />,
+    link: "/home-based-services",
+  },
+  {
+    title: "Therapy Services",
+    description: [
+      "Occupational Therapy",
+      "Physiotherapy",
+    ],
+    icon: <PersonIcon size={44} weight="duotone" />,
+    link: "/therapy",
+  },
+];
 
 const Services = () => {
   return (
-    <div className="container pb-5"> {/* Added pb-5 for bottom padding */}
-      {/* Row 1 */}
-      <center><h1>Our Services</h1></center>
-      <div className="row mb-3">
-        <div className="col-12 col-md-6 mb-3 d-flex">
-          <div className="card h-100 w-100">
-            <div className="card-body">
-              <HouseLineIcon size={50} color="#E25D9C" weight="duotone" />
-              <h2>Residential Services</h2>
-              <p>
-                Residential Care
-                <br />
-                Dementia Residence
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 mb-3">
-          <div className="card">
-            <div className="card-body">
-              <SunIcon size={50} color="#E25D9C"weight="duotone" />
-              <h2>Day Care Services</h2>
-              <p>
-                Dementia Day Care Centre
-                <br />
-                Day Rehabilitation Centre
-                <br/>
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Row 2 */}
-      <div className="row">
-        <div className="col-12 col-md-6 col-lg-6 mb-3">
-          <div className="card ">
-            <div className="card-body">
-              <HouseIcon size={50} color="#E25D9C" weight="duotone" />
-              <h2>Home-Based Services</h2>
-              <p>
-                Home Medical & Home Nursing Services
-                <br />
-                Home Help Services
-                <br/>
-              </p>
-            </div>
-          </div>
+    <section className="services-section py-5">
+      <div className="container-fluid px-5">
+        <div className="text-center mb-5">
+          <h1 className="service-heading">Our Services</h1>
+          <p className="text-muted">
+            Comprehensive care and support tailored to every stage of life.
+          </p>
         </div>
 
-        <div className="col-12 col-md-6 col-lg-6 mb-3">
-          <div className="card h-100 w-100">
-            <div className="card-body">
-              <PersonIcon size={50} color="#E25D9C" weight="duotone" />
-              <h2>Therapy Services</h2>
-              <p>
-                Occupational Therapy
-                <br />
-                Physiotherapy
-              </p>
+        <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+          {services.map((service, index) => (
+            <div className="col" key={index}>
+              <div className="card service-card h-100">
+                <div className="card-body">
+
+                  <div className="service-icon">
+                    {service.icon}
+                  </div>
+
+                  <h4 className="service-title">
+                    {service.title}
+                  </h4>
+
+                  <ul className="service-description">
+                    {service.description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+
+                  <Link to={service.link} className="service-more">
+                    Find out more
+                    <ArrowRightIcon
+                      size={16}
+                      weight="bold"
+                      className="ms-2"
+                    />
+                  </Link>
+
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

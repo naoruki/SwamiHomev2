@@ -1,0 +1,184 @@
+.donation-section {
+    padding: 80px 0;
+}
+
+.donation-card {
+
+    background: linear-gradient(
+        135deg,
+        #fdeef5,
+        #fff,
+        #fdeef5
+    );
+
+    border-radius: 30px;
+
+    padding: 55px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Decorative circles */
+
+.donation-card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(255,255,255,.35);
+    top:-80px;
+    right:-80px;
+}
+
+.donation-card::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    bottom:-40px;
+    left:-40px;
+}
+
+/* Left */
+
+.heart-circle{
+
+    width:170px;
+    height:170px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#E25D9C;
+
+    box-shadow:0 10px 30px rgba(226,93,156,.2);
+}
+
+/* Middle */
+
+.donation-title{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    color:#C53B80;
+
+    margin-bottom:18px;
+}
+
+.donation-description{
+
+    font-size:1.1rem;
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin:0;
+}
+
+/* Right */
+
+.donation-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    align-items:flex-end;
+}
+
+.donation-btn{
+
+    width:240px;
+
+    text-align:center;
+
+    padding:16px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.donate-btn{
+
+    background:#E25D9C;
+
+    color:white;
+}
+
+.donate-btn:hover{
+
+    background:#c74483;
+
+    color:white;
+}
+
+.volunteer-btn{
+
+    border:2px solid #E25D9C;
+
+    color:#E25D9C;
+
+    background:white;
+}
+
+.volunteer-btn:hover{
+
+    background:#E25D9C;
+
+    color:white;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .donation-card{
+
+        padding:40px 25px;
+
+        text-align:center;
+    }
+
+    .heart-circle{
+
+        margin-bottom:35px;
+    }
+
+    .donation-actions{
+
+        align-items:center;
+
+        margin-top:35px;
+    }
+
+    .donation-title{
+
+        font-size:2rem;
+    }
+}

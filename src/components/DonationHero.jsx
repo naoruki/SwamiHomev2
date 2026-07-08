@@ -1,56 +1,61 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
-import heroImage from "../assets/donateimg.png"; // Update path as needed
-const DonationHero = () => {
+import { Heart, Users } from "@phosphor-icons/react";
+import donationHeart from "../assets/donation-heart.png";
+import "../styles/DonateHeader.css";
+
+export default function DonateHeader() {
   return (
-    <Container className="py-5">
-      <Row className="align-items-center g-5">
-        {/* Left Column: Image */}
-        <Col xs={12} sm={12} lg={6} className="pt-5 pt-sm-0 text-center ">
-          <img
-            src={heroImage}
-            className="d-block mx-auto img-fluid"
-            alt="Bootstrap Themes"
-            width={700}
-            height={500}
-            loading="lazy"
-          />
-        </Col>
+    <section className="donate-hero">
+      <div className="floating-heart heart-one">♥</div>
+      <div className="floating-heart heart-two">♥</div>
+      <div className="floating-heart heart-three">♥</div>
 
-        {/* Right Column: Text */}
-        <Col lg={6}>
-          <h1 className="fw-bold lh-1 mb-3">
-            Give <span className="caveat-font">Hope</span>. Share{" "}
-            <span className="caveat-font">Love</span>.
+      <div className="donate-hero-container">
+        <div className="donate-hero-text">
+          <div className="support-pill">💗 Support SWAMI Home</div>
+
+          <h1>
+            Give <span>Hope.</span>
+            <br />
+            Share <span>Love.</span>
           </h1>
-          <p className="lead p-2">
-            Make a difference in the lives of those in need. Your generous
-            donations help us provide essential services and support to our
-            community. Every contribution counts, no matter how small.
-          </p>
-          <div className="row g-2">
-            <div className="col-12 col-md-4">
-              <Button
-                size="lg"
-                className="volunteer-button w-100"
-                href="#donation-section"
-              >
-                Donate
-              </Button>
-            </div>
-            <div className="col-12 col-md-4">
-              <Button
-                size="lg"
-                className="volunteer-button w-100"
-                href="/volunteer"
-              >
-                Volunteer
-              </Button>
-            </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
 
-export default DonationHero;
+          <p>
+            Your generosity helps us provide quality care, meaningful programmes,
+            and a safe home for persons living with dementia.
+          </p>
+
+          <div className="donate-hero-buttons">
+            <a
+              href="https://securecheckout.hit-pay.com/payment-request/@sunshine-welfare-action-mission-swami"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="donate-main-btn"
+            >
+              <Heart size={24} weight="fill" />
+              Donate Now
+            </a>
+
+            <a href="/volunteer" className="donate-outline-btn">
+              <Users size={24} weight="bold" />
+              Volunteer
+            </a>
+          </div>
+        </div>
+
+        <div className="donate-hero-image">
+          <div className="image-glow"></div>
+          <img src={donationHeart} alt="Support SWAMI Home" />
+        </div>
+      </div>
+
+      <div className="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path
+            d="M0,64 C240,130 480,10 720,70 C960,130 1200,40 1440,90 L1440,120 L0,120 Z"
+            fill="#ffffff"
+          />
+        </svg>
+      </div>
+    </section>
+  );
+}

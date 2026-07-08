@@ -1,16 +1,18 @@
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import Logo from "../assets/logo.png";
-import HoverNavDropdown from "./HoverNavDropdown"; // adjust path if needed
+import HoverNavDropdown from "./HoverNavDropdown";
 import { useEffect } from "react";
 import { InstagramLogoIcon, FacebookLogoIcon } from "@phosphor-icons/react";
 import "../styles/DropdownHover.css";
-
 import { Link } from "react-router-dom";
 
 function NavBar() {
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.getElementById("fullscreen-navbar");
+
+      if (!navbar) return;
+
       if (window.scrollY > 0) {
         navbar.classList.add("scrolled");
       } else {
@@ -28,7 +30,7 @@ function NavBar() {
       className="d-none d-lg-flex sticky-navbar fullscreen-navbar"
       id="fullscreen-navbar"
     >
-      <Container>
+      <Container fluid className="px-4">
         <Navbar.Brand as={Link} to="/">
           <div className="d-flex align-items-center">
             <img
@@ -43,182 +45,102 @@ function NavBar() {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbar-nav" />
-        <Navbar.Collapse id="navbar-nav ">
-          <Nav className="ms-auto">
-            {/* <Nav.Link as={Link} to="/" active>
-              Home
-            </Nav.Link> */}
 
-            <HoverNavDropdown
-              title="About Us"
-              id="about-dropdown"
-              className="NavDropItem"
-            >
-              <NavDropdown.Item href="/about-us" className="">
-                About Us
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/about-us/#our-journey" className="">
+        <Navbar.Collapse id="navbar-nav">
+          <Nav className="ms-auto align-items-center">
+            <HoverNavDropdown title="About Us" id="about-dropdown">
+              <NavDropdown.Item href="/about-us">About Us</NavDropdown.Item>
+              <NavDropdown.Item href="/about-us/#our-journey">
                 Our Journey
               </NavDropdown.Item>
-              <NavDropdown.Item href="/founder" className="">
-                Our Founder
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/organization" className="">
+              <NavDropdown.Item href="/founder">Our Founder</NavDropdown.Item>
+              <NavDropdown.Item href="/organization">
                 Organization Structure
               </NavDropdown.Item>
-              <NavDropdown.Item href="/management-committee" className="">
+              <NavDropdown.Item href="/management-committee">
                 Management Committee
               </NavDropdown.Item>
-              <NavDropdown.Item href="/annual-report" className="">
+              <NavDropdown.Item href="/annual-report">
                 Annual Report
               </NavDropdown.Item>
-              <NavDropdown.Item href="/Privacy-Policy" className="">
+              <NavDropdown.Item href="/Privacy-Policy">
                 Privacy Policy
               </NavDropdown.Item>
             </HoverNavDropdown>
+
             <HoverNavDropdown title="Services" id="services-dropdown">
-              <NavDropdown.Item
-                href="/residential-services"
-                className="dropdown-hover"
-              >
+              <NavDropdown.Item href="/residential-services">
                 Residential Services
-                <div className="dropdown-submenu">
-                  <a
-                    className="dropdown-item"
-                    href="/residential-services/#residential-care"
-                  >
-                    Residential Care
-                  </a>
-                  <a
-                    className="dropdown-item"
-                    href="/residential-services/#dementia-care"
-                  >
-                    Dementia Care
-                  </a>
-                </div>
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href="/daycare-services"
-                className="dropdown-hover"
-              >
+              <NavDropdown.Item href="/daycare-services">
                 Day Care Services
-                <div className="dropdown-submenu">
-                  <a
-                    className="dropdown-item"
-                    href="/daycare-services/#Dementia-Day-Centre"
-                  >
-                    Dementia Day Care Centre
-                  </a>
-                  <a
-                    className="dropdown-item"
-                    href="/daycare-services/#Day-Rehabilitation-Centre"
-                  >
-                    Day Rehabilitation Centre
-                  </a>
-                </div>
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href="/home-based-services"
-                className="dropdown-hover"
-              >
+              <NavDropdown.Item href="/home-based-services">
                 Home-Care Services
-                <div className="dropdown-submenu">
-                  <a
-                    className="dropdown-item"
-                    href="/home-based-services/#home-medical"
-                  >
-                    Home Medical & Home Nursing Services
-                  </a>
-                  <a
-                    className="dropdown-item"
-                    href="/home-based-services/#Home-Help-Services"
-                  >
-                    Home Help Services
-                  </a>
-                </div>
               </NavDropdown.Item>
-              <NavDropdown.Item href="/therapy" className="dropdown-hover">
+              <NavDropdown.Item href="/therapy">
                 Therapy Services
-                <div className="dropdown-submenu">
-                  <a
-                    className="dropdown-item"
-                    href="/therapy/#Occupational-Therapy"
-                  >
-                    Occupational Therapy
-                  </a>
-                  <a className="dropdown-item" href="/therapy/#Physiotherapy">
-                    Physiotherapy
-                  </a>
-                </div>
               </NavDropdown.Item>
             </HoverNavDropdown>
+
             <HoverNavDropdown title="Community Life" id="community-dropdown">
-              <NavDropdown.Item href="/Activities" className="">
+              <NavDropdown.Item href="/Activities">
                 Activities & Programs
               </NavDropdown.Item>
-              <NavDropdown.Item href="/Facilities" className="">
+              <NavDropdown.Item href="/Facilities">
                 Facilities
               </NavDropdown.Item>
-              <NavDropdown.Item href="/Virtual-Tour" className="">
+              <NavDropdown.Item href="/Virtual-Tour">
                 Virtual Tour
               </NavDropdown.Item>
             </HoverNavDropdown>
+
             <HoverNavDropdown title="Media" id="media-dropdown">
-              <NavDropdown.Item href="/events" className="">
+              <NavDropdown.Item href="/events">
                 What's happening
               </NavDropdown.Item>
-              <NavDropdown.Item href="/past-events" className="">
+              <NavDropdown.Item href="/past-events">
                 Past Event Highlights
               </NavDropdown.Item>
-              <NavDropdown.Item href="/gallery" className="">
+              <NavDropdown.Item href="/gallery">
                 Photo Gallery
               </NavDropdown.Item>
-              <NavDropdown.Item href="/publications" className="">
+              <NavDropdown.Item href="/publications">
                 Publications
               </NavDropdown.Item>
             </HoverNavDropdown>
+
             <HoverNavDropdown title="Get Involved" id="careers-dropdown">
-              <NavDropdown.Item href="/career" className="">
-                Careers
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/donate" className="">
-                Donate
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/volunteer" className="">
-                Volunteer
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/meal-delivery-volunteers" className="">
+              <NavDropdown.Item href="/career">Careers</NavDropdown.Item>
+              <NavDropdown.Item href="/donate">Donate</NavDropdown.Item>
+              <NavDropdown.Item href="/volunteer">Volunteer</NavDropdown.Item>
+              <NavDropdown.Item href="/meal-delivery-volunteers">
                 Meal on Wheels Volunteer
               </NavDropdown.Item>
-              <NavDropdown.Item href="/tender" className="">
-                Tender
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/tender">Tender</NavDropdown.Item>
             </HoverNavDropdown>
-            <Nav className="ms-auto align-items-center gap-3">
-              <Nav.Link as={Link} to="/contact-us">
-                Contact Us
-              </Nav.Link>
 
-              {/* Facebook */}
-              <Nav.Link
-                href="https://www.facebook.com/profile.php?id=61552785959134"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-0"
-              >
-                <FacebookLogoIcon size={30} weight="fill" />
-              </Nav.Link>
+            <Nav.Link as={Link} to="/contact-us">
+              Contact Us
+            </Nav.Link>
 
-              {/* Instagram */}
-              <Nav.Link
-                href="https://www.instagram.com/savvysilverstars/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-0"
-              >
-                <InstagramLogoIcon size={30} weight="fill" />
-              </Nav.Link>
-            </Nav>
+            <Nav.Link
+              href="https://www.facebook.com/profile.php?id=61552785959134"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-0 ms-3"
+            >
+              <FacebookLogoIcon size={30} weight="fill" />
+            </Nav.Link>
+
+            <Nav.Link
+              href="https://www.instagram.com/savvysilverstars/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-0 ms-3"
+            >
+              <InstagramLogoIcon size={30} weight="fill" />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
