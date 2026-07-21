@@ -499,6 +499,20 @@ function NavBarMobile() {
                   Tender
                 </NavDropdown.Item>
               </NavDropdown>
+              
+              {/* Community Life Dropdown */}
+              <NavDropdown title="Community Resources" id="community-Resources">
+                <NavDropdown.Item
+                  as={Link}
+                  to="/community-resources"
+                  onClick={handleNavClick}
+                  className={
+                    location.pathname === "/community-resources" ? "active" : ""
+                  }
+                >
+                  Information & Resources
+                </NavDropdown.Item>
+              </NavDropdown>
 
               {/* Contact */}
               <Nav.Link
@@ -511,7 +525,7 @@ function NavBarMobile() {
               </Nav.Link>
             </Nav>
 
-            {/* ✅ ONLY ADDITION */}
+           
             <div className="pt-3 d-flex gap-3">
               <Nav.Link
                 href="https://www.facebook.com/profile.php?id=61552785959134"

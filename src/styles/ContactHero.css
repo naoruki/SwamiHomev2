@@ -1,0 +1,614 @@
+.contact-hero {
+  position: relative;
+  min-height: 510px;
+  padding: 105px 24px 145px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 13% 45%,
+      rgba(246, 173, 201, 0.23) 0,
+      rgba(246, 173, 201, 0) 29%
+    ),
+    radial-gradient(
+      circle at 82% 24%,
+      rgba(255, 226, 135, 0.2) 0,
+      rgba(255, 226, 135, 0) 27%
+    ),
+    linear-gradient(
+      135deg,
+      #fffafc 0%,
+      #fffdf9 53%,
+      #fff9ed 100%
+    );
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.contact-eyebrow {
+  margin: 0 0 16px;
+
+  color: #49a8cf;
+
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-hero h1 {
+  margin: 0 0 28px;
+
+  color: #e65a98;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4.2rem, 7vw, 7.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
+}
+
+.contact-intro {
+  max-width: 790px;
+  margin: 0 auto;
+
+  color: #3d4248;
+
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.contact-decoration {
+  position: absolute;
+  z-index: 3;
+
+  color: #f29aba;
+
+  opacity: 0.88;
+
+  user-select: none;
+  pointer-events: none;
+
+  filter: drop-shadow(0 8px 12px rgba(233, 94, 148, 0.08));
+}
+
+.contact-heart-one {
+  top: 205px;
+  left: 10%;
+
+  font-size: 5.2rem;
+
+  transform: rotate(-9deg);
+}
+
+.contact-heart-two {
+  top: 315px;
+  left: 16%;
+
+  font-size: 2.3rem;
+
+  transform: rotate(13deg);
+}
+
+.contact-heart-three {
+  top: 275px;
+  right: 13%;
+
+  font-size: 5rem;
+
+  transform: rotate(9deg);
+}
+
+.contact-heart-four {
+  top: 420px;
+  right: 10%;
+
+  font-size: 2.2rem;
+
+  transform: rotate(-13deg);
+}
+
+.heart-trail {
+  position: absolute;
+  z-index: 2;
+
+  width: 185px;
+  height: 295px;
+
+  opacity: 0.82;
+
+  pointer-events: none;
+}
+
+.heart-trail::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border: 3px dashed rgba(247, 171, 202, 0.75);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+
+  border-radius: 50%;
+}
+
+.heart-trail-left {
+  top: 285px;
+  left: 3%;
+
+  transform: rotate(-30deg);
+}
+
+.heart-trail-right {
+  top: 335px;
+  right: 2%;
+
+  transform: scaleX(-1) rotate(-30deg);
+}
+
+.contact-sun {
+  position: absolute;
+  z-index: 1;
+
+  top: 36px;
+  right: 4%;
+
+  width: 270px;
+  height: 270px;
+
+  pointer-events: none;
+
+  opacity: 0.72;
+}
+
+.sun-circle {
+  position: absolute;
+  inset: 51px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 37% 33%,
+      #fff8cc 0%,
+      #ffe793 55%,
+      #ffdc71 100%
+    );
+
+  box-shadow:
+    0 20px 55px rgba(255, 205, 59, 0.12),
+    inset 0 0 45px rgba(255, 255, 255, 0.38);
+}
+
+.sun-ray {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 18px;
+  height: 62px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    #ffea9d 0%,
+    #ffe17e 100%
+  );
+
+  transform-origin: 50% 136px;
+}
+
+.ray-1 {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.ray-2 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ray-3 {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.ray-4 {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.ray-5 {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.ray-6 {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.ray-7 {
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.ray-8 {
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.contact-wave {
+  position: absolute;
+  z-index: 4;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 130px;
+
+  pointer-events: none;
+}
+
+.contact-wave svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* Large desktop */
+@media (min-width: 1500px) {
+  .contact-hero {
+    min-height: 540px;
+    padding-top: 120px;
+  }
+
+  .contact-heart-one {
+    left: 11%;
+  }
+
+  .contact-heart-two {
+    left: 18%;
+  }
+
+  .contact-heart-three {
+    right: 15%;
+  }
+
+  .contact-heart-four {
+    right: 11%;
+  }
+
+  .contact-sun {
+    right: 5%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .contact-hero {
+    min-height: 465px;
+    padding: 90px 24px 135px;
+  }
+
+  .contact-hero-content {
+    max-width: 720px;
+  }
+
+  .contact-heart-one {
+    top: 190px;
+    left: 6%;
+
+    font-size: 4.3rem;
+  }
+
+  .contact-heart-two {
+    top: 290px;
+    left: 13%;
+
+    font-size: 2rem;
+  }
+
+  .contact-heart-three {
+    top: 265px;
+    right: 8%;
+
+    font-size: 4.2rem;
+  }
+
+  .contact-heart-four {
+    top: 380px;
+    right: 6%;
+
+    font-size: 1.9rem;
+  }
+
+  .heart-trail-left {
+    left: -1%;
+  }
+
+  .heart-trail-right {
+    right: -2%;
+  }
+
+  .contact-sun {
+    top: 45px;
+    right: 0;
+
+    width: 225px;
+    height: 225px;
+  }
+
+  .sun-circle {
+    inset: 44px;
+  }
+
+  .sun-ray {
+    width: 15px;
+    height: 50px;
+
+    transform-origin: 50% 113px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 820px) {
+  .contact-hero {
+    min-height: 420px;
+    padding: 80px 20px 125px;
+  }
+
+  .contact-hero-content {
+    max-width: 610px;
+  }
+
+  .contact-eyebrow {
+    font-size: 0.88rem;
+  }
+
+  .contact-intro {
+    max-width: 560px;
+  }
+
+  .contact-heart-one {
+    top: 170px;
+    left: 3%;
+
+    font-size: 3.5rem;
+
+    opacity: 0.62;
+  }
+
+  .contact-heart-two {
+    top: 245px;
+    left: 10%;
+
+    font-size: 1.7rem;
+
+    opacity: 0.62;
+  }
+
+  .contact-heart-three {
+    top: 235px;
+    right: 5%;
+
+    font-size: 3.5rem;
+
+    opacity: 0.62;
+  }
+
+  .contact-heart-four {
+    top: 330px;
+    right: 3%;
+
+    font-size: 1.6rem;
+
+    opacity: 0.62;
+  }
+
+  .heart-trail {
+    width: 135px;
+    height: 225px;
+
+    opacity: 0.55;
+  }
+
+  .heart-trail-left {
+    top: 235px;
+    left: -4%;
+  }
+
+  .heart-trail-right {
+    top: 280px;
+    right: -5%;
+  }
+
+  .contact-sun {
+    top: 70px;
+    right: -45px;
+
+    width: 175px;
+    height: 175px;
+
+    opacity: 0.56;
+  }
+
+  .sun-circle {
+    inset: 36px;
+  }
+
+  .sun-ray {
+    width: 11px;
+    height: 38px;
+
+    transform-origin: 50% 88px;
+  }
+
+  .contact-wave {
+    height: 105px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .contact-hero {
+    min-height: 365px;
+    padding: 64px 18px 105px;
+  }
+
+  .contact-hero-content {
+    max-width: 350px;
+  }
+
+  .contact-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 0.76rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  .contact-hero h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(3.35rem, 16vw, 4.5rem);
+  }
+
+  .contact-intro {
+    max-width: 330px;
+
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .contact-heart-one {
+    top: 66px;
+    left: -3px;
+
+    font-size: 2.65rem;
+
+    opacity: 0.38;
+  }
+
+  .contact-heart-two {
+    top: 130px;
+    left: 12%;
+
+    font-size: 1.4rem;
+
+    opacity: 0.38;
+  }
+
+  .contact-heart-three {
+    top: 165px;
+    right: 6px;
+
+    font-size: 2.6rem;
+
+    opacity: 0.36;
+  }
+
+  .contact-heart-four {
+    top: 245px;
+    right: 3%;
+
+    font-size: 1.35rem;
+
+    opacity: 0.36;
+  }
+
+  .heart-trail {
+    width: 88px;
+    height: 145px;
+
+    opacity: 0.34;
+  }
+
+  .heart-trail::before {
+    border-width: 2px;
+  }
+
+  .heart-trail-left {
+    top: 125px;
+    left: -35px;
+  }
+
+  .heart-trail-right {
+    top: 205px;
+    right: -37px;
+  }
+
+  .contact-sun {
+    top: 98px;
+    right: -52px;
+
+    width: 132px;
+    height: 132px;
+
+    opacity: 0.38;
+  }
+
+  .sun-circle {
+    inset: 29px;
+  }
+
+  .sun-ray {
+    width: 8px;
+    height: 27px;
+
+    transform-origin: 50% 66px;
+  }
+
+  .contact-wave {
+    height: 78px;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 390px) {
+  .contact-hero {
+    min-height: 350px;
+    padding-inline: 16px;
+  }
+
+  .contact-hero h1 {
+    font-size: 3.35rem;
+  }
+
+  .contact-intro {
+    max-width: 300px;
+
+    font-size: 0.93rem;
+  }
+
+  .contact-heart-two,
+  .contact-heart-four {
+    display: none;
+  }
+
+  .heart-trail {
+    display: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .contact-decoration,
+  .contact-sun {
+    animation: none;
+  }
+}

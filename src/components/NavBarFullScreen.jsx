@@ -120,6 +120,9 @@ function NavBar() {
               <NavDropdown.Item href="/tender">Tender</NavDropdown.Item>
             </HoverNavDropdown>
 
+            <HoverNavDropdown title="Community Resources" id="community-resources-dropdown">
+              <NavDropdown.Item href="/community-resources">Information & Resources</NavDropdown.Item>
+            </HoverNavDropdown>
             <Nav.Link as={Link} to="/contact-us">
               Contact Us
             </Nav.Link>

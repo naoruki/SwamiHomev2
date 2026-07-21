@@ -1,159 +1,109 @@
-import paynow from "../assets/paynow.png";
-import sgdonate from "../assets/sgdonate.svg";
+import {
+  QrCode,
+  Gift,
+  HandHeart,
+  CreditCard,
+  ArrowRight,
+} from "@phosphor-icons/react";
+import "../styles/DonationOptions.css";
 
-const DonateSection = () => {
+export default function DonationOptions() {
   return (
-    <>
-      <hr />
+    <section id="donation-options" className="donation-options-section">
+      <div className="donation-options-container">
+        <div className="donation-section-title">
+          <span>Ways to Give</span>
+          <h2>Choose a Donation Method</h2>
+          <p>
+            Your support helps SWAMI Home continue providing care, comfort, and
+            meaningful programmes for our residents.
+          </p>
+        </div>
 
-      <div
-        className="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start donation-section pb-5"
-        id="donation-section"
-      >
-        {/* First Card */}
-        <div
-          className="card"
-          style={{
-            width: "18rem",
-            borderRadius: "1rem",
-            overflow: "hidden",
-            display: "flex",
-            flexDirection: "column",
-            height: "28rem",
-          }}
-        >
-          <div
-            style={{
-              height: "10rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={paynow}
-              alt="PayNow QR"
-              style={{
-                maxHeight: "100%",
-                maxWidth: "80%",
-                objectFit: "contain",
-              }}
-            />
+        <div className="donation-options-grid">
+          <div className="donation-option-card">
+            <div className="option-icon blue">
+              <CreditCard size={34} weight="duotone" />
+            </div>
+
+            <h3>Donate via HitPay</h3>
+            <p>
+              Make a secure online donation using available payment methods.
+            </p>
+
+            <a
+              href="https://securecheckout.hit-pay.com/payment-request/@sunshine-welfare-action-mission-swami"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="option-link"
+            >
+              Donate Now <ArrowRight size={18} />
+            </a>
           </div>
-          <div
-            className="card-body"
-            style={{
-              height: "18rem",
-              overflow: "auto",
-            }}
-          >
-            <h5 className="card-title">Pay Now</h5>
-            <p className="card-text">
-              Name: S W A MI (GENERAL DONATIONS) <br />
+
+          <div className="donation-option-card">
+            <div className="option-icon blue">
+              <QrCode size={34} weight="duotone" />
+            </div>
+
+            <h3>PayNow</h3>
+            <p>
+              Name: S W A M I (GENERAL DONATIONS)
+              <br />
               UEN: S88SS0104KGDT
               <br />
-              Reference: <i>Your full name</i>
+              Reference: Your full name
             </p>
+
+            <a
+              href="mailto:enquiry@swami.org.sg"
+              className="option-link"
+            >
+              Email for Tax Deduction <ArrowRight size={18} />
+            </a>
+          </div>
+
+          <div className="donation-option-card">
+            <div className="option-icon green">
+              <Gift size={34} weight="duotone" />
+            </div>
+
+            <h3>Giving.sg</h3>
             <p>
-              Please <a href="mailto:enquiry@swami.org.sg">email</a> us for tax
-              deduction
+              Support us through Giving.sg and contribute towards our mission.
             </p>
+
+            <a
+              href="https://www.giving.sg/organisation/profile/391a0ed5-0d05-4dad-ac37-2499db3de6fe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="option-link green-link"
+            >
+              Donate via Giving.sg <ArrowRight size={18} />
+            </a>
+          </div>
+
+          <div className="donation-option-card">
+            <div className="option-icon pink">
+              <HandHeart size={34} weight="duotone" />
+            </div>
+
+            <h3>Donation in Kind</h3>
+            <p>
+              Contribute useful items or supplies to support our residents and
+              programmes.
+            </p>
+
+            <a href="/contact-us" className="option-link pink-link">
+              Contact Us <ArrowRight size={18} />
+            </a>
           </div>
         </div>
 
-        {/* Second Card */}
-        <div
-          className="card"
-          style={{
-            width: "18rem",
-            borderRadius: "1rem",
-            overflow: "hidden",
-            display: "flex",
-            flexDirection: "column",
-            height: "28rem",
-          }}
-        >
-          <div
-            style={{
-              height: "10rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={sgdonate}
-              alt="Other QR"
-              style={{
-                maxHeight: "100%",
-                maxWidth: "80%",
-                objectFit: "contain",
-              }}
-            />
-          </div>
-          <div
-            className="card-body"
-            style={{
-              height: "18rem",
-              overflow: "auto",
-            }}
-          >
-            <h5 className="card-title">Donate Online</h5>
-            <p className="card-text">
-              <a href="https://www.giving.sg/organisation/profile/391a0ed5-0d05-4dad-ac37-2499db3de6fe">
-                Donate via Giving.sg
-              </a>
-            </p>
-          </div>
-        </div>
-          {/* third Card */}
-        <div
-          className="card"
-          style={{
-            width: "18rem",
-            borderRadius: "1rem",
-            overflow: "hidden",
-            display: "flex",
-            flexDirection: "column",
-            height: "28rem",
-          }}
-        >
-          <div
-            style={{
-              height: "10rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {/* <img
-              src={sgdonate}
-              alt="Other QR"
-              style={{
-                maxHeight: "100%",
-                maxWidth: "80%",
-                objectFit: "contain",
-              }}
-            /> */}
-          </div>
-          <div
-            className="card-body"
-            style={{
-              height: "18rem",
-              overflow: "auto",
-            }}
-          >
-            <h5 className="card-title">Donation in Kind</h5>
-            <p className="card-text">
-              <a href="/contact-us">
-                Contact Us here
-              </a>
-            </p>
-          </div>
+        <div className="tax-note">
+          <strong>Note:</strong> SWAMI Home is an approved Institution of a Public Character (IPC). Qualifying donations are eligible for a 250% tax deduction, subject to IRAS guidelines. Please email us your donation details to facilitate your tax deduction.
         </div>
       </div>
-    </>
+    </section>
   );
-};
-
-export default DonateSection;
+}

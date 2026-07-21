@@ -3,7 +3,7 @@
   overflow: hidden;
   min-height: 680px;
   padding: 90px 20px 120px;
-
+  background: linear-gradient(135deg, #fffafc 0%, #fff4f8 55%, #ffffff 100%);
 }
 
 .donate-hero-container {
@@ -18,31 +18,49 @@
 }
 
 .donate-hero-text {
-  animation: fadeUp 0.8s ease both;
+  order: 1;
 }
 
-.support-pill {
-  display: inline-block;
-  background: rgba(255, 224, 238, 0.9);
-  color: #e75491;
-  padding: 12px 28px;
-  border-radius: 999px;
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin-bottom: 26px;
-  box-shadow: 0 8px 24px rgba(231, 84, 145, 0.12);
+.donate-hero-image {
+  order: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(236, 92, 150, 0.18);
+  filter: blur(55px);
+  z-index: -1;
+}
+
+.donate-hero-image img {
+  width: 100%;
+  max-width: 700px;
+  transform: scale(1.12);
+  display: block;
 }
 
 .donate-hero-text h1 {
   margin: 0 0 30px;
-  font-size: clamp(4.8rem, 7vw, 7.6rem);
-  line-height: 0.95;
+  font-size: clamp(4.8rem, 7vw, 7.4rem);
+  line-height: 0.98;
   font-weight: 900;
   color: #222;
   letter-spacing: -2px;
 }
 
-.donate-hero-text h1 span {
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.donate-hero-text h1 em {
   color: #e75491;
   font-style: italic;
 }
@@ -100,39 +118,12 @@
   transform: translateY(-3px);
 }
 
-.donate-hero-image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 1s ease both;
-}
-
-.image-glow {
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: rgba(236, 92, 150, 0.18);
-  filter: blur(55px);
-  z-index: -1;
-}
-
-.donate-hero-image img {
-  width: 100%;
-  max-width: 720px;
-  transform: scale(1.15);
-  display: block;
-  animation: floatImage 5s ease-in-out infinite;
-}
-
 .floating-heart {
   position: absolute;
   color: #ef8fa0;
   font-size: 3rem;
   z-index: 1;
   opacity: 0.8;
-  animation: floatHeart 4s ease-in-out infinite;
 }
 
 .heart-one {
@@ -143,77 +134,8 @@
 .heart-two {
   top: 32%;
   right: 9%;
-  animation-delay: 0.8s;
 }
 
-.heart-three {
-  bottom: 20%;
-  left: 8%;
-  animation-delay: 1.4s;
-}
-
-.hero-wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 120px;
-  z-index: 1;
-}
-
-.hero-wave svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-@keyframes floatImage {
-  0%,
-  100% {
-    transform: scale(1.15) translateY(0);
-  }
-
-  50% {
-    transform: scale(1.15) translateY(-14px);
-  }
-}
-
-@keyframes floatHeart {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-6deg);
-  }
-
-  50% {
-    transform: translateY(-16px) rotate(8deg);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Tablet */
 @media (max-width: 992px) {
   .donate-hero {
     padding: 50px 20px 100px;
@@ -243,97 +165,52 @@
   }
 
   .donate-hero-image img {
-    max-width: 580px;
-    transform: scale(1.08);
-  }
-
-  .image-glow {
-    width: 420px;
-    height: 420px;
+    max-width: 520px;
+    transform: none;
   }
 }
 
-/* Mobile */
 @media (max-width: 576px) {
   .donate-hero {
     min-height: auto;
-    padding: 15px 18px 80px;
+    padding: 20px 18px 80px;
   }
 
   .donate-hero-container {
-    gap: 10px;
-  }
-
-  .donate-hero-image {
-    width: 100%;
-    margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
   }
 
   .donate-hero-image img {
-    width: 122vw;
-    max-width: none;
+    width: 92%;
+    max-width: 390px;
     transform: none;
-    margin-left: -11vw;
-    margin-top: -10px;
-    animation: none;
-  }
-
-  .image-glow {
-    width: 310px;
-    height: 310px;
-    filter: blur(40px);
-  }
-
-  .support-pill {
-    font-size: 1rem;
-    padding: 10px 22px;
-    margin-bottom: 24px;
   }
 
   .donate-hero-text h1 {
-    font-size: 4rem;
+    font-size: 3.3rem;
     line-height: 1.05;
     letter-spacing: -1px;
-    margin-bottom: 26px;
   }
 
   .donate-hero-text p {
-    font-size: 1.12rem;
-    line-height: 1.75;
-    margin-bottom: 36px;
+    max-width: 340px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    margin: 0 auto 32px;
   }
 
   .donate-hero-buttons {
+    width: 100%;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   .donate-main-btn,
   .donate-outline-btn {
     width: 100%;
     min-width: unset;
-    padding: 16px 26px;
-  }
-
-  .floating-heart {
-    font-size: 2.1rem;
-  }
-
-  .heart-one {
-    top: 7%;
-    left: 18%;
-  }
-
-  .heart-two {
-    top: 20%;
-    right: 10%;
-  }
-
-  .heart-three {
-    display: none;
-  }
-
-  .hero-wave {
-    height: 70px;
   }
 }

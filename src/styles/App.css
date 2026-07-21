@@ -219,11 +219,11 @@
     margin-left: 0 !important;
   }
 
-  .d-flex.justify-content-between {
+  /* .d-flex.justify-content-between {
     flex-direction: column;
     gap: 12px;
     align-items: center !important;
-  }
+  } */
 
   .service-link {
     justify-content: center;
