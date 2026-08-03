@@ -32,6 +32,7 @@ import Gallery from "./pages/GalleryPage.jsx";
 import ActivtiesPage from "./pages/ActivitiesPage.jsx";
 import PublicationPage from "./pages/PublicationPage.jsx";
 import DeliveryVolunteerPage from "./pages/MealDeliveryVolunteerPage.jsx";
+import ComReportPage from "./pages/ComResourceNewsletterPage.jsx";
 import "./config/appInsights";
 function AppContent() {
   const location = useLocation();
@@ -74,6 +75,7 @@ function AppContent() {
           <Route path="gallery" element={<Gallery />} />
           <Route path ="activities" element={<ActivtiesPage />} />
           <Route path ="publications" element={<PublicationPage />} />
+          <Route path="community-resources" element={<ComReportPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
