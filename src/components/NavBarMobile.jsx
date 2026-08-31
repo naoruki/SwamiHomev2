@@ -397,7 +397,7 @@ function NavBarMobile() {
                 >
                   Activities & Programs
                 </NavDropdown.Item>
-                <NavDropdown.Item
+                {/* <NavDropdown.Item
                   as={Link}
                   to="/facilities"
                   onClick={handleNavClick}
@@ -406,8 +406,8 @@ function NavBarMobile() {
                   }
                 >
                   Facilities
-                </NavDropdown.Item>
-                <NavDropdown.Item
+                </NavDropdown.Item> */}
+                {/* <NavDropdown.Item
                   as={Link}
                   to="/visual-tour"
                   onClick={handleNavClick}
@@ -415,7 +415,17 @@ function NavBarMobile() {
                     location.pathname === "/visual-tour" ? "active" : ""
                   }
                 >
-                  Visual Tour
+                  Events & Highlights
+                </NavDropdown.Item> */}
+                <NavDropdown.Item
+                  as={Link}
+                  to="/events-highlights"
+                  onClick={handleNavClick}
+                  className={
+                    location.pathname === "/events-highlights" ? "active" : ""
+                  }
+                >
+                  Events & Highlights
                 </NavDropdown.Item>
               </NavDropdown>
 
@@ -423,9 +433,9 @@ function NavBarMobile() {
               <NavDropdown title="Media" id="media-dropdown">
                 <NavDropdown.Item
                   as={Link}
-                  to="/events"
+                  to="/events-notices"
                   onClick={handleNavClick}
-                  className={location.pathname === "/events" ? "active" : ""}
+                  className={location.pathname === "/events-notices" ? "active" : ""}
                 >
                   What's Happening
                 </NavDropdown.Item>
@@ -499,7 +509,7 @@ function NavBarMobile() {
                   Tender
                 </NavDropdown.Item>
               </NavDropdown>
-              
+
               {/* Community Life Dropdown */}
               <NavDropdown title="Community Resources" id="community-Resources">
                 <NavDropdown.Item
@@ -525,7 +535,6 @@ function NavBarMobile() {
               </Nav.Link>
             </Nav>
 
-           
             <div className="pt-3 d-flex gap-3">
               <Nav.Link
                 href="https://www.facebook.com/profile.php?id=61552785959134"

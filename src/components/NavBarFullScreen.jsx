@@ -87,20 +87,23 @@ function NavBar() {
               <NavDropdown.Item href="/Activities">
                 Activities & Programs
               </NavDropdown.Item>
-              <NavDropdown.Item href="/Facilities">
+              {/* <NavDropdown.Item href="/Facilities">
                 Facilities
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/Virtual-Tour">
+              </NavDropdown.Item> */}
+              {/* <NavDropdown.Item href="/Virtual-Tour">
                 Virtual Tour
+              </NavDropdown.Item> */}
+             <NavDropdown.Item href="/events-highlights">
+               Events & Highlights
               </NavDropdown.Item>
             </HoverNavDropdown>
 
             <HoverNavDropdown title="Media" id="media-dropdown">
-              <NavDropdown.Item href="/events">
+              <NavDropdown.Item href="/events-notices">
                 What's happening
               </NavDropdown.Item>
               <NavDropdown.Item href="/past-events">
-                Past Event Highlights
+                Past Event Notices
               </NavDropdown.Item>
               <NavDropdown.Item href="/gallery">
                 Photo Gallery

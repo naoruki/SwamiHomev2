@@ -1,0 +1,939 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.events-page {
+  width: 100%;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   BANNER
+========================================= */
+
+.events-banner {
+  width: 100%;
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+
+  background-image:
+    url("/images/EventsHighlightBanner.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.events-banner-content {
+  width: min(1400px, 90%);
+  margin: 0 auto;
+}
+
+
+.events-banner-content h1 {
+  margin: 0 0 14px;
+
+  color: #333333;
+
+  font-size: clamp(38px, 4vw, 60px);
+
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+
+.events-banner-content p {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.events-section {
+  padding: 60px 0 100px;
+}
+
+
+.events-container {
+  width: min(1400px, 90%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.event-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 50px;
+}
+
+
+.event-category-btn {
+  padding: 11px 20px;
+
+  color: #555555;
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.event-category-btn:hover {
+  color: #e85b7d;
+
+  border-color: #e85b7d;
+
+  transform: translateY(-1px);
+}
+
+
+.event-category-btn.active {
+  color: #ffffff;
+
+  background: #e85b7d;
+
+  border-color: #e85b7d;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.events-heading {
+  margin-bottom: 35px;
+}
+
+
+.events-heading span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #e85b7d;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.events-heading h2 {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.events-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.event-card {
+  width: 100%;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  text-align: left;
+
+  color: inherit;
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.event-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 14px 35px
+    rgba(0, 0, 0, 0.11);
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.event-image {
+  position: relative;
+
+  width: 100%;
+  height: 260px;
+
+  overflow: hidden;
+
+  background: #f3f3f3;
+}
+
+
+.event-image > img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+
+.event-card:hover
+.event-image > img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   MEDIA COUNT
+========================================= */
+
+.event-photo-count {
+  position: absolute;
+
+  left: 14px;
+  bottom: 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 7px 10px;
+
+  color: #ffffff;
+
+  background:
+    rgba(0, 0, 0, 0.65);
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  backdrop-filter: blur(4px);
+}
+
+
+.media-divider {
+  margin: 0 2px;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.event-content {
+  padding: 20px 22px 24px;
+}
+
+
+.event-content h3 {
+  margin: 0 0 12px;
+
+  color: #333333;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+
+.event-date {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #777777;
+
+  font-size: 14px;
+}
+
+
+.event-date svg {
+  color: #e85b7d;
+}
+
+
+.event-description {
+  margin: 14px 0 0;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.no-events {
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: #fff9fa;
+
+  border-radius: 15px;
+}
+
+
+.no-events h3 {
+  margin: 0 0 8px;
+}
+
+
+.no-events p {
+  margin: 0;
+
+  color: #777777;
+}
+
+
+/* =========================================
+   MODAL OVERLAY
+========================================= */
+
+.event-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+
+  background:
+    rgba(20, 20, 20, 0.82);
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.event-modal {
+  position: relative;
+
+  width: min(1150px, 100%);
+
+  max-height: 94vh;
+
+  padding: 30px;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   CLOSE
+========================================= */
+
+.event-modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 30;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: #333333;
+  background: #f3f3f3;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+
+.event-modal-close:hover {
+  color: #ffffff;
+  background: #e85b7d;
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.event-modal-header {
+  padding-right: 65px;
+
+  margin-bottom: 22px;
+}
+
+
+.event-modal-header h2 {
+  margin: 0 0 10px;
+
+  color: #e85b7d;
+
+  font-size: 26px;
+  font-weight: 650;
+
+  line-height: 1.35;
+}
+
+
+.event-modal-date {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #777777;
+
+  font-size: 14px;
+}
+
+
+.event-modal-date svg {
+  color: #e85b7d;
+}
+
+
+.event-modal-description {
+  max-width: 800px;
+
+  margin: 16px 0 0;
+
+  color: #666666;
+
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.event-slider {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #f5f5f5;
+}
+
+
+/* =========================================
+   PHOTO SLIDE
+========================================= */
+
+.slider-image {
+  width: 100%;
+  height: 580px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f5f5;
+}
+
+
+.slider-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   VIDEO SLIDER
+========================================= */
+
+.event-slider-video {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  background: transparent;
+}
+
+
+/* =========================================
+   YOUTUBE
+========================================= */
+
+.youtube-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #000000;
+
+  border-radius: 14px;
+}
+
+
+.youtube-wrapper iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.slider-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 20;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  transform: translateY(-50%);
+
+  color: #333333;
+
+  background:
+    rgba(255, 255, 255, 0.95);
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.2);
+}
+
+
+.slider-arrow:hover {
+  color: #ffffff;
+
+  background: #e85b7d;
+}
+
+
+.slider-arrow-left {
+  left: 18px;
+}
+
+
+.slider-arrow-right {
+  right: 18px;
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.slider-counter {
+  display: flex;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 12px;
+
+  color: #777777;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   THUMBNAILS
+========================================= */
+
+.event-thumbnails {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  padding: 3px 2px 8px;
+
+  overflow-x: auto;
+}
+
+
+.event-thumbnail {
+  position: relative;
+
+  flex: 0 0 90px;
+
+  width: 90px;
+  height: 65px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  border: 3px solid transparent;
+  border-radius: 8px;
+
+  opacity: 0.55;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.event-thumbnail:hover {
+  opacity: 0.9;
+}
+
+
+.event-thumbnail-active {
+  opacity: 1;
+
+  border-color: #e85b7d;
+}
+
+
+.event-thumbnail > img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   VIDEO THUMBNAIL
+========================================= */
+
+.video-thumbnail {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.video-thumbnail-play {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background:
+    rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+  .events-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .events-banner {
+    min-height: 250px;
+  }
+
+
+  .slider-image {
+    height: 500px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .events-banner {
+    min-height: 220px;
+  }
+
+
+  .events-banner-content {
+    width: 88%;
+  }
+
+
+  .events-banner-content h1 {
+    font-size: 34px;
+  }
+
+
+  .events-banner-content p {
+    font-size: 15px;
+  }
+
+
+  .events-section {
+    padding: 45px 0 70px;
+  }
+
+
+  /* CATEGORY */
+
+  .event-categories {
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+
+    margin-bottom: 40px;
+
+    padding-bottom: 8px;
+
+    overflow-x: auto;
+  }
+
+
+  .event-category-btn {
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+  }
+
+
+  /* GRID */
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .event-image {
+    height: 240px;
+  }
+
+
+  /* MODAL */
+
+  .event-modal-overlay {
+    padding: 10px;
+  }
+
+
+  .event-modal {
+    padding: 20px 14px 18px;
+
+    border-radius: 14px;
+  }
+
+
+  .event-modal-header {
+    padding-right: 50px;
+  }
+
+
+  .event-modal-header h2 {
+    font-size: 20px;
+  }
+
+
+  .event-modal-description {
+    font-size: 14px;
+  }
+
+
+  .event-modal-close {
+    top: 12px;
+    right: 12px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* PHOTO */
+
+  .slider-image {
+    height: 390px;
+  }
+
+
+  /* YOUTUBE */
+
+  .event-slider-video {
+    width: 100%;
+  }
+
+
+  .youtube-wrapper {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 10px;
+  }
+
+
+  /* ARROWS */
+
+  .slider-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .slider-arrow-left {
+    left: 9px;
+  }
+
+
+  .slider-arrow-right {
+    right: 9px;
+  }
+
+
+  /* THUMBNAILS */
+
+  .event-thumbnail {
+    flex-basis: 72px;
+
+    width: 72px;
+    height: 54px;
+  }
+
+}
