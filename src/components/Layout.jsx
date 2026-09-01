@@ -36,7 +36,7 @@ const Layout = () => {
   return (
     <>
       {/* 🔔 Dynamic Alert Bar */}
-      {message && <AlertBar message={message} link="/events" />}
+      {message && <AlertBar message={message} link="/events-notices" />}
 
       <NavBar />
       <NavBarMobile />
