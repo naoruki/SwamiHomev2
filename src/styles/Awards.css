@@ -1,0 +1,725 @@
+/* =========================================
+   AWARDS PAGE
+========================================= */
+
+.awards-page {
+  width: 100%;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   PAGE INTRO
+========================================= */
+
+.awards-intro {
+  width: 100%;
+
+  padding: 70px 20px 60px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(232, 91, 125, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(197, 139, 36, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf8 0%,
+      #ffffff 100%
+    );
+
+  border-bottom: 1px solid #f4eeee;
+}
+
+
+.awards-intro-container {
+  width: min(850px, 90%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   INTRO LABEL
+========================================= */
+
+.awards-intro-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #c58b24;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   MAIN PAGE TITLE
+========================================= */
+
+.awards-intro h1 {
+  margin: 0 0 16px;
+
+  color: #e65391;
+
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================
+   INTRO DESCRIPTION
+========================================= */
+
+.awards-intro p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #666666;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   INTRO DECORATIVE LINE
+========================================= */
+
+.awards-intro-container::after {
+  content: "";
+
+  display: block;
+
+  width: 50px;
+  height: 3px;
+
+  margin: 22px auto 0;
+
+  background: #e85b7d;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   AWARDS SECTION
+========================================= */
+
+.awards-section {
+  padding: 60px 0 90px;
+}
+
+
+.awards-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING - REDESIGNED
+========================================= */
+
+.awards-section-heading {
+  position: relative;
+
+  width: 100%;
+  max-width: 620px;
+
+  margin: 0 auto 35px;
+
+  padding-left: 22px;
+
+  text-align: left;
+}
+
+
+/* =========================================
+   SECTION HEADING VERTICAL LINE
+========================================= */
+
+.awards-section-heading::before {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+
+  width: 4px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #e85b7d,
+      #f3a4b8
+    );
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   OUR ACHIEVEMENT
+========================================= */
+
+.awards-section-heading > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #c58b24;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.awards-section-heading h2 {
+  margin: 0 0 8px;
+
+  color: #333333;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================
+   SECTION DESCRIPTION
+========================================= */
+
+.awards-section-heading p {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   AWARDS GRID
+========================================= */
+
+.awards-grid {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+
+/* =========================================
+   AWARD CARD
+========================================= */
+
+.award-card {
+  width: 100%;
+  max-width: 620px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 28px
+    rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.award-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 16px 40px
+    rgba(0, 0, 0, 0.11);
+}
+
+
+/* =========================================
+   CERTIFICATE AREA
+========================================= */
+
+.award-card-image {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf4 0%,
+      #fff7f8 100%
+    );
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+
+/* =========================================
+   CERTIFICATE IMAGE
+========================================= */
+
+.award-certificate-image {
+  width: 60%;
+  max-width: 310px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 7px 24px
+    rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.award-card:hover .award-certificate-image {
+  transform: scale(1.015);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.award-card-content {
+  padding: 28px 30px 32px;
+}
+
+
+/* =========================================
+   RECOGNITION BADGE
+========================================= */
+
+.award-recognition {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 14px;
+
+  padding: 7px 12px;
+
+  color: #c58b24;
+  background: #fff8e9;
+
+  border: 1px solid #f3e2bd;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+
+.award-recognition svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   DATE
+========================================= */
+
+.award-date {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 12px;
+
+  color: #777777;
+
+  font-size: 14px;
+}
+
+
+.award-date svg {
+  flex-shrink: 0;
+
+  color: #e85b7d;
+}
+
+
+/* =========================================
+   AWARD TITLE
+========================================= */
+
+.award-card-content h3 {
+  margin: 0 0 14px;
+
+  color: #333333;
+
+  font-size: 23px;
+  font-weight: 650;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   AWARD DESCRIPTION
+========================================= */
+
+.award-card-content p {
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   OFFICIAL AWARD LINK
+========================================= */
+
+.award-official-link {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 22px;
+
+  padding: 10px 16px;
+
+  color: #c58b24;
+  background: #fff8e9;
+
+  border: 1px solid #ecd39d;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.award-official-link:hover {
+  color: #ffffff;
+
+  background: #c58b24;
+  border-color: #c58b24;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 14px
+    rgba(197, 139, 36, 0.22);
+}
+
+
+.award-official-link svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+  /* INTRO */
+
+  .awards-intro {
+    padding: 60px 20px 55px;
+  }
+
+
+  .awards-intro h1 {
+    font-size: 46px;
+  }
+
+
+  .awards-intro p {
+    font-size: 16px;
+  }
+
+
+  /* AWARDS SECTION */
+
+  .awards-section {
+    padding: 50px 0 80px;
+  }
+
+
+  .awards-section-heading {
+    max-width: 620px;
+
+    margin-bottom: 32px;
+  }
+
+
+  .awards-section-heading h2 {
+    font-size: 24px;
+  }
+
+
+  /* CARD */
+
+  .award-card {
+    max-width: 620px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* =====================================
+     INTRO
+  ====================================== */
+
+  .awards-intro {
+    padding: 45px 15px 40px;
+  }
+
+
+  .awards-intro-container {
+    width: 92%;
+  }
+
+
+  .awards-intro-label {
+    margin-bottom: 9px;
+
+    font-size: 10px;
+  }
+
+
+  .awards-intro h1 {
+    margin-bottom: 13px;
+
+    font-size: 34px;
+  }
+
+
+  .awards-intro p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+
+  .awards-intro-container::after {
+    width: 42px;
+
+    margin-top: 18px;
+  }
+
+
+  /* =====================================
+     AWARDS SECTION
+  ====================================== */
+
+  .awards-section {
+    padding: 45px 0 65px;
+  }
+
+
+  .awards-container {
+    width: 90%;
+  }
+
+
+  /* =====================================
+     SECTION HEADING
+  ====================================== */
+
+  .awards-section-heading {
+    width: 100%;
+    max-width: 520px;
+
+    margin-bottom: 28px;
+
+    padding-left: 17px;
+  }
+
+
+  .awards-section-heading::before {
+    top: 3px;
+    bottom: 3px;
+
+    width: 3px;
+  }
+
+
+  .awards-section-heading > span {
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .awards-section-heading h2 {
+    margin-bottom: 6px;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+  }
+
+
+  .awards-section-heading p {
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+
+  /* =====================================
+     GRID
+  ====================================== */
+
+  .awards-grid {
+    gap: 20px;
+  }
+
+
+  /* =====================================
+     CARD
+  ====================================== */
+
+  .award-card {
+    width: 100%;
+
+    border-radius: 14px;
+  }
+
+
+  /* =====================================
+     CERTIFICATE
+  ====================================== */
+
+  .award-card-image {
+    padding: 30px 15px;
+  }
+
+
+  .award-certificate-image {
+    width: 68%;
+    max-width: 260px;
+  }
+
+
+  /* =====================================
+     CARD CONTENT
+  ====================================== */
+
+  .award-card-content {
+    padding: 22px 20px 25px;
+  }
+
+
+  .award-recognition {
+    padding: 6px 10px;
+
+    font-size: 10px;
+  }
+
+
+  .award-date {
+    font-size: 13px;
+  }
+
+
+  .award-card-content h3 {
+    font-size: 20px;
+  }
+
+
+  .award-card-content p {
+    font-size: 14px;
+  }
+
+
+  .award-official-link {
+    padding: 9px 13px;
+
+    font-size: 13px;
+  }
+
+}

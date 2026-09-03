@@ -34,6 +34,7 @@ import PublicationPage from "./pages/PublicationPage.jsx";
 import DeliveryVolunteerPage from "./pages/MealDeliveryVolunteerPage.jsx";
 import ComReportPage from "./pages/ComResourceNewsletterPage.jsx";
 import EventsHighlights from "./pages/EventsHighlights.jsx";
+import Awards from "./pages/Awards.jsx";
 import "./config/appInsights";
 function AppContent() {
   const location = useLocation();
@@ -78,6 +79,7 @@ function AppContent() {
           <Route path ="publications" element={<PublicationPage />} />
           <Route path="community-resources" element={<ComReportPage />} />
           <Route path="events-highlights" element={<EventsHighlights />} />
+           <Route path="awards" element={<Awards />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -419,6 +419,14 @@ function NavBarMobile() {
                 </NavDropdown.Item> */}
                 <NavDropdown.Item
                   as={Link}
+                  to="/awards"
+                  onClick={handleNavClick}
+                  className={location.pathname === "/awards" ? "active" : ""}
+                >
+                  Awards & Recognitions
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={Link}
                   to="/events-highlights"
                   onClick={handleNavClick}
                   className={
@@ -435,7 +443,9 @@ function NavBarMobile() {
                   as={Link}
                   to="/events-notices"
                   onClick={handleNavClick}
-                  className={location.pathname === "/events-notices" ? "active" : ""}
+                  className={
+                    location.pathname === "/events-notices" ? "active" : ""
+                  }
                 >
                   What's Happening
                 </NavDropdown.Item>

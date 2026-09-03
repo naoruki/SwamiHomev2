@@ -93,8 +93,11 @@ function NavBar() {
               {/* <NavDropdown.Item href="/Virtual-Tour">
                 Virtual Tour
               </NavDropdown.Item> */}
-             <NavDropdown.Item href="/events-highlights">
-               Events & Highlights
+              <NavDropdown.Item href="/awards">
+                Awards & Recognitions
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/events-highlights">
+                Events & Highlights
               </NavDropdown.Item>
             </HoverNavDropdown>
 
@@ -105,9 +108,7 @@ function NavBar() {
               <NavDropdown.Item href="/past-events">
                 Past Event Notices
               </NavDropdown.Item>
-              <NavDropdown.Item href="/gallery">
-                Photo Gallery
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/gallery">Photo Gallery</NavDropdown.Item>
               <NavDropdown.Item href="/publications">
                 Publications
               </NavDropdown.Item>
@@ -123,8 +124,13 @@ function NavBar() {
               <NavDropdown.Item href="/tender">Tender</NavDropdown.Item>
             </HoverNavDropdown>
 
-            <HoverNavDropdown title="Community Resources" id="community-resources-dropdown">
-              <NavDropdown.Item href="/community-resources">Information & Resources</NavDropdown.Item>
+            <HoverNavDropdown
+              title="Community Resources"
+              id="community-resources-dropdown"
+            >
+              <NavDropdown.Item href="/community-resources">
+                Information & Resources
+              </NavDropdown.Item>
             </HoverNavDropdown>
             <Nav.Link as={Link} to="/contact-us">
               Contact Us
